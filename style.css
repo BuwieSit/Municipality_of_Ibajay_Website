@@ -1,0 +1,20 @@
+@import url(global.css);
+
+.parallax {
+    background-attachment: fixed;
+    background-position: 100%;
+    background-repeat: no-repeat;
+
+}
+.parallax-inner {
+    padding-top: 25%;
+    padding-bottom: 25%;
+}
+
+.top-wrapper {
+    background: url('z-resources/hall_front.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 600px;
+    background-color: var(--lightGreen);
+}
