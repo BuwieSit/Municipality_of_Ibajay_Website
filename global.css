@@ -46,6 +46,7 @@ header {
 #headerTitle {
    -webkit-text-fill-color: white;
    -webkit-background-clip: text;
+   background-clip: text;
    text-decoration: none;
    font-weight: 500;
 }
@@ -167,7 +168,10 @@ a {
     transition: all 0.3s ease;
     opacity: 0;
 }
-
+.pleft, .pright {
+    transition: all 0.3s ease;
+    
+}
 .slider {
     position: absolute;
     top: 0;
