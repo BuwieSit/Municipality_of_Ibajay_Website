@@ -172,6 +172,7 @@ a {
     transition: all 0.3s ease;
     
 }
+
 .slider {
     position: absolute;
     top: 0;
@@ -294,6 +295,16 @@ a {
 }
 .toggle:hover {
     background-color: var(--lightYellow);
+}
+#adminText {
+    font-family: var(--subtitle-font);
+    font-size: 10px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+}
+#adminText:hover {
+    text-decoration: underline;
 }
 .forgot-pass {
     font-family: var(--subtitle-font);
