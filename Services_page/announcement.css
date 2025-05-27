@@ -1,0 +1,36 @@
+body {
+    height: 100vh;
+      margin: 0;
+      background: linear-gradient(
+        to bottom,
+        #033F63 0%,
+        #28666E 51%,
+        #B5B682 100%
+        );
+}
+
+.announcement{
+    background-color:  rgba(255, 255, 255, 0.753);
+    border-radius: 30px;
+    font-family: 'Inter';
+    font-size: 50px;
+    cursor: pointer;
+    box-shadow: 10px 10px #32A34A;
+    width: 375px;
+}
+
+.news{
+    font-size: 50px;
+    cursor: pointer;
+    text-shadow: 10px 10px black;
+
+}
+ 
+.lang{
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;                 
+    margin-top: 20px;          
+    margin-right: 20px;       
+}
+  
