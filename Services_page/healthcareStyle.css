@@ -1,0 +1,52 @@
+body {
+    background-image: url(../z-resources/Hospital.jpg);
+    background-size: 100% 120%; /* Ensures full width */
+    background-position:center; 
+    background-repeat: no-repeat;
+    background-color:#E3F2FD ;
+   
+}
+
+.banner {
+    position: relative;
+    text-align: center;
+    color: white;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 50vh; 
+    font-size: 25px;
+}
+
+.banner-container h1 {
+    display: flex;
+    background-color: lightgray;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.appointment-BTN{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.appointment-BTN button{
+    color: whitesmoke;
+    background-color: red;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.booking{
+   position: absolute;
+    bottom: 6%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(211, 211, 211);
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-align: left;
+    font-size: 30px;
+}
