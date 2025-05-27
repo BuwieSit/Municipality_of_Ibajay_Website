@@ -1,5 +1,5 @@
 body {
-    height: 200vh;
+    height: 150vh;
       margin: 0;
       background: linear-gradient(
         to bottom,
@@ -55,6 +55,7 @@ nav a:hover {
     padding: 10px 20px;
     display: flex;
     justify-content: flex-end;
+    gap: 15px;
 }
 
 .announcement-button{
@@ -67,11 +68,11 @@ nav a:hover {
     font-size: 30px;
     font-weight: bold; 
     background-image: linear-gradient(to left, #F1E816, #32A34A);
-    box-shadow: 10px 10px rgba(196, 185, 185, 0.9); /* Add a subtle shadow */
+    box-shadow: 0 10px 20px rgba(196, 185, 185, 0.9); /* Add a subtle shadow */
 }
 .news-button {
-    background-color: #d4edda;
-    color: #333;
+    background-color: #d4edda50;
+    color: hwb(0 100% 0%);
     border: none;
     padding: 10px 15px;
     border-radius: 20px;
@@ -80,13 +81,10 @@ nav a:hover {
     font-size: 30px;
 }
 
-.news-button {
-    background-color: #607d8b; /* Grayish button */
-    color: white;
-}
 
 .container {
     padding: 20px;
+
 }
 
 .main-announcement {
@@ -98,11 +96,10 @@ nav a:hover {
     align-items: center;
     color: white;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
-    background-image:
-    radial-gradient(circle, rgba(247, 239, 239, 0.05) 1px, transparent 1px),
-    radial-gradient(circle, rgba(0,0,0,0.05) 1px, transparent 1px);
-    background-size: 20px 20px; /* Adjust the size of the noise specks */
-    background-position: 0 0, 10px 10px; /* Offset the second layer for more randomness */
+    background-image: url('noise.png'), linear-gradient(#e0f2f750, rgba(161, 130, 130, 0.5)); 
+    background-repeat: repeat, no-repeat;
+    background-size: auto, 100% 100%;
+    background: overlay;    
 }
 
 .date-icon {
