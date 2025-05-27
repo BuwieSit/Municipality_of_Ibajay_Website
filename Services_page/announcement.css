@@ -1,5 +1,5 @@
 body {
-    height: 100vh;
+    height: 200vh;
       margin: 0;
       background: linear-gradient(
         to bottom,
@@ -52,20 +52,32 @@ nav a:hover {
 }
 
 .announcement-bar {
-    background-color: #80cbc4; /* Teal-ish bar */
     padding: 10px 20px;
     display: flex;
     justify-content: flex-end;
 }
 
-.announcement-button, .news-button {
-    background-color: #cddc39; /* Light green button */
+.announcement-button{
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px; 
+    cursor: pointer;
+    font-size: 30px;
+    font-weight: bold; 
+    background-image: linear-gradient(to left, #F1E816, #32A34A);
+    box-shadow: 10px 10px rgba(196, 185, 185, 0.9); /* Add a subtle shadow */
+}
+.news-button {
+    background-color: #d4edda;
     color: #333;
     border: none;
     padding: 10px 15px;
     border-radius: 20px;
     margin-left: 10px;
     text-decoration: none;
+    font-size: 30px;
 }
 
 .news-button {
@@ -78,13 +90,19 @@ nav a:hover {
 }
 
 .main-announcement {
-    background-color: #80cbc4; /* Teal-ish background */
+    background-color: #ffffff50;
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 20px;
     display: flex;
     align-items: center;
     color: white;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+    background-image:
+    radial-gradient(circle, rgba(247, 239, 239, 0.05) 1px, transparent 1px),
+    radial-gradient(circle, rgba(0,0,0,0.05) 1px, transparent 1px);
+    background-size: 20px 20px; /* Adjust the size of the noise specks */
+    background-position: 0 0, 10px 10px; /* Offset the second layer for more randomness */
 }
 
 .date-icon {
@@ -96,6 +114,12 @@ nav a:hover {
 .icon {
     font-size: 3em;
     margin-right: 15px;
+}
+
+.line{
+    font-size: 100px;
+    font-family:fantasy;
+    color: white;
 }
 
 .date {
@@ -115,13 +139,14 @@ nav a:hover {
 }
 
 .event-item {
-    background-color: #b2dfdb; /* Lighter teal background */
+    background-color: #ffffff50;
     padding: 15px;
     border-radius: 8px;
     margin-bottom: 10px;
     display: flex;
     align-items: center;
-    color: #333;
+    color: #ffffff;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.473);
 }
 
 .date-label {
@@ -135,4 +160,15 @@ nav a:hover {
 
 .event-text {
     line-height: 1.4;
+    margin-left: 25px;
+}
+
+.main-text{
+    margin-left: 25px;
+}
+
+.line2{
+    font-size: 50px;
+    font-family:fantasy;
+    color: white;
 }
