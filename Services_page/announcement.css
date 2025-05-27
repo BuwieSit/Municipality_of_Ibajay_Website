@@ -9,28 +9,130 @@ body {
         );
 }
 
-.announcement{
-    background-color:  rgba(255, 255, 255, 0.753);
-    border-radius: 30px;
-    font-family: 'Inter';
-    font-size: 50px;
-    cursor: pointer;
-    box-shadow: 10px 10px #32A34A;
-    width: 375px;
+.logo {
+    display: flex;
+    align-items: center;
 }
 
-.news{
-    font-size: 50px;
-    cursor: pointer;
-    text-shadow: 10px 10px black;
-
+.logo img {
+    height: 40px;
+    margin-right: 10px;
 }
- 
-.lang{
+
+.logo span {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav li {
+    margin-left: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.account-button {
+    background-color: #fdd835; /* Yellow account button */
+    color: #333 !important;
+}
+
+.announcement-bar {
+    background-color: #80cbc4; /* Teal-ish bar */
+    padding: 10px 20px;
     display: flex;
     justify-content: flex-end;
-    gap: 10px;                 
-    margin-top: 20px;          
-    margin-right: 20px;       
 }
-  
+
+.announcement-button, .news-button {
+    background-color: #cddc39; /* Light green button */
+    color: #333;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+.news-button {
+    background-color: #607d8b; /* Grayish button */
+    color: white;
+}
+
+.container {
+    padding: 20px;
+}
+
+.main-announcement {
+    background-color: #80cbc4; /* Teal-ish background */
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.date-icon {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.icon {
+    font-size: 3em;
+    margin-right: 15px;
+}
+
+.date {
+    text-align: center;
+}
+
+.month {
+    font-size: 1.5em;
+    font-weight: bold;
+    display: block;
+}
+
+.day {
+    font-size: 3em;
+    font-weight: bold;
+    display: block;
+}
+
+.event-item {
+    background-color: #b2dfdb; /* Lighter teal background */
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    color: #333;
+}
+
+.date-label {
+    background-color: white;
+    color: #006994;
+    padding: 8px 12px;
+    border-radius: 5px;
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+.event-text {
+    line-height: 1.4;
+}
