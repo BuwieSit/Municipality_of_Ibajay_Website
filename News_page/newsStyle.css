@@ -1,0 +1,37 @@
+#newsButton {
+    width: 90px;
+    height: 40px;
+    font-family: var(--subtitle-font);
+    font-size: var(--nav-fontsize);
+    font-weight: 700;
+    border-radius: 50px;
+    background: var(--darkGreen);
+    color: black;
+    cursor: pointer;
+}
+#newsButton:hover {
+    filter: drop-shadow(0px 0px 10px var(--lightYellow));
+    color: white;
+}
+.news-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(124, 152, 133, 0.5);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur( 10.5px );
+    -webkit-backdrop-filter: blur( 10.5px );
+    border: 1px solid rgba( 255, 255, 255, 0.18);    
+    border-radius: 50px;
+
+    transition: all 0.3s ease;
+    opacity: 0;
+}
