@@ -10,7 +10,6 @@
 </head>
 <body>
 
-
     <header>
         <div class="header-logo-cont">
             <a href="../index.html">
@@ -32,10 +31,107 @@
         </div>
     </header>
 
+        <a href="./permits.html">
+            <div class="service-wrapper">
+                <div class="service-innerbox">
+                    <h2 class="service-innertext">Business Registration and Permits</h2>
+                    <div class="innercontent">
+                        <p>Easily apply for municipal permits—such as construction, occupancy, and other clearances—or start and renew your business in Ibajay through our streamlined process. We ensure fast processing, transparent requirements, and a supportive, business-friendly environment for both individuals and entrepreneurs.</p>
+                    </div>
+                </div>
+        </a>
+
+        <a href="healthcare.html">
+                <div class="service-innerbox">
+                    <h2 class="service-innertext">Healthcare</h2>
+                    <div class="innercontent">
+                        <p>Access quality healthcare services through Ibajay’s local health centers and programs. From maternal care to disease prevention, we aim to provide accessible and inclusive health support for all residents.</p>
+                    </div>
+                </div>
+        </a>
+
+        <a href="tourism.html">
+                <div class="service-innerbox">
+                    <h2 class="service-innertext">Tourism</h2>
+                    <div class="innercontent">
+                        <p>Discover Ibajay’s natural beauty and cultural heritage—from lush forests and clean beaches to local festivals and traditions. Our tourism services guide you through unforgettable experiences that highlight what makes Ibajay unique.</p>
+                    </div>
+                </div>
+        </a>
+    </div>
+   
+    
+
+
+
+
 
     
-    <!-- Script stays at the bottom of the page -->
-    <script src="servicesScript.js"></script>
-    <script src="globalScript.js"></script>
+    <!-- Script and POPUP stays at the bottom of the page -->
+
+    <div class="acc-popup">
+      <div class="slider">
+        <div class="slider-wrapper">
+          <img src="../z-resources/ibajay_logo.png" />
+          <h1 id="headerTitle">Municipality of Ibajay</h1>
+        </div>
+        <button class="sign-button log-button toggle">
+          <p>Login</p>
+        </button>
+      </div>
+      <div class="popup-wrapper pleft">
+        <form class="popup-form reg-form" autocomplete="off">
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="username"
+            required
+          />
+
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="email"
+            required
+          />
+
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="password"
+            required
+          />
+
+          <button type="submit" class="sign-button reg-button">Sign up</button>
+        </form>
+      </div>
+      <div class="popup-wrapper pright">
+        <form class="popup-form login-form" autocomplete="off">
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="username"
+            required
+          />
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="password"
+            required
+          />
+
+          <button type="submit" class="sign-button reg-button">Sign in</button>
+          <p class="forgot-pass">Forgot password?</p>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="../globalScript.js"></script>
 </body>
 </html>
