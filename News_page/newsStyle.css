@@ -6,7 +6,7 @@
     font-weight: 700;
     border-radius: 50px;
     background: var(--darkGreen);
-    color: black;
+    color: rgb(243, 233, 233);
     cursor: pointer;
 }
 #newsButton:hover {
@@ -34,4 +34,141 @@
 
     transition: all 0.3s ease;
     opacity: 0;
+}
+#newsButtons {
+    position: relative;
+    color: black;
+    font-weight: bold;
+    background: none;
+    z-index: 2;
+    width: 90px;
+    height: 40px;
+    font-family: var(--subtitle-font);
+    font-size: var(--nav-fontsize);
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+#newsButtons::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: white;
+    opacity: 0.5;
+    border-radius: inherit;
+    z-index: 1;
+}
+#newsButtons::after {
+content: "";
+    position: absolute;
+    top: 5px;  
+    left: 5px;  
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #3b8d99, #6b6b83);
+    border-radius: inherit;
+    z-index: 0;
+}
+#newsButtons span {
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(to right, #3b8d99, #6b6b83);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+#anns-Button {
+    position: relative;
+    color: black;
+    font-weight: bold;
+    background: none;
+    z-index: 2;
+    width: 170px;
+    height: 40px;
+    font-family: var(--subtitle-font);
+    font-size: var(--nav-fontsize);
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+#anns-Button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: white;
+    opacity: 0.5;
+    border-radius: inherit;
+    z-index: 1;
+}
+#anns-Button::after {
+content: "";
+    position: absolute;
+    top: 5px;  
+    left: 5px;  
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #3b8d99, #6b6b83);
+    border-radius: inherit;
+    z-index: 0;
+}
+#anns-Button span {
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(to right, #3b8d99, #6b6b83);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.page {
+    background: linear-gradient(to bottom, #28666e, #033f63);
+    height: 100vh;
+
+}
+
+.navsnews {
+    width: fit-content;
+    float: right;
+    margin-top: 30px;
+    margin-right: 50px;
+    position: relative;
+}
+.navsnews > ul {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    align-items: center;
+    font-family: var(--subtitle-font);
+    font-size: var(--nav-fontsize);
+}
+.navsnews > ul > * {
+    width: 200px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    border-radius: 100px;
+}
+.navsnews > ul > * > li {
+    width: 170px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    border-radius: 50px;
+}
+
+.navsnews > ul > *:hover > li {
+    background-color: var(--darkGreen);
+    border-radius: 50px;
+    color: black;
 }
