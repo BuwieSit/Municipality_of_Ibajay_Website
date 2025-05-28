@@ -1,9 +1,7 @@
 @import url(global.css);
 
-
-.parallax-inner {
-    padding-top: 25%;
-    padding-bottom: 25%;
+body {
+    background-color: var(--darkBlue);
 }
 
 .top-wrapper {
@@ -12,4 +10,40 @@
     width: 100%;
     height: 600px;
     background-color: var(--lightGreen);
+}
+.top-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.top-inner > h1 {
+    font-family: var(--title-font);
+    font-size: 10rem;
+    filter: drop-shadow(10px 10px 10px black);
+}
+.top-inner > p {
+    font-family: var(--subtitle-font);
+    font-style: italic;
+}
+.container-box {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero {
+    background-color: var(--blueGreen);
+}
+.main-carousel {
+    background-color: var(--lightGreen);
+}
+.hotlines {
+    background-color: var(--lightYellow);
+}
+.officials {
+    background-color: var(--darkBlue);
 }
