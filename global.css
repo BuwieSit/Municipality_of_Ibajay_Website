@@ -167,6 +167,7 @@ a {
 
     transition: all 0.3s ease;
     opacity: 0;
+    pointer-events: none;
 }
 .pleft, .pright {
     transition: all 0.3s ease;

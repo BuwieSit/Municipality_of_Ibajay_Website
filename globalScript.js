@@ -15,9 +15,11 @@ window.addEventListener('DOMContentLoaded', () => {
     accountBtn.addEventListener('click', () => {
         if (popup.style.opacity == '0') {
             popup.style.opacity = '1';
+            popup.style.pointerEvents = 'all';
         }
         else {
             popup.style.opacity = '0';
+            popup.style.pointerEvents = 'none';
         }
         
     });
