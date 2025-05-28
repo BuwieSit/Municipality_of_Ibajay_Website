@@ -1,0 +1,45 @@
+
+.background {
+    background-color: #28666E;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.site-border {
+    border: 1.5px solid black;
+    background: transparent;
+    border-radius: 50px;
+    margin: 30px auto;
+    max-width: 90vw;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 2%;
+    padding-left: 3%;
+
+    padding-right: 40px;
+    min-height: 90vh;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+h3 {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.5rem;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+p.contact {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+p.pformat {
+    font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif
+}
+.namesake {
+    font-style: italic;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.2em;
+}
+.bold {
+    font-weight: bold;
+}
