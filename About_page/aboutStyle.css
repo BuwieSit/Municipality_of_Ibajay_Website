@@ -91,3 +91,112 @@ body {
     font-style: italic;
     font-family: var(--subtitle-font);
 }
+
+.officials-list {
+    width: 100%;
+    height: 5000px;
+    padding-bottom: 50px;
+    background-image: linear-gradient(var(--blueGreen) ,var(--lightYellow));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 50px;
+}
+.title-wrapper {
+    width: 100%;
+    height: 200px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title-wrapper > h1 {
+    font-family: var(--subtitle-font);
+    font-size: 50px;
+    font-weight: 700;
+}
+
+
+.member-line {
+    width: 100%;
+    height: 700px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.member-wrapper {
+    position: relative;
+    overflow: none;
+    gap: 30px;
+    border-radius: 30px;
+}
+.member-wrapper > img {
+    width: 400px;
+    border-radius: 30px;
+
+}
+.member-wrapper > p {
+    font-family: var(--subtitle-font);
+    font-weight: 600;
+    font-size: 20px;
+    margin-top: 10px;
+    text-align: center;
+    color: black;
+}
+
+.higher-govt > img {
+    width: 500px;
+}
+.higher-govt > .member-overlay > .member-list > li {
+    font-size: 30px;
+    list-style-type: none;
+}
+
+.member-wrapper:hover > .member-overlay {
+    transform: translateY(0%);
+    opacity: 1;
+}
+.member-overlay {
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+    opacity: 0;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 90%;
+    height: 94%;
+    padding-left: 5%;
+    padding-right: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.member-overlay > * {
+    font-family: var(--subtitle-font);
+}
+.member-name {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+}
+.member-list {
+    width: 90%;
+    height: 50%;
+    padding-left: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    list-style-type: circle;
+    font-weight: 600;
+}
+.member-list > li {
+    font-size: 20px;
+}
+
+
