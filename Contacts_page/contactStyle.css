@@ -16,7 +16,7 @@
     box-sizing: border-box;
     padding: 2%;
     padding-left: 3%;
-
+    position: absolute;
     padding-right: 40px;
     min-height: 90vh;
     box-shadow: 0 2px 12px rgba(0,0,0,0.04);
@@ -42,4 +42,81 @@ p.pformat {
 }
 .bold {
     font-weight: bold;
+}
+#overlay-button {
+  position: absolute;
+  left: -45px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45px;
+  height: 80px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px 0 0 8px;
+  cursor: pointer;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+  transition: background 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+#overlay-button:hover {
+  background: #0056b3;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  right: -40%;
+  width: 40%;
+  height: 100%;
+  background-color: white;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.3);
+  transition: right 0.5s ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+} 
+.overlay:hover {
+  right: 0px;
+}
+.overlay-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100%;
+    min-width: 100%;
+    position: relative;
+}
+.email-form {
+    width: 70%;
+    height: 80%;
+    display: flex;
+    margin-top: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: #A8A7A7;
+    border-radius: .5em;
+    flex-direction: column;
+}
+.email-input {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    width: 90%;
+    max-height: 90%;
+    height: 100%;
+    gap: 1px;
+    font: bold 1rem Arial, Helvetica, sans-serif;
+}
+h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-height: 30%;
+    max-width: 50%;
 }
