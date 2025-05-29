@@ -1,4 +1,4 @@
-body {
+.page {
     height: 150vh;
       margin: 0;
       background: linear-gradient(
@@ -9,80 +9,8 @@ body {
         );
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-}
-
-.logo img {
-    height: 40px;
-    margin-right: 10px;
-}
-
-.logo span {
-    font-weight: bold;
-    font-size: 1.2em;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-}
-
-nav li {
-    margin-left: 20px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-}
-
-nav a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.account-button {
-    background-color: #fdd835; /* Yellow account button */
-    color: #333 !important;
-}
-
-.announcement-bar {
-    padding: 10px 20px;
-    display: flex;
-    justify-content: flex-end;
-    gap: 15px;
-}
-
-.announcement-button{
-    background-color: #d4edda;
-    color: #155724;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px; 
-    cursor: pointer;
-    font-size: 30px;
-    font-weight: bold; 
-    background-image: linear-gradient(to left, #F1E816, #32A34A);
-    box-shadow: 0 10px 20px rgba(196, 185, 185, 0.9); /* Add a subtle shadow */
-}
-.news-button {
-    background-color: #d4edda50;
-    color: hwb(0 100% 0%);
-    border: none;
-    padding: 10px 15px;
-    border-radius: 20px;
-    margin-left: 10px;
-    text-decoration: none;
-    font-size: 30px;
-}
-
-
 .container {
+    margin-top: 70px;
     padding: 20px;
 }
 
