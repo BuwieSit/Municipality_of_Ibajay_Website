@@ -257,16 +257,13 @@ content: "";
     text-shadow: 0px 2px 2px rgb(0, 0, 0);
 }
 
-.sub-box{
-    border-radius: 50px;
-    display: block;
-    justify-content: flex-start;
-    margin: 20px;
-    background: rgb(217, 217, 217,.5);
-    height: 500px;
-    width: 400px;
-    padding: 0px;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+.sub-box {
+  flex: 0 0 200px; /* Adjust size so 6 fit within 1300px + gaps */
+  height: 500px;
+  background: rgba(217, 217, 217, 0.5);
+  border-radius: 50px;
+  margin-right: 20px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
 }
 
 .news-image2 {
@@ -296,7 +293,7 @@ content: "";
 .sub-news{
     display: flex;
     justify-content: flex-start;
-    margin: 10px 20px 10px 85px;
+    margin: 10px 20px 10px 130px;
     padding-top: 20px;
     gap: 1px;
     align-items: center;
