@@ -1,0 +1,88 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--darkBlue);
+}
+
+.card-container{
+    display: flex;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+.right-panel {
+  display: flex;
+  flex: 1;
+  padding: 60px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: black;
+  width: 500px;
+
+}
+
+.left-panel{
+display: flex;    
+padding: 20px;
+justify-content: center;
+background: skyblue;
+width: 400px;
+align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.time{
+    height: 35px;
+}
+
+.submit-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.submit-button button{
+    color: black;
+    background-color:#bcb4b4;
+    border-radius: 13px;
+    padding: 15px;
+    transition: transform .2s ease, box-shadow .2s ease;
+    width: 100px;
+    
+}
+
+.submit-button button:hover:not(:disabled) {
+   background: red;
+   color: black;
+   text-shadow: 0 0.1rem whitesmoke;
+
+}
+
