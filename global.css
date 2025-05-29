@@ -166,7 +166,7 @@ footer {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-
+    z-index: 100;
     background: rgba(124, 152, 133, 0.5);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
     backdrop-filter: blur( 10.5px );
