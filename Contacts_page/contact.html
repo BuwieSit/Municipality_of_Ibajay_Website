@@ -56,6 +56,34 @@
         </div>
       </div>
 
+      <div class="overlay" id="overlay">
+        <button id="overlay-button">&lt;</button>
+      <div class="overlay-content">
+        <h2>Questions? Email Us!</h2><br><br>
+        <div class="email-form">
+          <div class="email-input">
+            <label for="firstName">First Name</label>
+            <input type="text" class="text-input" id="firstName" name="firstName" placeholder="Your First Name" required><br>
+
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Your Last Name" required><br>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required><br>
+
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" placeholder="Type your message here..." required></textarea><br><br>
+
+            <input type="checkbox" name="permission" id="permission" required>
+            <label for="permission">I understand that this message may be public and shared with the city staff. 
+              I will not include any personal information as such.</label><br><br>
+
+            <button type="submit" class="submit-button">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="acc-popup">
       <div class="slider">
         <div class="slider-wrapper">
@@ -118,6 +146,7 @@
       </div>
     </div>
 
+
 <!-- Script and POPUP stays at the bottom of the page -->
     <div class="acc-popup">
       <div class="slider">
@@ -130,6 +159,7 @@
         </button>
         <a href="../admin.html"><sub id="adminText">sign in as admin?</sub></a>
       </div>
+
       <div class="popup-wrapper pleft">
         <form class="popup-form reg-form" autocomplete="off">
           <input
@@ -155,7 +185,7 @@
             placeholder="password"
             required
           />
-
+          
           <button type="submit" class="sign-button reg-button">Sign up</button>
         </form>
       </div>
