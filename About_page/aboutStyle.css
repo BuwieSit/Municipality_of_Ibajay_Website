@@ -94,7 +94,7 @@ body {
 
 .officials-list {
     width: 100%;
-    height: 5000px;
+    height: 3500px;
     padding-bottom: 50px;
     background-image: linear-gradient(var(--blueGreen) ,var(--lightYellow));
     display: flex;
@@ -158,7 +158,9 @@ body {
     transform: translateY(0%);
     opacity: 1;
 }
+
 .member-overlay {
+    pointer-events: none;
     transform: translateY(-50%);
     transition: all 0.3s ease;
     opacity: 0;
@@ -199,4 +201,57 @@ body {
     font-size: 20px;
 }
 
+.vis-mis {
+    width: 100%;
+    height: 700px;
+    background-image: linear-gradient(to top, var(--blueGreen) ,var(--lightYellow));
+    
+}
+.vis-mis > h2 {
+    text-align: center;
+    font-family: var(--title-font);
+    font-style: italic;
+    font-size: 50px;
+}
+.vm-wrapper {
+    width: 70%;
+    height: 300px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), var(--darkBlue));
+    
+}
+.vision {
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    left: 0;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    overflow: hidden;
+}
+.mission {
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    float: right;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+.vismis-alignment {
+    width: 50%;
+    height: 80%;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    font-family: var(--subtitle-font);
+    font-weight: 500;
+    font-size: 15px;
+}
 
