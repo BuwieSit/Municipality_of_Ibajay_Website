@@ -1,7 +1,8 @@
 @import url(global.css);
 
 body {
-    background-color: var(--darkBlue);
+    background-color: var(--blueGreen);
+    overflow-x: hidden;
 }
 
 .top-wrapper {
