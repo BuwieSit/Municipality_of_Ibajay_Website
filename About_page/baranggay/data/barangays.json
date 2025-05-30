@@ -1,0 +1,524 @@
+{
+    "Agbago": {
+        "chairman": "Fredelio V. Salido",
+        "skchairman": "Stephen Dave S. Sombilon",
+
+        "Kagawads": ["Majji S. Tabañar", 
+                    "Stanlex J. Pelayo",
+                    "Odelon M. Soreño",
+                    "Arcadio C. Sonon Jr.",
+                    "Jim R. Sombilon",
+                    "Teresita G. Fernando",
+                    "Niceforo A. Briones"],
+        "sk_kagawads": []
+    },
+
+    "Agdugayan": {
+        "chairman": "Eduardo T. Robles",
+        "skchairman": "Ma. Lie C. Antonio",
+
+        "Kagawads": ["Nestor T Sabandal", 
+                    "Diowel B Soguilon",
+                    "Amie T Fernando",
+                    "Olegario P Fernandez",
+                    "Melindres B Sulbo-An",
+                    "Virenai S Robles",
+                    "Girlie C Antonio"],
+        "sk_kagawads": []
+    },
+
+    "Antipolo": {
+        "chairman": "Lydio G Perez Jr.",
+        "skchairman": "Val Nikko S Perez",
+
+        "Kagawads": ["Rudita S Alejandre", 
+                    "Alexander O Mationg",
+                    "Rafael A Odencio Jr.",
+                    "Jimla S Selidio",
+                    "Paz D Delos Reyez",
+                    "Wilma P Solano",
+                    "Jose Cris C Saro"],
+        "sk_kagawads": []
+    },
+
+    "Aparicio": {
+        "chairman": "Reynaldo B Vallejo",
+        "skchairman": "Louise Marjorie I Vallejo",
+        "Kagawads": [
+            "Wennie I Vallejo",
+            "Elias C Franusco Jr.",
+            "Reynaldo B Tayco",
+            "Margie V Italia",
+            "Luzminda I Domingo",
+            "Edgar I Vallejo Sr.",
+            "Albert T Francisco Sr."
+        ],
+        "sk_kagawads": []
+    },
+
+    "Aquino": {
+        "chairman": "Rodel E Cambarihan",
+        "skchairman": "Jan Emerson M Colangoy",
+        "Kagawads": [
+            "Cerle L Bantang",
+            "Ramon C Bautista",
+            "Elmer S Evangelista",
+            "Kelly P Dalisay",
+            "Augusto M Sangilan",
+            "Errol E Villanueva",
+            "Marissa C Amacio"
+        ],
+        "sk_kagawads": []
+    },
+
+    "Aslum": {
+        "chairman": "Carlito L Pamaos Jr.",
+        "skchairman": "Ma.Rizza D Santia",
+        "Kagawads": [
+            "Fernando E Cabales",
+            "Enrique T Reigo",
+            "Celestino M Saus",
+            "Romeo V Dela Cruz",
+            "Leonard A Asunta",
+            "Leonardo S Calizo",
+            "Felicidad D Pinca"
+        ],
+        "sk_kagawads": []
+    },
+
+    "Bagacay": {
+        "chairman": "Melvin M Cabales",
+        "skchairman": "Danessa A Sasi",
+        "Kagawads": [
+            "John T Ang",
+            "Wilfredo N Magtanum",
+            "Pierre S Tañala",
+            "Messiah D Ascaño",
+            "Ernesto S Franco",
+            "Lino F Dioso",
+            "Antonio S Sarate"
+        ],
+        "sk_kagawads": []
+    },
+
+    "Batuan": {
+        "chairman": "Flora S Dumalaog",
+        "skchairman": "Dione M Eguis Jr.",
+        "Kagawads": [
+            "Ronilo S Reiaba",
+            "Felix M Castro",
+            "Jacob S Solivel",
+            "William S Garcia",
+            "Eduardo E Egues Sr.",
+            "Ricardo S Salido Jr.",
+            "Ernesto S Maglunob"
+        ],
+        "sk_kagawads": []
+    },
+
+    "Buenavista": {
+        "chairman": "Jupiter M Suspeñe",
+        "skchairman": "Mary Grace M Masula",
+        "Kagawads": [
+            "Prudencio T Claud Jr.",
+            "Nitchelda M Sonon",
+            "Nolito S Manikan",
+            "Larry A Alonsagay",
+            "Francasios M Masula",
+            "Asher V Sevilla",
+            "Reynante M Claud"
+        ],
+        "sk_kagawads": []
+    },
+
+    "Bugtongbato": {
+        "chairman": "Teodorico S Inguillo",
+        "skchairman": "Joan M Sacapaño",
+        "Kagawads": [
+            "Elibita C Tibus",
+            "Napoleon T Sacapaño",
+            "Renato M Salido",
+            "Rustico S Inguillo",
+            "Renante S Castillo",
+            "Mila S Soguilon",
+            "Reynaldo I Dela Cruz"
+        ],
+        "sk_kagawads": []
+    },
+
+    "Cabugao": {
+        "chairman": "Louie F Palan",
+        "skchairman": "Reann T Tugo",
+        "Kagawads": [
+            "Rosine B Masula",
+            "Marlyn B Macahilas",
+            "Cledito A Soguilon",
+            "Merlita J Francisco",
+            "Jamesy J Masula",
+            "Celina P Tanio-An",
+            "Georny M Salas"
+        ],
+        "sk_kagawads": []
+    },
+
+    "Capilijian": {
+        "chairman": "Diva S Agustin",
+        "skchairman": "Jose Raphael P Gatanela",
+        "Kagawads": [
+            "Eraño M Ascaño",
+            "Julio S Gatanela",
+            "Lino C Nemis",
+            "Josephine S Villanueva",
+            "Efren M Fernandez",
+            "Daniel E Bermjudo",
+            "Jan M Gelito"
+        ],
+        "sk_kagawads": []
+    },
+
+    "Colongcolong": {
+        "chairman": "Dennis M De Jesus",
+        "skchairman": "Ethan Koe C Muyo",
+        "Kagawads": [
+            "Abenir S Fernandez",
+            "Melba A Supe",
+            "Rogelio P Supe",
+            "Lionel S Suela",
+            "Dindo C Muyo",
+            "Rosalinda U Baladjay",
+            "Malvin T Salminao"
+        ],
+        "sk_kagawads": []
+    },
+
+    "Laguinbanua": {
+        "chairman": "Realita S Bersales",
+        "skchairman": "Ervin Ralph S Venus",
+        "Kagawads": [
+            "Cyril M Alag",
+            "Chevy S Fernandez",
+            "Lovelito V Sijera",
+            "Danilo A Alag",
+            "Gemma S Solidum",
+            "Mark Patrick S Solidum",
+            "Lucita S Tibus"
+        ],
+        "sk_kagawads": []
+    },
+
+    "Mabusao": {
+        "chairman": "Rijan S Ascaño",
+        "skchairman": "Claudine M Jutic",
+        "Kagawads": [
+            "Cylin J Romposon",
+            "Sulpicio J Cancayda",
+            "Rizalde G Ascaño",
+            "Benigno I Magwali",
+            "Erlinda J Valeriano",
+            "Lucita V Magwali",
+            "Jeonefer V Valeriano"
+        ],
+        "sk_kagawads": []
+    },
+
+    "Malindog": {
+        "chairman": "Leoncito M Evangelio",
+        "skchairman": "Neil P Gregorio",
+        "Kagawads": [
+            "Pacita E Gregorio",
+            "Joel M Tayco Sr.",
+            "Amador M Evangelio",
+            "Marlyn I Gregorio",
+            "Rodgien G Italia",
+            "Ronita B Pines",
+            "Eleuterio M Italia Sr."
+        ],
+        "sk_kagawads": []
+    },
+
+    "Maloco": {
+        "chairman": "Lowell S Fernandez",
+        "skchairman": "Decs S Del Carmen",
+        "Kagawads": [
+            "Niyon F Fernando",
+            "Josephen S Española",
+            "Jerome S Roba",
+            "Teodoro D Del Carmen",
+            "Joel F Salido",
+            "Niño T Urbe",
+            "Remberto S Sitjar Jr."
+        ],
+        "sk_kagawads": []
+    },
+
+    "Mina-A": {
+        "chairman": "Morito T Tayco Sr.",
+        "skchairman": "Jay-Ann T Domingo",
+        "Kagawads": [
+            "Expedito T Narciso",
+            "Gerry B Tayco",
+            "Norbert T Mariano",
+            "Gina T Tayco",
+            "Brian D Tayco",
+            "Jolito T Domingo",
+            "Sammy M Tayco"
+        ],
+        "sk_kagawads": []
+    },
+
+    "Monlaque": {
+        "chairman": "Rudy I Francisco",
+        "skchairman": "Lodjie B Magsael",
+        "Kagawads": [
+            "Gilbert S Bautista",
+            "Roosevelt B German",
+            "Justin B German",
+            "Melita G Angustia",
+            "Sabino B Cabatac",
+            "Jonathan B Tenorio",
+            "Edgar F Pines"
+        ],
+        "sk_kagawads": []
+    },
+
+    "Naile": {
+        "chairman": "Marivic S Tormon",
+        "skchairman": "Angelica P Ambagan",
+        "Kagawads": [
+            "Jesus F Fantilaga",
+            "Casilda D Masula",
+            "Felipe V Echegaray",
+            "Orlando S Tibus",
+            "Andrew A Sorillo",
+            "Arvin O Begaso",
+            "Frederic V Duncan"
+        ],
+        "sk_kagawads": []
+    },
+
+    "Naisud": {
+        "chairman": "Edgar F Pelayo",
+        "skchairman": "Anelyn J Garmino",
+        "Kagawads": [
+            "Josephen S Olid",
+            "Reyland R Olid",
+            "Honorato D Unsan",
+            "Sarwin D Perucho",
+            "Alicia U Alag",
+            "Theresa P Baron",
+            "Abundio L Montesa Jr."
+        ],
+        "sk_kagawads": []
+    },
+
+    "Naligusan": {
+        "chairman": "Igmedio G Montero",
+        "skchairman": "Imee Pauleen B Tenorio",
+        "Kagawads": [
+            "Linda M Tumbagahan",
+            "Mary Ann M Paguinggan",
+            "Jasmin M Chavez",
+            "Ester S Tenorio",
+            "Sanicio M Mag-Apan",
+            "Falculan S Mariano",
+            "Edna R Tenorio"
+        ],
+        "sk_kagawads": []
+    },
+
+    "Ondoy": {
+        "chairman": "Danilo B Solano",
+        "skchairman": "Arnie Rica G Solano",
+        "Kagawads": [
+            "Gerahard S Garcia",
+            "Robelo S Sta. Lucia",
+            "Roy B Pugao",
+            "Paul S Magharing",
+            "Joey B Franuelas",
+            "Enriquito S Santo",
+            "Domigo L Ebona Jr."
+        ],
+        "sk_kagawads": []
+    },
+
+    "Poblacion": {
+        "chairman": "Remar S Bautista",
+        "skchairman": "Laarme Jean M Sallador",
+        "Kagawads": [
+            "Eric Don B Galvan",
+            "Vonn A Salido",
+            "Gaspar M Diaz",
+            "Den B Masangkay",
+            "Hannibal D Garcia",
+            "Rolando C Sescar",
+            ""
+        ],
+        "sk_kagawads": []
+    },
+
+    "Polo": {
+        "chairman": "Rosanny M Javier",
+        "skchairman": "John Ireneo T Solimbad",
+        "Kagawads": [
+            "Epifanio M Javier",
+            "Ricky B Fernandez",
+            "Riolan S Solimbad",
+            "Rexel M Rapa",
+            "Aida F Javier",
+            "Anthony D Tejada",
+            "Ricky C Bartolata"
+        ],
+        "sk_kagawads": []
+    },
+
+    "Regador": {
+        "chairman": "Noel T Simera",
+        "skchairman": "Rose Joy T Taño-An",
+        "Kagawads": [
+            "Gina M Segovia",
+            "Enribeth A Tilad",
+            "Jowe P Senatin",
+            "Felix S Tumampil",
+            "Severino S Capispisan",
+            "Nilo P Turiaga",
+            "Benito M Pamisan"
+        ],
+        "sk_kagawads": []
+    },
+
+    "Rivera": {
+        "chairman": "Gerry M Belinario",
+        "skchairman": "Jess M Salas",
+        "Kagawads": [
+            "Jim V Belinario",
+            "Ernie S Salvador",
+            "Juanito M Belinario Jr.",
+            "Nenita B Salgado",
+            "Herlyn S Panagsagan",
+            "Antonio P Batoy",
+            "Jose Dolpito B Masula"
+        ],
+        "sk_kagawads": []
+    },
+
+    "Rizal": {
+        "chairman": "Johnny T Magluyan",
+        "skchairman": "Gerard Merc S Gonzaga",
+        "Kagawads": [
+            "Araceli M Tabella",
+            "Edgar P Maquirang",
+            "Danny S Ortega",
+            "Aquilino M Franco Jr.",
+            "Ador M Masangkay",
+            "Edna D Ricopuerto",
+            "Redentor S Señeris"
+        ],
+        "sk_kagawads": []
+    },
+
+    "San Isidro": {
+        "chairman": "Froebel T Miroy",
+        "skchairman": "Jeuz Joachimm Lorhetto C Miaral",
+        "Kagawads": [
+            "Antonino M Miaral",
+            "Richard A Tumlos",
+            "Blas S Sombilon",
+            "Zaldy L Tiagan",
+            "Henry G Maylas",
+            "Gina A Santillan",
+            "Vicente A Espiritu"
+        ],
+        "sk_kagawads": []
+    },
+
+    "San Jose": {
+        "chairman": "Rano B Hontiveros",
+        "skchairman": "Levie Jean B Tenorio",
+        "Kagawads": [
+            "Leonor A Tenorio",
+            "Jose G Manabe Jr.",
+            "Alfredo A San Miguel Jr.",
+            "Menchi M Ysmael",
+            "Gil D Tenorio",
+            "Melvelito T Tenorio",
+            "Jesry S Maquirang"
+        ],
+        "sk_kagawads": []
+    },
+
+    "Santa Cruz": {
+        "chairman": "Virgilio I Dela Cruz",
+        "skchairman": "Rhea Mae M Tapar",
+        "Kagawads": [
+            "Antonio L Maglinte",
+            "Elmer M Delgado",
+            "Delmar D Dumalaog",
+            "Pastor S Enero Jr.",
+            "Noel M Valenzuela",
+            "Elsa C Suarez",
+            "Antonio C Fernandez"
+        ],
+        "sk_kagawads": []
+    },
+
+    "Tagbaya": {
+        "chairman": "Greta S Sijera",
+        "skchairman": "Herald Neil M Pelaez",
+        "Kagawads": [
+            "Filomena C Suan",
+            "Johannes S Soledad",
+            "Wilfredo G Saron Jr.",
+            "Ediltruda S Castro",
+            "Jonathan M Valencia",
+            "Cleto C Mationg",
+            "Melchorita F Soriano"
+        ],
+        "sk_kagawads": []
+    },
+
+    "Tul-Ang": {
+        "chairman": "Jose Rodenio M Salilid",
+        "skchairman": "Aiza S Maglunob",
+        "Kagawads": [
+            "Romeo V Ilinon",
+            "Jesusimo S Fernando",
+            "Renato S Sumanting Jr.",
+            "Menalyn G Fernandez",
+            "Redgie S Sumanting",
+            "Lupeta B Jara",
+            "Noel S Salilid"
+        ],
+        "sk_kagawads": []
+    },
+
+    "Unat": {
+        "chairman": "Rodel M Manikan",
+        "skchairman": "Mariah Maxine G Dalisay",
+        "Kagawads": [
+            "Gerry P Casi",
+            "Elidie S Tumbokon",
+            "Aristoteles M Gumboc",
+            "Frank C Manikan",
+            "Aquiles S Manikan",
+            "Jonel Dick S Manikan",
+            "Linly H Sorosa"
+        ],
+        "sk_kagawads": []
+    },
+
+    "Yawan": {
+        "chairman": "Orlando F Tenorio",
+        "skchairman": "Rowena T Paulino",
+        "Kagawads": [
+            "Artemio T Paulino",
+            "Rene T Tenorio",
+            "Enriquito F Tenorio",
+            "Amalia J Antoy",
+            "Roger J Pelayo",
+            "Alex P Tayco",
+            "Rufino T Pelayo"
+        ],
+        "sk_kagawads": []
+    }
+
+}
