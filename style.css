@@ -23,7 +23,7 @@ body {
 .top-inner > h1 {
     font-family: var(--title-font);
     font-size: 10rem;
-    filter: drop-shadow(10px 10px 10px black);
+    color: var(--blueGreen);
 }
 .top-inner > p {
     font-family: var(--subtitle-font);
