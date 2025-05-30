@@ -1,7 +1,8 @@
 @import url('./global.css');
 
 footer {
-    background-image: linear-gradient(var(--blueGreen), var(--darkBlue));
+    /* background-image: linear-gradient(var(--blueGreen), var(--darkBlue)); */
+    background-color: black;
     border: none;
     width: 100%;
     height: 400px;
@@ -9,7 +10,9 @@ footer {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-
+    border: 1px solid black;
+    position: fixed;
+    bottom: 0;
 }
 
 .footer-column {
@@ -38,18 +41,44 @@ footer {
     font-weight: 700;
 }
 .tab-list {
-    height: 100%;
-    background-color: red;
-    padding: 20px;
+    width: 90%;
+    padding: 30px;
     display: flex;
+    flex-direction: row;
     align-items: flex-start;
     justify-content: space-around;
     gap: 20px;
     font-family: var(--subtitle-font);
     font-size: 15px;
+}
+.tab-list > ul {
     list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    width: 90%;
+    height: 100%;
+}
+.tab-list > ul > li > a {
+    color: black;
+    font-weight: 400;
+    
+}
+.tab-list > ul > li > a:hover {
+    text-decoration: underline;
+    color: white;
 }
 .list-title {
     font-size: 25px;
     font-weight: 700;
+}
+.terms-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
 }
