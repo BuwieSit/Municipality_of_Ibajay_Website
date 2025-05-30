@@ -15,7 +15,7 @@ body {
     display: flex;
     justify-content: center; 
     align-items: center; 
-    height: 50vh; 
+    height: 55vh; 
     font-size: 25px;
 }
 
@@ -71,7 +71,7 @@ body {
     align-items: start;
     justify-content: end;
     padding-left: 35px;
-    padding-bottom: 50px;
+    padding-bottom: 35px;
 
 }
 
@@ -92,7 +92,7 @@ body {
     justify-content: end;
     padding-right: 35px;
     flex-direction: column;
-    padding-bottom: 50px;
+    padding-bottom: 35px;
 
 
 
