@@ -1,8 +1,6 @@
  body {
-    background-image: url('../z-resources/Ibajayy.jpg');
-    background-size: cover;
-    background-position: center; 
-    background-repeat: no-repeat;
+    height: 500vh;
+    background: #28666E;
 }
  
  .center-container {
@@ -13,9 +11,17 @@
     text-align: center; 
 }
 
+.background {
+    background-image: url('../z-resources/Ibajayy.jpg');
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
+    padding-bottom: 120px;
+}
+
 .center-container h1 {
     display: flex;
-    background-color: rgb(211, 211, 211);
+    background-color: rgb(255, 255, 255, 80%);
     padding: 10px 20px;
     border-radius: 20px;
     text-align: center;
@@ -24,7 +30,7 @@
 
 .step{
     display: inline-block;
-    background-color: rgb(211, 211, 211);
+    background-color: rgb(255, 255, 255, 80%);
     padding: 20px;
     border-radius: 20px;
     text-align: center;
@@ -55,4 +61,154 @@
     text-align: left; 
     list-style-position: inside;
 }
+
+.reg-head {
+    margin-bottom: 50px;
+    width: 100%;
+    border: black solid 1px;
+    background: linear-gradient(
+        #FEDC97 0%,
+        #28666E00 100%
+    );
+    height: 60px;
+    box-shadow: 0 10px 10px black;
+    justify-content: center;
+}
+
+.title{
+    text-align: center;
+    color: white;
+    font-size: 50px;
+}
+
+.sys-all{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.sys-container{
+    border: black solid 1px;
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    flex-direction: column;
+    border-radius: 30px;
+    height: 230px;
+}
+
+.sys-container h3, .sys-icon{
+    text-align: center;
+}
+
+
+/* Transaction popup*/
+.trans-btn {
+    cursor: pointer;
+}
+
+.step-container{
+    display: flex;
+    justify-content: space-around;
+}
+
+.step1, .step2, .step3 {
+    border: black solid 1px;
+    background-color: white;
+    height:300px;
+    width: 200px;
+    border-radius: 30px;
+    padding: 20px;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.4); /* Inner shadow */
+}
+
+.step2 img, .step3 img{
+    height: 100px;
+    width: 100px;
+    justify-content: center;
+    display: flex;
+    align-self: center;
+    margin-bottom: 50px;
+}
+
+.step3 img{
+    height: 140px;
+    width: 140px;
+    justify-content: center;
+    display: flex;
+    align-self: center;
+    margin-bottom: -10px;
+    margin-top: 0px;
+}
+
+.proceed {
+    border: black solid 1px;
+    height: 70px;
+    background-color: #35827E;
+    width: 100%;
+    color: white;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+}
+
+.permit-type{
+    border: black solid 1px;
+    background-color: white;
+    margin: 30px 20px 20px 20px;
+    border-radius: 30px;
+    font-size: 35px;
+    text-align: center;
+}
+
+.exit {
+    background-image: url(../z-resources/side_nav_icons/Exit.png);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    border: none;
+    outline: none;
+    width: 30px;  
+    height: 30px;
+    cursor: pointer;
+}
+
+.exit-btn {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px;
+    
+}
+
+.trans-popup {
+    border: black solid 1px;
+    background: linear-gradient(
+        to right,
+        #283B51 0%,
+        #32A34A 100%
+    );
+    height: 500px;
+    width: 900px;
+    border-radius: 30px;
+    display: none;
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.open-popup {
+    display: block;
+}
+
 

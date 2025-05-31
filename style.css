@@ -23,11 +23,13 @@ body {
 .top-inner > h1 {
     font-family: var(--title-font);
     font-size: 10rem;
-    filter: drop-shadow(10px 10px 10px black);
+    color: white;
+    filter: drop-shadow(0px 0px 5px white);
 }
 .top-inner > p {
     font-family: var(--subtitle-font);
     font-style: italic;
+    color: white;
 }
 
 /* EXPERIMENT */
@@ -52,7 +54,7 @@ body {
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
     background-position: 50% 50%;
     background-size: cover;
-    z-index: 100;
+    z-index: 90;
     transition: 1s;
 }
 
@@ -231,7 +233,7 @@ body {
 /* time running */
 .carousel .timeRunning{
     position: absolute;
-    z-index: 1000;
+    z-index: 95;
     width: 0%;
     height: 4px;
     background-color: #14ff72cb;

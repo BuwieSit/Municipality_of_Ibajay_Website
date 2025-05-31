@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="z-resources/ibajay_logo.png">
+    <link rel="icon" href="../z-resources/ibajay_logo.png">
     <link rel="stylesheet" href="../global.css">
     <link rel="stylesheet" href="permitsStyle.css">
     <title>Municipality Of Ibajay</title>
@@ -32,8 +32,9 @@
         </div>
     </header>
 
+  <div class="background">
     <div class="center-container">
-        <h1>Business Registration & Permits</h1>
+        <h1 class="tut-title">Business Registration & Permits</h1>
     </div>
     <br>
      
@@ -93,6 +94,54 @@
          <br>
     </div>
 </div>
+</div>
+
+<div class="reg-head">
+  <div class="title">
+      Business Registration System for getting Documents
+  </div>
+</div>
+
+<div class="sys-all">
+  <div class="sys-container">
+    <div>
+        <img class="sys-icon" src="../z-resources/business reg.png">
+    </div>
+    <div class="trans-form">
+      <button class="trans-btn" onclick="openPopup()"><h3>Business Registration System for getting documents</h3></button>
+    </div>
+  </div>
+</div>
+
+<!-- Script and POPUP stays at the bottom of the page -->
+      <div class="trans-popup" id="popup">
+          <div class="exit-btn">
+          <button type="button" class="exit"  onclick="closePopup()"></button>
+          </div>
+          <div class="permit-type">
+              <strong>Business Registration System for getting documents</strong>
+          </div>
+          <div class="step-container">
+            <div class="step1">
+                <img src="../z-resources/download-icon.png">
+                🔽 Click the button below to download the official application form.[Download Form](PDF or Word format. Please print and fill it out completely.)
+            </div>
+            <div class="step2">
+                <img src="../z-resources/attachment-icon.png">
+                Upload your filled-out form here:
+                (PDF, JPG, or PNG accepted. Max size: 5MB)
+                <input type="file" name="Filename">
+            </div>
+            <div class="step3">
+              <img src="../z-resources/payment-icon.png">
+              💰 Permit Fee:
+              ₱[Dynamic Amount Based on Permit Type](Fee will appear after form selection)
+              <div class="proceed-btn">
+              <button type="button" class="proceed"><strong>Proceed to Payment</strong></button>
+              </div>
+            </div>
+          </div>
+        </div>
        
     <!-- Script and POPUP stays at the bottom of the page -->
 
@@ -161,5 +210,6 @@
 
     <script src="script.js"></script>
     <script src="../globalScript.js"></script>
+    <script src="../Services_page/permitScript.js"></script>
 </body>
 </html>

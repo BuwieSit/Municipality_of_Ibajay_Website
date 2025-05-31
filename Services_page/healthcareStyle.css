@@ -1,9 +1,11 @@
+@import url('../global.css');
+
 body {
     background-image: url(../z-resources/Hospital.jpg);
     background-size: 100% 150%; 
     background-position:center; 
     background-repeat: no-repeat;
-    background-color: lightgray;
+    background-color: var(--darkBlue);
 
    
 }

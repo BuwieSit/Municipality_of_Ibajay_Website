@@ -170,7 +170,7 @@ content: "";
     padding: 0px;
     margin: auto;
     height: 720px;
-    width: 1300px;
+    width: 1000px;
     flex-direction: column;
     background: linear-gradient(
         to bottom,
@@ -188,7 +188,7 @@ content: "";
 
 .news-image {
     height: 492px;
-    width: 1300px;
+    width: 1000px;
 }
 
 .news1 {    
@@ -206,32 +206,33 @@ content: "";
     display: flex;
     justify-content: flex-start;
     margin-top: 20px;
-    gap: 800px;
+    gap: 500px;
 }
 
 .name{
-    color: #aaa4a4;
+    color: #6B6666;
     font-size: 20px;
     text-align: left;
     padding-left: 40px;
-    text-shadow: 0px 2px 2px rgb(0, 0, 0);
 }
 
 .dnt{
-    color: #aaa4a4;
+    color: #6B6666;
     font-size: 20px;
     text-align: right;
     padding-right: 40px;
-    text-shadow: 0px 2px 2px rgb(0, 0, 0);
 }
 
-.sub-box {
-  flex: 0 0 200px; /* Adjust size so 6 fit within 1300px + gaps */
-  height: 500px;
-  background: rgba(217, 217, 217, 0.5);
-  border-radius: 50px;
-  margin-right: 20px;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+.sub-box{
+    border-radius: 50px;
+    display: block;
+    justify-content: flex-start;
+    margin: 20px;
+    background: rgb(217, 217, 217,.5);
+    height: 500px;
+    width: 400px;
+    padding: 0px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
 }
 
 .news-image2 {
@@ -254,16 +255,19 @@ content: "";
 .date{
     text-align: center;
     font-size: 20px;
-    color: #c2baba;
-    text-shadow: 1px 3px 3px rgba(0, 0, 0, 1);
+    color: #6B6666;
 }
 
 .sub-news{
     display: flex;
+<<<<<<< HEAD
+    justify-content: space-around;
+    margin: 10px;
+=======
     justify-content: flex-start;
     margin: 10px 20px 10px 130px;
+>>>>>>> 9c14190b604201017a1c7ee9cf49c4a9255491a7
     padding-top: 20px;
     gap: 1px;
     align-items: center;
-    
 }
