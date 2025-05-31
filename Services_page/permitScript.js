@@ -1,28 +1,32 @@
-//POPUP FUNCTIONALITY
-const permit_text = document.querySelector('.permit-text');
-const container = document.querySelector('.sys-container');
-const popup_text = document.querySelector('.popup-text');
 
-function changeText() {
-  let text = permit_text.textContent.trim();
-  popup_text.textContent = text;
+
+function changeText(clickedElement) {
+  const permit = clickedElement.querySelector('.permit-text');
+  const popup_text = document.querySelector('.popup-text');
+
+  if (permit && popup_text) {
+    popup_text.textContent = permit.textContent.trim();
+  }
 }
 
 
-
-function openPopup(idToOpen, idToClose = null) {
+function openPopup(idToOpen, idToClose = null, clickedElement = null) {
   if (idToClose) {
     document.getElementById(idToClose).classList.remove("open-popup");
-    popup_text.textContent = "";
+    // popup_text.textContent = "";
   }
-  
+
   document.getElementById(idToOpen).classList.add("open-popup");
-  changeText();
+
+  if (clickedElement) {
+    changeText(clickedElement);
+  }
+
 }
 
 function closePopup(idToClose) {
   document.getElementById(idToClose).classList.remove("open-popup");
-  popup_text.textContent = "";
+
 }
 
 

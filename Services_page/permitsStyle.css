@@ -38,7 +38,10 @@ body {
 }
 
 .step{
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
     background-color: rgb(255, 255, 255, 80%);
     padding: 20px;
     border-radius: 20px;
@@ -46,10 +49,86 @@ body {
     margin-top: 100px;
     flex: 0 0 auto;
     width: 20%;
-    height: 100px;
+    height: 200px;
+}
+.step:nth-child(1) {
+    animation: s1;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+}
+.step:nth-child(2) {
+    animation: s2;
+    animation-iteration-count: infinite;
+    animation-delay: 3s;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+}
+.step:nth-child(3) {
+    animation: s3;
+    animation-iteration-count: infinite;
+    animation-delay: 6s;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+}
+.step:nth-child(4) {
 
+    animation: s4;
+    animation-iteration-count: infinite;
+    animation-delay: 6s;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+}
+@keyframes s1 {
+    0% {
+        transform: translateY(0%);
+
+    }
+    50% {
+        transform: translateY(5%);
+        background-color: var(--lightYellow);
+    }
+    100% {
+        transform: translateY(0%);
+    }
 }
 
+@keyframes s2 {
+    0% {
+        transform: translateY(0%);
+
+    }
+    50% {
+        transform: translateY(-5%);
+        background-color: rgb(21, 146, 21);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes s3 {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes s4 {
+    0% {
+        transform: translateX(0%);
+    }
+    50% {
+        transform: translateX(3%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
 
 .step-container{
     display: flex;
@@ -84,7 +163,7 @@ body {
     font-weight: 600;
     font-size: 40px;
     margin-bottom: 10%;
-    margin-top: 10%;
+
 }
 
 .sys-all{
@@ -151,11 +230,21 @@ body {
     justify-content: space-around;
     align-items: center;
     box-shadow: -10px 0px 20px rgba(0, 0, 0, 0.4) inset; 
+    transition: all 0.3s ease;
 }
 .steps > p {
     font-family: var(--subtitle-font);
     font-weight: 500;
     font-size: 15px;
+}
+.step1 {
+    cursor: pointer;
+}
+.step1 > a {
+    text-decoration: underline;
+}
+.steps:hover {
+    box-shadow: 0px 0px 50px black inset;
 }
 sub {
     font-family: var(--subtitle-font);
