@@ -33,75 +33,37 @@
         </div>
     </header>
 
-  <div class="background">
-    <div class="center-container">
-        <h1 class="tut-title">Business Registration & Permits</h1>
-    </div>
-    <br>
-     
-    <div class="step-container">
-    <div class="step">
+  <div class="top-container">
+          <h1 class="tut-title">Business Registration & Permits</h1>
+  </div>
 
-        <img src="../z-resources/download.png" height="75" alt="download">
-        <h3>Step 1: Download the Form</h3> 
-        <br>
-        <p> 🔽 Click the button below to download 
-        <br> official application form.</p>
-        <p>[Download Form] </p>
-        <p>(PDF or Word format. Please print and fill
-            <br> it out completely.)</p>
-         <br>
-        <h2>Download PDF</h2>
-    </div>
+<div class="step-container">
+        <div class="step">
+            <h3>Step 1: Download the Form</h3> 
+        </div>
 
 
-    <div class="step">
-        <img src="../z-resources/attachment.png" height="75" alt="attachment">
-        <h3>Step 2: Attached the Completed Form</h3>
-        <br>
-        <p> Upload your filled-out form here: </p>
-        <img src="../z-resources/choosen_file.png" height="150" alt="choosen file">
-        <p>(PDF, JPG, PNG accepted. Max size: 5mb)</p>
-    </div>
+        <div class="step">
+            <h3>Step 2: Attached the Completed Form</h3>
+        </div>
 
-    <div class="step">
-        <img src="../z-resources/payment.png" height="75" alt="payment">
-        <h3>Step 3: Payment</h3>
-        <br>
-        <p> - Payment Option </p>
-        <p>Select your preferred method of payment: </p>
-        <ul>
-            <li>Gcash</li>
-            <li>Paymaya</li>
-            <li>Over the counter (at Municipal Hall)</li>
-            <li>Bank transfer</li>
-        <p>💰 Permit Fee will appear based on the selected permit type<p>
-        <p>🧾 Upload your proof of payment: 
-            <br>choose file] (screenshot or receipt | max 5MB)
-        </p>    
-    </ul>
-    </div>
-    <div class="step">
-        <img src="../z-resources/submit (2).png" height="75" alt="submit (2)">
-        <h3>Step 4:Submit Your Application</h3>
-        <br>
-        <p> Once your file is attached, click below to
-        <br> submit it for processing.</p>
-        <img src="../z-resources/Submit.png" height="150" alt="submit">
-        <p>Note: you will receive an email or text
-            <br> confirmation within 1-2 bussiness days.
-            <br> For urgent concerns, contact the Municipal
-            <br> Permit Office. </p>
-         <br>
-    </div>
-</div>
-</div>
+        <div class="step">   
+            <h3>Step 3: Payment </h3>
 
-<div class="reg-head">
+        </div>
+
+        <div class="step">
+        
+          <h3>Step 4: Submit Your Application</h3>
+
+        </div>
+  </div>
+
+
   <div class="title">
       Business Registration System for getting Documents
   </div>
-</div>
+
 
   <!-- Trigger: Click this container to open the first popup -->
 <div class="sys-all">
@@ -178,7 +140,7 @@
       </div>
       <div class="trans-form">
         <div class="trans-type">
-            <p class="permit-text"><u>Sanitary permit for food establishments, clinics, and markets</u></p class="permit-text">
+            <p class="permit-text">Sanitary permit for food establishments, clinics, and markets</p class="permit-text">
         </div>
       </div>
     </div>
@@ -189,7 +151,7 @@
       </div>
       <div class="trans-form">
         <div class="trans-type">
-            <p class="permit-text"><u>others</u></p class="permit-text">
+            <p class="permit-text">others</p class="permit-text">
         </div>
       </div>
     </div>
@@ -208,35 +170,29 @@
 
   <div class="step-container">
     <!-- Step 1 -->
-    <div class="step1">
+    <div class="step1 steps">
       <img src="../z-resources/download-icon.png" alt="Download Icon">
-      <p>🔽 Click the button below to download the official application form.</p>
-      <p><em>(PDF or Word format. Please print and fill it out completely.)</em></p>
       <a href="../z-resources/Permits-icon/permit template of ibajay, Aklan.pdf" download class="download-link">
-        <u>DOWNLOAD FORM</u>
+        DOWNLOAD FORM
       </a>
     </div>
 
     <!-- Step 2 -->
-    <div class="step2">
+    <div class="step2 steps">
       <img src="../z-resources/attachment-icon.png" alt="Upload Icon">
-      <p>📎 Upload your filled-out form here:</p>
-      <p><em>(PDF, JPG, or PNG accepted. Max size: 5MB)</em></p>
-      <input type="file" name="Filename">
+      <p>Upload your filled-out form here:</p>
+      <sub>(PDF, JPG, or PNG accepted. Max size: 5MB)</sub>
+      <input type="file" name="Filename" id="fileUpload">
     </div>
 
     <!-- Step 3 -->
-    <div class="step3">
+    <div class="step3 steps">
       <img src="../z-resources/payment-icon.png" alt="Payment Icon">
       <p>💰 Permit Fee:</p>
-      <p>₱ <em>[Dynamic Amount Based on Permit Type]</em><br>
-         <small>(Fee will appear after form selection)</small>
-      </p>
+      <p id="price">₱ </p>
 
       <div class="proceed-btn">
-        <button type="button" class="proceed" onclick="openPopup('popup2', 'popup1')">
-          <strong>Proceed to Payment</strong>
-        </button>
+        <button type="button" class="proceed" onclick="openPopup('popup2', 'popup1')">Proceed to Payment</button>
       </div>
     </div>
   </div>
@@ -249,29 +205,37 @@
       <div class="popup2-left">
       </div>
       <div class="popup2-right">
+
         <div class="exit-btn2">
           <button type="button" class="exit2" onclick="closePopup('popup2')"></button>
         </div>
-        <div class="popup2-head">
-          Payment Details
-        </div>
-        <div class="Options">
-          <button type="button" class="gcash">
-            <img src="../z-resources/Permits-icon/gcash-icon.png">
-            <span>GCash</span>
-          </button>
-          <button type="button" class="maya">
-            <img src="../z-resources/Permits-icon/maya-icon.png">
-            <span>Maya</span>
-          </button>
-          <button type="button" class="paypal">
-            <img src="../z-resources/Permits-icon/paypal-icon.png">
-            <span>PayPal</span>
-          </button>
+
+          <p id="payment-text">Payment</p>
+          <div class="Options">
+              <div class="options-wrapper">
+                  
+                  <button type="button" class="payment-option gcash">
+                    <img src="../z-resources/Permits-icon/gcash-icon.png">
+                  </button>
+                  <p>Gcash</p>
+                <button type="button" class="payment-option maya">
+                  <img src="../z-resources/Permits-icon/maya-icon.png">
+                </button>
+                <p>Maya</p>
+                <button type="button" class="payment-option paypal">
+                  <img src="../z-resources/Permits-icon/paypal-icon.png">
+                </button>
+                <p>Paypal</p>
+              </div>
           </div>
+
           <div class="line-with-or">
             <hr><span>or</span><hr>
           </div>
+
+          <!-- LOWER PART -->
+
+
         </div>
       </div>
     </div>

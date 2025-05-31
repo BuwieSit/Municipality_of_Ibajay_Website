@@ -13,6 +13,7 @@ function changeText() {
 function openPopup(idToOpen, idToClose = null) {
   if (idToClose) {
     document.getElementById(idToClose).classList.remove("open-popup");
+    popup_text.textContent = "";
   }
   
   document.getElementById(idToOpen).classList.add("open-popup");
@@ -21,6 +22,7 @@ function openPopup(idToOpen, idToClose = null) {
 
 function closePopup(idToClose) {
   document.getElementById(idToClose).classList.remove("open-popup");
+  popup_text.textContent = "";
 }
 
 
