@@ -81,8 +81,13 @@
 }
 
 .sys-all{
-    display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px;
+    padding: 20px;
+    width: max-content; /* Shrinks to fit children */
+    margin: 0 auto;     /* Horizontally centers the element */
 }
 
 .sys-container{
@@ -94,7 +99,8 @@
     width: 400px;
     flex-direction: column;
     border-radius: 30px;
-    height: 230px;
+    height: 250px;
+    cursor: pointer;
 }
 
 .sys-container h3, .sys-icon{
@@ -102,14 +108,19 @@
 }
 
 
-/* Transaction popup*/
-.trans-btn {
-    cursor: pointer;
+.trans-type {
+    font-size: 20px;
+    text-align: center;
 }
 
 .step-container{
     display: flex;
     justify-content: space-around;
+}
+
+.download-link{
+    color: black;
+    text-align: center;
 }
 
 .step1, .step2, .step3 {
@@ -184,6 +195,110 @@
     
 }
 
+/** POP UP 2 (CSS)**/
+.popup2-all-container {
+    display: flex;
+    position: relative;
+}
+
+.popup2-left {
+    border: black solid 1px;
+    border-radius: 30px;
+    background-color: #283B51;
+    height: 500px;
+    width: 500px;
+    margin-right: -20px;
+    background-image: url(../z-resources/Permits-icon/paymentBG.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.popup2-right {
+    border: black solid 1px;
+    border-radius: 30px;
+    background-color: #ffffff;
+    height: 500px;
+    width: 500px;
+}
+
+.exit2 {
+    background-image: url(../z-resources/Permits-icon/exit2.png);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    border: none;
+    outline: none;
+    width: 30px;  
+    height: 30px;
+    cursor: pointer;
+}
+
+.exit-btn2 {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px;
+}
+
+.popup2-head {
+    margin-left: 50px;
+    font-size: 25px;
+}
+
+.Options {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 5px;
+    margin-left: 37px;
+}
+.gcash, .maya, .paypal {
+    padding: 2px;
+    background-color: #D7D7D7;
+    border-radius: 10px;
+    width: 120px;
+    height: 30px;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;  
+    border: none;
+}
+
+.gcash img, .maya img, .paypal img{
+    margin-right: -20px;
+}
+
+.gcash span, .maya span, .paypal span { 
+    flex-grow: 1; 
+    text-align: center;
+    color: rgba(0, 0, 0, .5);
+    font-size: 15px;
+}
+
+
+.line-with-or {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 10px;
+  gap: 5px;
+  margin-left: 50px;
+}
+
+.line-with-or hr {
+  flex: 1;
+  height: 1px;
+  background-color: rgba(0, 0, 0, .5);
+  border: none;
+}
+
+.line-with-or span {
+  padding: 0 10px;
+  color: rgba(0, 0, 0, .5);
+  font-weight: bold;
+}
+/** POP UP SCRIPT(CSS)**/
 .trans-popup {
     border: black solid 1px;
     background: linear-gradient(

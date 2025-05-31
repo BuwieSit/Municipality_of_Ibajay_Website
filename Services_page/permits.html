@@ -104,46 +104,178 @@
 </div>
 
 <div class="sys-all">
-  <div class="sys-container">
-    <div>
-        <img class="sys-icon" src="../z-resources/business reg.png">
-    </div>
-    <div class="trans-form">
-      <button class="trans-btn" onclick="openPopup()"><h3>Business Registration System for getting documents</h3></button>
-    </div>
+  <!-- Trigger: Click this container to open the first popup -->
+<div class="sys-container" onclick="openPopup('popup1')">
+  <div>
+    <img class="sys-icon" src="../z-resources/Permits-icon/business reg.png">
+  </div>
+  <div class="trans-form">
+    <button class="trans-btn">
+      <strong><u>Business Registration System</u></strong>
+    </button>
   </div>
 </div>
 
-      <div class="trans-popup" id="popup">
-          <div class="exit-btn">
-          <button type="button" class="exit"  onclick="closePopup()"></button>
+  <div class="sys-container" onclick="openPopup('popup1')">
+    <div>
+      <img class="sys-icon" src="../z-resources/Permits-icon/BR-icon.png">
+    </div>
+    <div class="trans-form">
+      <div class="trans-type">
+          <strong><u>Business Renewal Permit</u></strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="sys-container" onclick="openPopup('popup1')">
+    <div>
+      <img class="sys-icon" src="../z-resources/Permits-icon/Special-icon.png">
+    </div>
+    <div class="trans-form">
+      <div class="trans-type">
+          <strong><u>Special permits for events or sidewalk vending</u></strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="sys-container" onclick="openPopup('popup1')">
+    <div>
+      <img class="sys-icon" src="../z-resources/Permits-icon/mayor-icon.png">
+    </div>
+    <div class="trans-form">
+      <div class="trans-type">
+          <strong><u>Mayor’s permit</u></strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="sys-container" onclick="openPopup('popup1')">
+    <div>
+      <img class="sys-icon" src="../z-resources/Permits-icon/building-icon.png">
+    </div>
+    <div class="trans-form">
+      <div class="trans-type">
+          <strong><u>Building permit for new structures or renovations</u></strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="sys-container" onclick="openPopup('popup1')">
+    <div>
+      <img class="sys-icon" src="../z-resources/Permits-icon/Barangay-icon.png">
+    </div>
+    <div class="trans-form">
+      <div class="trans-type">
+          <strong><u>Barangay clearance</u></strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="sys-container" onclick="openPopup('popup1')">
+    <div>
+      <img class="sys-icon" src="../z-resources/Permits-icon/sanitary-icon.png">
+    </div>
+    <div class="trans-form">
+      <div class="trans-type">
+          <strong><u>Sanitary permit for food establishments, clinics, and markets</u></strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="sys-container" onclick="openPopup('popup1')">
+    <div>
+      <img class="sys-icon" src="../z-resources/Permits-icon/other-icon.png">
+    </div>
+    <div class="trans-form">
+      <div class="trans-type">
+          <strong><u>others</u></strong>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FIRST POPUP -->
+<div class="trans-popup" id="popup1">
+  <div class="exit-btn">
+    <button type="button" class="exit" onclick="closePopup('popup1')"></button>
+  </div>
+
+  <div class="permit-type">
+    <strong>Business Registration System for getting documents</strong>
+  </div>
+
+  <div class="step-container">
+    <!-- Step 1 -->
+    <div class="step1">
+      <img src="../z-resources/download-icon.png" alt="Download Icon">
+      <p>🔽 Click the button below to download the official application form.</p>
+      <p><em>(PDF or Word format. Please print and fill it out completely.)</em></p>
+      <a href="../z-resources/Permits-icon/permit template of ibajay, Aklan.pdf" download class="download-link">
+        <u>DOWNLOAD FORM</u>
+      </a>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="step2">
+      <img src="../z-resources/attachment-icon.png" alt="Upload Icon">
+      <p>📎 Upload your filled-out form here:</p>
+      <p><em>(PDF, JPG, or PNG accepted. Max size: 5MB)</em></p>
+      <input type="file" name="Filename">
+    </div>
+
+    <!-- Step 3 -->
+    <div class="step3">
+      <img src="../z-resources/payment-icon.png" alt="Payment Icon">
+      <p>💰 Permit Fee:</p>
+      <p>₱ <em>[Dynamic Amount Based on Permit Type]</em><br>
+         <small>(Fee will appear after form selection)</small>
+      </p>
+
+      <div class="proceed-btn">
+        <button type="button" class="proceed" onclick="openPopup('popup2', 'popup1')">
+          <strong>Proceed to Payment</strong>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+       
+<!-- Second Popup (ID: popup2) -->
+<div class="trans-popup" id="popup2">
+  <div class="trans-wrapper">
+    <div class="popup2-all-container">
+      <div class="popup2-left">
+      </div>
+      <div class="popup2-right">
+        <div class="exit-btn2">
+          <button type="button" class="exit2" onclick="closePopup('popup2')"></button>
+        </div>
+        <div class="popup2-head">
+          Payment Details
+        </div>
+        <div class="Options">
+          <button type="button" class="gcash">
+            <img src="../z-resources/Permits-icon/gcash-icon.png">
+            <span>GCash</span>
+          </button>
+          <button type="button" class="maya">
+            <img src="../z-resources/Permits-icon/maya-icon.png">
+            <span>Maya</span>
+          </button>
+          <button type="button" class="paypal">
+            <img src="../z-resources/Permits-icon/paypal-icon.png">
+            <span>PayPal</span>
+          </button>
           </div>
-          <div class="permit-type">
-              <strong>Business Registration System for getting documents</strong>
-          </div>
-          <div class="step-container">
-            <div class="step1">
-                <img src="../z-resources/download-icon.png">
-                🔽 Click the button below to download the official application form.[Download Form](PDF or Word format. Please print and fill it out completely.)
-            </div>
-            <div class="step2">
-                <img src="../z-resources/attachment-icon.png">
-                Upload your filled-out form here:
-                (PDF, JPG, or PNG accepted. Max size: 5MB)
-                <input type="file" name="Filename">
-            </div>
-            <div class="step3">
-              <img src="../z-resources/payment-icon.png">
-              💰 Permit Fee:
-              ₱[Dynamic Amount Based on Permit Type](Fee will appear after form selection)
-              <div class="proceed-btn">
-              <button type="button" class="proceed"><strong>Proceed to Payment</strong></button>
-              </div>
-            </div>
+          <div class="line-with-or">
+            <hr><span>or</span><hr>
           </div>
         </div>
-       
-
+      </div>
+    </div>
+  </div>
+</div>
         
     <footer>
         <div class="footer-column">
