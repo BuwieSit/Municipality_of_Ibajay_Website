@@ -127,7 +127,7 @@ body {
     text-align: center;
 }
 
-.step-container{
+.popup-step-container{
     display: flex;
     justify-content: space-around;
 }
