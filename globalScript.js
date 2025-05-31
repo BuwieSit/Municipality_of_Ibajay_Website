@@ -1,6 +1,6 @@
-window.addEventListener('load', function() {
-  loadingScreen.style.display = 'none';
-})
+// window.addEventListener('load', function() {
+//   loadingScreen.style.display = 'none';
+// })
 
 window.addEventListener('DOMContentLoaded', () => {
 
@@ -46,6 +46,5 @@ window.addEventListener('DOMContentLoaded', () => {
         }
         
     });
-
 
 });

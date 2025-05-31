@@ -1,9 +1,12 @@
+@import url('../global.css');
+
 body {
     background-image: url(../z-resources/Hospital.jpg);
-    background-size: 100% 120%; /* Ensures full width */
+    background-size: 100% 150%; 
     background-position:center; 
     background-repeat: no-repeat;
-    background-color:#E3F2FD ;
+    background-color: var(--darkBlue);
+
    
 }
 
@@ -14,7 +17,7 @@ body {
     display: flex;
     justify-content: center; 
     align-items: center; 
-    height: 50vh; 
+    height: 55vh; 
     font-size: 25px;
 }
 
@@ -24,6 +27,7 @@ body {
     padding: 10px 20px;
     border-radius: 20px;
     text-align: center;
+    color: black;
 }
 
 .appointment-BTN{
@@ -33,20 +37,67 @@ body {
 }
 
 .appointment-BTN button{
-    color: whitesmoke;
-    background-color: red;
+    color: black;
+    background-color: whitesmoke;
     border-radius: 20px;
     padding: 20px;
+    transition: transform .2s ease, box-shadow .2s ease;
 }
 
-.booking{
-   position: absolute;
-    bottom: 6%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgb(211, 211, 211);
-    padding: 10px 20px;
-    border-radius: 20px;
-    text-align: left;
-    font-size: 30px;
+
+
+.appointment-BTN button:hover:not(:disabled) {
+   background: red;
+   color: black;
+   text-shadow: 0 0.1rem white;
+
 }
+
+
+.booking{
+    background-color: rgb(211, 211, 211);
+    padding: 15px 20px;
+    border-radius: 30px;
+    text-align: left;
+    font-size: 20px;
+
+}
+
+.booking-container{
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: end;
+    padding-left: 35px;
+    padding-bottom: 27px;
+
+}
+
+.emergency{
+    background-color: rgb(211, 211, 211);
+    padding: 15px 20px;
+    border-radius: 30px;
+    text-align: left;
+    font-size: 20px;
+}
+
+.emergency-container{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    padding-right: 35px;
+    flex-direction: column;
+    padding-bottom: 27px;
+
+
+
+}
+
+
