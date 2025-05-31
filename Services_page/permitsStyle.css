@@ -1,4 +1,5 @@
- body {
+@import url('../global.css');
+body {
     background: #28666E;
 }
  
@@ -173,6 +174,12 @@
     border-radius: 30px;
     font-size: 35px;
     text-align: center;
+}
+
+.permit-text {
+    font-family: var(--title-font);
+    font-weight: 600;
+    
 }
 
 .exit {
