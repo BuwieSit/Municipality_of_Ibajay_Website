@@ -431,9 +431,7 @@ footer {
     justify-content: center;
     align-items: center;
 }
-.signIn-wrapper {
 
-}
 .signUp-wrapper {
     transform: translateX(100%);
 }
@@ -443,4 +441,27 @@ footer {
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
     cursor: pointer;
+}
+
+.toast {
+    width: 100px;
+    aspect-ratio: 16/5;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+
+}
+#toastText {
+    font-family: var(--subtitle-font);
+    font-weight: 400;
+    font-size: 1rem;
+    color: white;
 }

@@ -47,4 +47,36 @@ window.addEventListener('DOMContentLoaded', () => {
         
     });
 
+
+    const number = document.getElementById('cont-number');
+
+    number.addEventListener('click', () => {
+        const textToCopy = number.textContent;
+
+        navigator.clipboard.writeText(textToCopy).then(() => {
+
+            const div = document.createElement('div');
+            const p = document.createElement('p');
+
+            div.classList.add('toast');
+            p.id = 'toastText';
+            p.textContent = 'Copied text';
+
+            div.appendChild(p);
+            document.body.appendChild(div);
+
+            div.style.opacity = '1';
+
+            setTimeout(() => {
+                div.style.opacity = '0';
+                setTimeout(() => {
+                    div.remove();
+                }, 500); 
+            }, 3000);
+        }).catch(err => {
+            alert("Failed to copy text: " + err);
+        });
+    });
+
+   
 });

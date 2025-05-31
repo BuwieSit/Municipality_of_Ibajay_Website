@@ -1,7 +1,8 @@
 @import url('./global.css');
 
 footer {
-    background-image: linear-gradient(var(--blueGreen), var(--darkBlue)); 
+    margin-top: 10%;
+    background-image: linear-gradient(rgba(40, 102, 110, 0), var(--darkBlue)); 
     border: none;
     width: 100%;
     height: 400px;
@@ -74,7 +75,7 @@ footer {
 }
 .list-title {
     font-size: 25px;
-    font-weight: 700;
+    font-weight: 600;
 }
 .terms-wrapper {
     width: 100%;
@@ -120,13 +121,21 @@ footer {
     aspect-ratio: 1;
     object-fit: cover;
 }
+#contact-title {
+    font-family: var(--subtitle-font);
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+}
 .contact-text {
     font-family: var(--subtitle-font);
     font-weight: 600;
     font-size: 13px;
     text-indent: 10px;
     color: black;
+    cursor: pointer;
 }
 .contact-text:hover {
     text-decoration: underline;
+    color: white;
 }
