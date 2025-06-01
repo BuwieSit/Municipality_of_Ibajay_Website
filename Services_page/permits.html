@@ -212,8 +212,6 @@
 
           <p id="payment-text">Payment</p>
           <div class="Options">
-              <div class="options-wrapper">
-                  
                   <button type="button" class="payment-option gcash">
                     <img src="../z-resources/Permits-icon/gcash-icon.png">
                   </button>
@@ -226,7 +224,6 @@
                   <img src="../z-resources/Permits-icon/paypal-icon.png">
                 </button>
                 <p>Paypal</p>
-              </div>
           </div>
 
           <div class="line-with-or">
@@ -234,7 +231,17 @@
           </div>
 
           <!-- LOWER PART -->
-
+          <div class="payment-container">
+            <form class="payment-form">
+              <label for="usernumber">Enter your number</label>
+              <input type="text" id="userNumber" name="usernumber" placeholder="Your Number">
+              <label for="usernumber">Enter your email</label>
+              <input type="email" id="email" name="email" placeholder="Email" autocomplete="off">
+              <button type="submit" id="payButton">Pay now!</button>
+            </form>
+            <div class="qrcode"></div>
+             <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
+          </div>
 
         </div>
       </div>
@@ -242,6 +249,15 @@
   </div>
 </div>
         
+
+
+
+
+
+
+
+
+
     <footer>
         <div class="footer-column">
           <section class="logo-text">
@@ -290,6 +306,10 @@
               </div>
         </div>
     </footer>
+
+
+
+
     <!-- Script and POPUP stays at the bottom of the page -->
 
     <div class="acc-popup">

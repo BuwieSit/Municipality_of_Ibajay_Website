@@ -30,4 +30,13 @@ function closePopup(idToClose) {
 }
 
 
+  var qrcode = new QRCode(document.querySelector('.qrcode'), {
+      text: 'https://new.gcash.com/',
+      width: 128,
+      height: 128,
+      colorDark : '#000',
+      colorLight : '#fff',
+      correctLevel : QRCode.CorrectLevel.H
+  });
+
 
