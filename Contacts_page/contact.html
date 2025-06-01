@@ -36,56 +36,56 @@
 <!-- Script and POPUP stays at the bottom of the page -->
 
     
-      <div class="background">
-        <div class="site-border">
-          <div class="contact-wrapper">
-              <h1>Contact Us</h1> <br><br>
-              <h3>LGU Information Board</h3> <br>
-              <p class="contact pformat">Telephone No. : (036) 289-2025</p><br>
-              <p class="contact pformat">Facebook Page : https://www.facebook.com/LGUIbajayInfoBoard/</p><br>
-              <p class="contact pformat">Email Address   : lguibajay@yahoo.com</p> <br><br>
-              <h3>Hon. JOSE MIGUEL M. MIRAFLORES</h3>
-              <p class="contact namesake">Ibajay, Aklan Mayor</p><br>
-              <p class="contact pformat">Telephone No.   : (036) 289-2677</p><br>
-              <p class="contact pformat">Fax No.         : (036) 289-2495</p><br><br>
-              <h3>Mr. Eliezer L. Sevilla</h3>
-              <p class="contact namesake">Municipal Civil Registrar</p><br>
-              <p class="contact pformat">Telephone No.   : (036) 289-2658</p><br>
-              <p class="contact pformat">Cellphone No.    : 09196394201</p><br>
-              <p class="contact pformat">Email Address    : eliezersevilla@yahoo.com</p><br><br>
-            </div>
+    <div class="grid-container">
+      <main class="main-content">
+        <div>
+          <h1>Contact Us!</h1>
         </div>
-      </div>
-
-      <div class="overlay" id="overlay">
-        <button id="overlay-button">&lt;</button>
-        <div class="overlay-content">
-          <h2>Questions? Email Us!</h2><br><br>
-          <div class="email-form">
-            <form action="https://formsubmit.co/ibajaysample@gmail.com" method="POST">
-              <label for="firstName">First Name</label>
-              <input class="text-labels" for="firstName" type="text" class="text-input" id="firstName" name="First Name" placeholder="Your First Name" required><br>
-
-              <label for="lastName">Last Name</label>
-              <input class="text-labels" for="lastName" type="text" id="lastName" name="Last Name" placeholder="Your Last Name" required><br>
-
-              <label for="email">Email</label>
-              <input class="text-labels" for="email" type="email" id="email" name="Email" placeholder="Your Email" required><br>
-
-              <label for="message">Your Message</label><br>
-              <textarea for="message" id="message" class="messagebox" name="Message" placeholder="Type your message here..." required></textarea><br><br>
-
-              <div class="checkbox-container">
-                <input type="checkbox" name="Permission" id="permission" required>
-                <label for="permission">I understand that this message may be public and shared with the city staff. 
-                I will not include any personal information as such.</label><br><br>
-              </div>
-              <button type="submit" class="submit-button">Submit</button>
-            </form>
-              
-            </div>
+        <div class="hover-effect">
+          <h3>LGU Information Board</h3>
+          <p>Telephone No. : (036) 289-2025</p>
+          <p>Facebook Page : https://www.facebook.com/LGUIbajayInfoBoard/</p>
+          <p>Email Address : lguibajay@yahoo.com</p>
         </div>
-      </div>
+        <div class="hover-effect">
+          <h3>Hon. JOSE MIGUEL M. MIRAFLORES</h3>
+          <p>Ibajay, Aklan Mayor</p>
+          <p>Telephone No. : (036) 289-2677</p>
+          <p>Fax No. : (036) 289-2495</p>
+        </div>
+        <div class="hover-effect">
+          <h3>Mr. Eliezer L. Sevilla</h3>
+          <p>Municipal Civil Registrar</p>
+          <p>Telephone No. : (036) 289-2658</p>
+          <p>Cellphone No. : 09196394201</p>
+          <p>Email Address : eliezersevilla@yahoo.com</p>
+        </div> 
+      </main>
+  
+      <aside class="sidebar">
+        <h3>Have Questions? Email Us!</h3>
+        <form action="https://formsubmit.co/ibajaysample@gmail.com" method="POST">
+          <label for="firstName">First Name</label>
+          <input type="text" for="firstName" placeholder="Your first name" id="firstName" name="First Name" required>
+
+          <label for="lastName">Last Name</label>
+          <input type="text" for="lastName" placeholder="Your last name" id="lastName" name="Last Name" required>
+
+          <label for="email">Email</label>
+          <input type="email" for="email" id="email" name="Email" placeholder="Your Email" required>
+
+          <label for="message" class="">Your Message</label>
+          <textarea for="message" rows="16" name="Message" id="message" placeholder="Type your message here..." required></textarea>
+
+          <div class="checkbox-container">
+            <input type="checkbox" name="privacy" id="privacy" required>
+            <label for="privacy">I understand that this message may be public and shared with the city staff.</label>
+          </div>
+
+          <button type="submit">Submit</button>
+        </form>
+      </aside>
+    </div>
 
     <div class="acc-popup">
       <div class="slider">
