@@ -1,4 +1,8 @@
+.page {
+    background: linear-gradient(to bottom, #28666e, #033f63);
+    height: 300vh;
 
+}
 .img-wrapper {
   position: relative;
   width: 100%;
@@ -122,3 +126,38 @@
   margin-top: 10px;
 }
 
+.highlight-layout {
+  display: flex;
+  justify-content: center;
+   align-items: stretch;
+  gap: 20px;
+  position: relative;
+  margin-top: 40px;
+  flex-wrap: nowrap; 
+}
+
+.highlight-box {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  z-index: 1;
+  text-align: center;
+}
+
+.highlight-box.center {
+  width: 600px;
+  transform: scale(1.1);
+  z-index: 2;
+  margin-left: -40px;
+  margin-right: -40px;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.highlight-box.center img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
