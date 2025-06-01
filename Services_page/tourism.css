@@ -1,3 +1,9 @@
+@import url('../global.css');
+
+body {
+  font-family: var(--subtitle-font);
+}
+
 .page {
     background: linear-gradient(to bottom, #28666e, #033f63);
     height: 300vh;
