@@ -86,6 +86,7 @@ body {
   flex: 1;
   min-width: 150px;
   max-width: 200px;
+  color: white;
 }
 
 .left-text p {
@@ -93,6 +94,8 @@ body {
   font-size: 1rem;
   line-height: 1.6;
   margin: 0;
+  
+  
 }
 
 
@@ -153,13 +156,14 @@ body {
   bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: white;
+  
   border: 2px solid black;
   border-radius: 30px;
   padding: 30px 15px;
-  width: auto; 
+  min-width: 270px;
+  max-width: 270px ;
   text-align: center;
-  font-size: 1.7rem;
+  font-size: 1rem;
   font-style: italic;
   text-transform: uppercase;
   z-index: 2;
@@ -196,10 +200,29 @@ body {
   margin-left: -40px;
   margin-right: -40px;
   background-color: transparent;
+  
+}
+.highlight-box.left {
+  min-width: 250px;
+  max-width: 500px;
+  z-index: 1;
+  margin-left: 5px;
+  margin-right: 10px;
   box-shadow: none;
+  text-align: left;
+  box-shadow: 0px 5px 5px rgba(0, 0 , 0 , 1);
+}
+.highlight-box.right {
+  min-width: 250px;
+  max-width: 500px;
+  z-index: 1;
+  margin-left: 10px;
+  margin-right: 5px;
+  box-shadow: 0px 5px 5px rgba(0, 0 , 0 , 1);
+  text-align: right;
 }
 
-.highlight-box.center {
+.highlight-box.center:hover {
   width: 650px;
   transform: scale(1.1);
   z-index: 2;
@@ -350,15 +373,33 @@ body {
   bottom: 0px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: white;
   border: 2px solid black;
   border-radius: 20px;
   padding: 20px 20px;
-  font-size: 1.6rem;
+  text-align: center;
+  font-size: 1rem;
   font-style: italic;
   text-transform: uppercase;
-  white-space: nowrap;
+  width:255px;
+  min-height: fit-content;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+}
+.yel{
+  background-color: #fedc97;
+  color: black;
+
+}
+.drkB{
+
+  background: var(--darkBlue);
+  color: white;
+  
+}
+.blG{
+  
+  background: var(--blueGreen);
+  color: black;
+  
 }
 
 
