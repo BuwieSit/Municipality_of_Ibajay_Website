@@ -465,3 +465,9 @@ footer {
     font-size: 1rem;
     color: white;
 }
+
+.cont-number:hover {
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+}

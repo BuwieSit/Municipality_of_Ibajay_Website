@@ -127,13 +127,13 @@ body {
     justify-content: center;
     list-style-type: none;
 }
-.cont-number:nth-child(1) {
+.eme-num:nth-child(1) {
     list-style-type: "📱";
 }
-.cont-number:nth-child(2) {
+.eme-num:nth-child(2) {
     list-style-type: "☎️";
 }
-.cont-number:nth-child(3) {
+.eme-num:nth-child(3) {
     list-style-type: "📧";
 }
 .emergency > ul > li:hover {
@@ -200,9 +200,16 @@ body {
 }
 .hotlines > section > ul {
     list-style-type: none;
+    font-weight: 600;
 }
+
 
 .hotlines > h3 {
     color: white;
-    
+}
+
+.hotlines > section > img {
+    width: 70px;
+    aspect-ratio: 1;
+    object-fit: cover;
 }

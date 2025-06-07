@@ -38,15 +38,22 @@ body {
     font-family: var(--title-font);
     color: black;
 }
-.service-innerbox:nth-child(1):hover {
-    background-image: linear-gradient(to top, var(--darkBlue), rgba(0, 0, 0, 0.1));
-} 
-.service-innerbox:nth-child(2):hover {
-    background-image: linear-gradient(to top, var(--darkGreen), rgba(0, 0, 0, 0.1));
+
+@keyframes fadeIn {
+    from {
+
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
-.service-innerbox:nth-child(3):hover {
-    background-image: linear-gradient(to top, var(--lightYellow), rgba(0, 0, 0, 0.1));
+
+
+.service-innerbox:hover {
+    background-image: linear-gradient(to top, var(--darkGreen), rgba(0, 0, 0, 0.9));
 }
+
 .service-innerbox:nth-child(2) {
     animation-delay: 1s;
 }
@@ -65,7 +72,6 @@ body {
 .service-innerbox:hover > .innercontent > p {
     transform: translateY(0%);
 }
-
 
 .innercontent {
     transition: all 0.3s ease;
