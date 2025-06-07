@@ -51,7 +51,7 @@ body {
 
 
 .service-innerbox:hover {
-    background-image: linear-gradient(to top, var(--darkGreen), rgba(0, 0, 0, 0.9));
+    background-image: linear-gradient(to top, var(--darkGreen), rgba(0, 0, 0, 0.2));
 }
 
 .service-innerbox:nth-child(2) {

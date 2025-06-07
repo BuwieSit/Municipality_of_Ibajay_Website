@@ -358,8 +358,9 @@ body {
 
     transition: all 0.3s ease;
     transform-style: preserve-3d;
-    transform: perspective(1000px);
-    animation: rotating 30s linear infinite;
+    transform: perspective(1000px) rotateX(-15deg);
+    animation: rotating 30s linear ;
+    animation-timeline: view(-10% 0%);
 
 }
 .image-container {
@@ -370,7 +371,7 @@ body {
     transform: 
     rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg ))
     translateZ(550px);
-    /* animation: rotating 20s linear infinite; */
+
     transition: all 0.3s ease;
 }
 .image-container > img {
