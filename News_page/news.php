@@ -82,7 +82,7 @@
     <?php while($row = mysqli_fetch_assoc($result)): ?>
         <div class="sub-box">
           <div class="news2">
-            <img class="news-image2" src="../z-resources/news2.png" alt="news2">
+            <img class="news-image2" src="../z-resources/news_thumb.png" alt="news2">
           </div>
 
           
@@ -94,7 +94,7 @@
             </div>
 
         
-        </div>
+        </div> 
       <?php endwhile; ?>
 
 

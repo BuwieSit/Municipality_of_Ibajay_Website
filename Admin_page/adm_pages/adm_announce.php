@@ -42,6 +42,10 @@
         <h2>Announcements</h2>
     </header>
 
+    <div class="news-preview">
+
+    </div>
+
     <div class="announcements-container">
         <div class="announce-list add"><img src="../../admin-resources/plus.png"></div>
 
@@ -49,6 +53,11 @@
         <div class="announce-list">
             <h2 class="headline-text"><?php echo htmlspecialchars($row['headline']); ?></h2>
             <small class="timestamp"><?php echo date('F j, Y, g:i a', strtotime($row['created_at'])); ?></small>
+
+            <form class="trash-form" action="../../ADMIN_CONTROLS/delete_news.php" method="post" onsubmit="return confirmDelete();">
+            <input type="hidden" name="id" value="<?php echo $row['news_id']; ?>">
+            <button id="trash" type="submit"><img src="../../admin-resources/trash.png"><button>
+            </form>
         </div>
         <?php endwhile; ?>
     </div>
