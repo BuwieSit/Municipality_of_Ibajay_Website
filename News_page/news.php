@@ -1,3 +1,14 @@
+<?php
+  session_start();
+  include '../conn.php'; 
+
+  $sql = "SELECT * FROM news_table ORDER BY created_at DESC";
+  $result = mysqli_query($conn, $sql);
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -68,29 +79,26 @@
     <!-- THIS IS SUB NEWS-->
 
 <div class="sub-news">
-      <div class="sub-box">
-        <div class="news2">
-          <img class="news-image2" src="../z-resources/news2.png" alt="news2">
-        </div>
-        <div class="sub-headline">
-          <strong>Nagaduso it droga nga miyembro it LGBTQIA+, kulong matapos maaresto sa buy-bust it Kalibo Municipal Police Station</strong>
-        </div>
-        <div class="date">
-          May 24, 2025 | 11:22 AM
-        </div>
-      </div>
+    <?php while($row = mysqli_fetch_assoc($result)): ?>
+        <div class="sub-box">
+          <div class="news2">
+            <img class="news-image2" src="../z-resources/news2.png" alt="news2">
+          </div>
 
-      <div class="sub-box">
-        <div class="news2">
-          <img class="news-image2" src="../z-resources/news2.png" alt="news2">
+          
+            <div class="sub-headline">
+              <strong><?php echo htmlspecialchars($row['headline']); ?></strong>
+            </div>
+            <div class="date">
+              <?php echo date('F j, Y, g:i a', strtotime($row['created_at'])); ?>
+            </div>
+
+        
         </div>
-        <div class="sub-headline">
-          <strong>Nagaduso it droga nga miyembro it LGBTQIA+, kulong matapos maaresto sa buy-bust it Kalibo Municipal Police Station</strong>
-        </div>
-        <div class="date">
-          May 24, 2025 | 11:22 AM
-        </div>
-      </div>
+      <?php endwhile; ?>
+
+
+
 
     <!-- THIS IS SUB NEWS -->
     <!-- THIS IS SUB NEWS-->

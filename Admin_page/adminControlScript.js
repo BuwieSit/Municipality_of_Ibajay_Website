@@ -18,9 +18,9 @@ if (dashboard) {
 
 if (announce) {
     announce.addEventListener('click', () => {
-        window.location.href = `${basePath}adm_pages/adm_announce.html`;
+        window.location.href = `${basePath}adm_pages/adm_announce.php`;
     });
-    if (window.location.pathname.endsWith("adm_announce.html")) {
+    if (window.location.pathname.endsWith("adm_announce.php")) {
         announce.classList.add('selected');
     }
 }
@@ -42,3 +42,6 @@ if (permit) {
         permit.classList.add('selected');
     }
 }
+
+
+
