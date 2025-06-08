@@ -5,6 +5,10 @@
   $sql = "SELECT * FROM news_table ORDER BY created_at DESC";
   $result = mysqli_query($conn, $sql);
 
+  $newsItems = [];
+  while($row = mysqli_fetch_assoc($result)) {
+      $newsItems[] = $row;
+  }
 
 ?>
 
@@ -38,7 +42,7 @@
             <ul>
                 <a href="../About_page/about.html"><li>About</li></a>
                 <a href="../Services_page/services.html"><li>Services</li></a>
-                <a href="../News_page/news.html"><li><span class="underline">News</span></li></a>
+                <a href="../News_page/news.php"><li><span class="underline">News</span></li></a>
                 <a href="../Contacts_page/contact.html"><li>Contacts</li></a>
                 <button id="accButton">Account</button>
             </ul>
@@ -78,34 +82,39 @@
     <!-- THIS IS SUB NEWS-->
     <!-- THIS IS SUB NEWS-->
 
-<div class="sub-news">
-    <?php while($row = mysqli_fetch_assoc($result)): ?>
-        <div class="sub-box">
+    <!-- SUB NEWS -->
+  <div class="sub-news">
+
+      <?php foreach($newsItems as $row): ?>
+        <div class="sub-box" 
+            data-headline="<?php echo htmlspecialchars($row['headline'], ENT_QUOTES); ?>" 
+            data-date="<?php echo date('F j, Y, g:i a', strtotime($row['created_at'])); ?>" 
+            data-desc="<?php echo htmlspecialchars($row['description'], ENT_QUOTES); ?>">
           <div class="news2">
             <img class="news-image2" src="../z-resources/news_thumb.png" alt="news2">
           </div>
+          <div class="sub-headline">
+            <strong><?php echo htmlspecialchars($row['headline']); ?></strong>
+          </div>
+          <div class="date">
+            <?php echo date('F j, Y, g:i a', strtotime($row['created_at'])); ?>
+          </div>
+        </div>
+      <?php endforeach; ?>
+  </div>
 
-          
-            <div class="sub-headline">
-              <strong><?php echo htmlspecialchars($row['headline']); ?></strong>
-            </div>
-            <div class="date">
-              <?php echo date('F j, Y, g:i a', strtotime($row['created_at'])); ?>
-            </div>
+    <!-- POPUP -->
+      <div class="news-desc-popup" id="newsPopup">
+        <div class="head-text">
+          <h3 id="popupHeadline"></h3>
+          <p id="popupDate"></p>
+        </div>
+        <div class="news-desc">
+          <p id="popupDesc"></p>
+        </div>
+        <button id="popup-close"><img src="../z-resources/close-line.png"></button>
+      </div>
 
-        
-        </div> 
-      <?php endwhile; ?>
-
-
-
-
-    <!-- THIS IS SUB NEWS -->
-    <!-- THIS IS SUB NEWS-->
-    <!-- THIS IS SUB NEWS-->
-    <!-- THIS IS SUB NEWS-->
-    <!-- THIS IS SUB NEWS-->
-</div>
 
       <footer>
         <div class="footer-column">
@@ -126,7 +135,7 @@
             <ul>
                 <p class="list-title">News</p>
                 <li><a href="./News_page/announcement.html">Announcements</a></li>
-                <li><a href="./News_page/news.html">Events</a></li>
+                <li><a href="./News_page/news.php">Events</a></li>
             </ul>
           </section>
         </div>
