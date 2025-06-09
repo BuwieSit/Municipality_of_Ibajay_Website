@@ -24,8 +24,8 @@
     <div class="side-nav">
 
         <div class="profile">
-            <img src="../../z-resources/ibajay_logo.png">
-            <p class="admin-name">Announce</p>
+        <a href="../../index.html"><img src="../../z-resources/ibajay_logo.png"></a>
+            <p class="admin-name">Main Page</p>
         </div>
 
         <div class="list-wrapper">
@@ -78,16 +78,20 @@
     <div class="add-popup">
         <img src="../../admin-resources/close.png" alt="close" id="closeBtn">
         <form class="add-form" action="../../ADMIN_CONTROLS/news_add.php" method="post">
-
             <input type="text" name="headline" id="headline" placeholder="Headline" required>
             <textarea name="headline-description" id="headline-description" placeholder="Description" required></textarea>
-        
-
         <button type="submit" class="add-btn"> <img src="../../admin-resources/plus.png"></button>
-
         </form>
     </div>
 
+        <div class="edit-popup">
+        <img src="../../admin-resources/close.png" alt="close" id="closeBtn">
+        <form class="add-form" action="../../ADMIN_CONTROLS/news_add.php" method="post">
+            <input type="text" name="headline" id="headline" placeholder="Headline" required>
+            <textarea name="headline-description" id="headline-description" placeholder="Description" required></textarea>
+        <button type="submit" class="add-btn"> <img src="../../admin-resources/plus.png"></button>
+        </form>
+    </div>
 <script src="../adminControlScript.js"></script>
 <script src="../newsAdd.js"></script>
 

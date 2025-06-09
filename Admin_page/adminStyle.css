@@ -35,7 +35,7 @@ body {
     font-weight: 600;
     font-size: 15px;
 }
-.profile > img {
+.profile > a > img {
     width: 80px;
 }
 
@@ -174,7 +174,7 @@ body {
 #closeBtn:hover {
     transform: rotate(90deg);
 }
-.add-popup {
+.add-popup, .edit-popup {
     transition: all 0.3s ease;
     pointer-events: none;
     opacity: 0;
@@ -296,7 +296,6 @@ body {
     aspect-ratio: 1;
 }
 .opt-wrapper {
-    background-color: red;
     width: 150px;
     height: 100px;
     position: absolute;

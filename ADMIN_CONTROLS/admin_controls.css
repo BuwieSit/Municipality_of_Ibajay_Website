@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container-box {
+    background-color: #fff;
+    padding: 2rem;
+    width: 90%;
+    max-width: 700px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+}
+
+.container-box h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 26px;
+    color: #222;
+}
+
+.container-box > form,
+.container-box > .view-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+/* Headline styling */
+.headline-box,
+.container-box input[type="text"] {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1a1a1a;
+    border-left: 5px solid #0057a3;
+    padding: 12px 16px;
+    background-color: #f0f8ff;
+    border-radius: 6px;
+    border: none;
+}
+
+/* Description styling */
+.description-box,
+.container-box textarea {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    border-left: 4px solid #0096c7;
+    padding: 15px 20px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    resize: vertical;
+}
+
+/* Publish date */
+.published-box {
+    margin-top: 1.5rem;
+    font-size: 14px;
+    color: #888888;
+    text-align: right;
+    font-style: italic;
+}
+
+/* Buttons */
+.container-box button {
+    padding: 0.75rem;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.container-box button:hover {
+    background-color: #0056b3;
+}
+
+/* Back link */
+.back-link {
+    text-align: center;
+    display: block;
+    margin-top: 20px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.back-link:hover {
+    color: #0056b3;
+}

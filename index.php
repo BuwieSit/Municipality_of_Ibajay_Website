@@ -1,3 +1,17 @@
+<?php
+  session_start();
+  include './conn.php'; 
+
+  $sql = "SELECT * FROM news_table ORDER BY created_at DESC";
+  $result = mysqli_query($conn, $sql);
+
+  $newsItems = [];
+  while($row = mysqli_fetch_assoc($result)) {
+      $newsItems[] = $row;
+  }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -53,146 +67,38 @@
 <div class="carousel">
 
         <div class="list">
-
-            <div class="item" style="background-image: url('../z-resources/news1.png');">
+          <?php foreach($newsItems as $row): ?>
+            <div class="item" style="background-image: url('../z-resources/news1.png');"
+            data-headline="<?php echo htmlspecialchars($row['headline'], ENT_QUOTES); ?>" 
+            data-desc="<?php echo htmlspecialchars($row['description'], ENT_QUOTES); ?>"
+            >
+            
                 <div class="content">
-                    <div class="title">NEWS</div>
-                    <div class="name">NP, LTO ag iba pang ahensiya it gobyerno, nagatingub it pwersa agud nga mapabaskog pa ro road safety sa Aklan</div>
+                  
+                    <div class="title"><?php echo htmlspecialchars($row['headline']); ?></div>
+                    
+                    <div class="name"><?php echo htmlspecialchars($row['description'], ENT_QUOTES); ?></div>
+                  
                     <div class="btn">
-                        <button>See More</button>
-                        
-                    </div>
-                </div>
-            </div>
-
-            <div class="item" style="background-image: url('../z-resources/news1.png');">
-                
-                <div class="content">
-                    <div class="title">NEWS</div>
-                    <div class="name">NP, LTO ag iba pang ahensiya it gobyerno, nagatingub it pwersa agud nga mapabaskog pa ro road safety sa Aklan</div>
-                    <div class="btn">
-                        <button>See More</button>
+                        <button><a href="News_page/news.php">See More</a></button>
                         
                     </div>
                 </div>
 
             </div>
-
-            <div class="item" style="background-image: url('../z-resources/news1.png');">
-
+          <?php endforeach; ?>         
+            <div class="item" style="background-image: url('../z-resources/news1.png');"
+            data-headline="<?php echo htmlspecialchars($row['headline'], ENT_QUOTES); ?>" 
+            data-desc="<?php echo htmlspecialchars($row['description'], ENT_QUOTES); ?>"
+            >
                 <div class="content">
-                    <div class="title">NEWS</div>
-                    <div class="name">NP, LTO ag iba pang ahensiya it gobyerno, nagatingub it pwersa agud nga mapabaskog pa ro road safety sa Aklan</div>
+                    <div class="title"><?php echo htmlspecialchars($row['headline']); ?></div>
+                    <div class="name">data-desc="<?php echo htmlspecialchars($row['description'], ENT_QUOTES); ?></div>
                     <div class="btn">
-                        <button>See More</button>
+                        <button><a href="News_page/news.php">See More</a></button>
                         
                     </div>
                 </div>
-
-            </div>
-
-            <div class="item" style="background-image: url('../z-resources/news1.png');">
-                
-                <div class="content">
-                    <div class="title">NEWS</div>
-                    <div class="name">NP, LTO ag iba pang ahensiya it gobyerno, nagatingub it pwersa agud nga mapabaskog pa ro road safety sa Aklan</div>
-                    <div class="btn">
-                        <button>See More</button>
-                        
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="item" style="background-image: url('../z-resources/news1.png');">
-                
-                <div class="content">
-                    <div class="title">NEWS</div>
-                    <div class="name">NP, LTO ag iba pang ahensiya it gobyerno, nagatingub it pwersa agud nga mapabaskog pa ro road safety sa Aklan</div>
-                    <div class="btn">
-                        <button>See More</button>
-                        
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="item" style="background-image: url('../z-resources/news1.png');">
-                
-                <div class="content">
-                    <div class="title">NEWS</div>
-                    <div class="name">NP, LTO ag iba pang ahensiya it gobyerno, nagatingub it pwersa agud nga mapabaskog pa ro road safety sa Aklan</div>
-                    <div class="btn">
-                        <button>See More</button>
-                        
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="item" style="background-image: url('../z-resources/news1.png');">
-                
-                <div class="content">
-                    <div class="title">NEWS</div>
-                    <div class="name">NP, LTO ag iba pang ahensiya it gobyerno, nagatingub it pwersa agud nga mapabaskog pa ro road safety sa Aklan</div>
-                    <div class="btn">
-                        <button>See More</button>
-                        
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="item" style="background-image: url('../z-resources/news1.png');">
-                
-                <div class="content">
-                    <div class="title">NEWS</div>
-                    <div class="name">NP, LTO ag iba pang ahensiya it gobyerno, nagatingub it pwersa agud nga mapabaskog pa ro road safety sa Aklan</div>
-                    <div class="btn">
-                        <button>See More</button>
-                        
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="item" style="background-image: url('../z-resources/news1.png');">
-                
-                <div class="content">
-                    <div class="title">NEWS</div>
-                    <div class="name">NP, LTO ag iba pang ahensiya it gobyerno, nagatingub it pwersa agud nga mapabaskog pa ro road safety sa Aklan</div>
-                    <div class="btn">
-                        <button>See More</button>
-                        
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="item" style="background-image: url('../z-resources/news1.png');">
-                
-                <div class="content">
-                    <div class="title">NEWS</div>
-                    <div class="name">NP, LTO ag iba pang ahensiya it gobyerno, nagatingub it pwersa agud nga mapabaskog pa ro road safety sa Aklan</div>
-                    <div class="btn">
-                        <button>See More</button>
-                        
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="item" style="background-image: url('../z-resources/news1.png');">
-                
-                <div class="content">
-                    <div class="title">NEWS</div>
-                    <div class="name">PNP, LTO ag iba pang ahensiya it gobyerno, nagatingub it pwersa agud nga mapabaskog pa ro road safety sa Aklan</div>
-                    <div class="btn">
-                        <button>See More</button>
-                       
-                    </div>
-                </div>
-
             </div>
 
         </div>

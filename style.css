@@ -193,6 +193,11 @@ body {
     cursor: pointer;
     font-size: 16px;
     border: 2px solid #fff;
+
+}
+.content > .btn > button > a {
+        color: black;
+        text-decoration: none;
 }
 
 .content .btn button:nth-child(1){
