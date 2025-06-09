@@ -67,40 +67,23 @@
 <div class="carousel">
 
         <div class="list">
+       
+
           <?php foreach($newsItems as $row): ?>
-            <div class="item" style="background-image: url('../z-resources/news1.png');"
+            <div class="item" style="background-image: url('./z-resources/news_thumb.png"
             data-headline="<?php echo htmlspecialchars($row['headline'], ENT_QUOTES); ?>" 
             data-desc="<?php echo htmlspecialchars($row['description'], ENT_QUOTES); ?>"
             >
-            
                 <div class="content">
-                  
                     <div class="title"><?php echo htmlspecialchars($row['headline']); ?></div>
-                    
                     <div class="name"><?php echo htmlspecialchars($row['description'], ENT_QUOTES); ?></div>
-                  
-                    <div class="btn">
-                        <button><a href="News_page/news.php">See More</a></button>
-                        
-                    </div>
-                </div>
-
-            </div>
-          <?php endforeach; ?>         
-            <div class="item" style="background-image: url('../z-resources/news1.png');"
-            data-headline="<?php echo htmlspecialchars($row['headline'], ENT_QUOTES); ?>" 
-            data-desc="<?php echo htmlspecialchars($row['description'], ENT_QUOTES); ?>"
-            >
-                <div class="content">
-                    <div class="title"><?php echo htmlspecialchars($row['headline']); ?></div>
-                    <div class="name">data-desc="<?php echo htmlspecialchars($row['description'], ENT_QUOTES); ?></div>
                     <div class="btn">
                         <button><a href="News_page/news.php">See More</a></button>
                         
                     </div>
                 </div>
             </div>
-
+            <?php endforeach; ?>   
         </div>
 
         <!--next prev button-->
