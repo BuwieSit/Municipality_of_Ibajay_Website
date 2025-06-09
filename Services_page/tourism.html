@@ -40,14 +40,11 @@
   </div>
 </div>
 
-<div class="container">
+<div class="container" id="food-container">
   <h6 class="oval" style="margin:20px 20px 20px 0px">Local Delicacies</h6>
   <h3 class="left-text">Binakol na Manok</h3>
 
-  
-  <div class="content-wrapper">
-    
-
+  <div class="content-wrapper">  
     <div class="left-text">
       <p>
         "Binakol na Manok" originates from the Western Visayas, particularly the province of Aklan.
@@ -55,25 +52,26 @@
         with grated coconut, green papaya, leafy vegetables, and more.
       </p>
     </div>
-
     
+
     <div class="image-row">
-        <div class="box">
-            <img src="../z-resources/Tourism/Food/food2.png" alt="Binakol">
-            <h1 class="title-oval yel">Binakol na Manok</h1>
-        </div>
-        <div class="box">
-            <img src="../z-resources/Tourism/Food/food.png" alt="Binakol">
-            <h1 class="title-oval blG">Hinubarang Manok</h1>
-        </div>
-        <div class="box">
-            <img src="../z-resources/Tourism/Food/food1.png" alt="Binakol">
-            <h1 class="title-oval drkB">Linapay</h1>
-        </div>
+      <div class="box" data-title="Binakol na Manok" data-description="&quot;Binakol na Manok&quot; originates from the Western Visayas, particularly the province of Aklan. Binakoe (Binakol) is a Filipino chicken soup made from native chicken cooked in coconut water, with grated coconut, green papaya, leafy vegetables, and more.">
+          <img src="../z-resources/Tourism/Food/food2.png" alt="Binakol">
+          <h1 class="title-oval yel">Binakol na Manok</h1>
+      </div>
+      <div class="box" data-title="Hinubarang Manok" data-description="&quot;Hinubarang Manok&quot; is a native dish from Aklan made with chicken cooked in garlic, onions, and ginger without any artificial seasoning or oil. It reflects the simplicity and purity of traditional Aklanon cuisine.">
+          <img src="../z-resources/Tourism/Food/food.png" alt="Hinubarang">
+          <h1 class="title-oval blG">Hinubarang Manok</h1>
+      </div>
+      <div class="box" data-title="Linapay" data-description="Linapay is a delicacy made from pounded freshwater shrimp or fish mixed with grated coconut and wrapped in banana leaves, then steamed to perfection. A traditional treat in the Visayas region.">
+          <img src="../z-resources/Tourism/Food/food1.png" alt="Linapay">
+          <h1 class="title-oval drkB">Linapay</h1>
+      </div>
     </div>
 
   </div>
 </div>
+
 
 
 <h6 class="oval" style="margin: 0px 0px 0px 20px">Cultural and Historical Sites</h6>
@@ -123,7 +121,7 @@
   </div>
 </div>
 
-<div class="tourism-wrapper otherbg">
+<div class="tourism-wrapper otherbg" id="moreTourism">
   <div class="tourism-box">
     <img src="../z-resources/Tourism/Scenic View 2/view1.png" alt="Binakol">
     <h1 class="tourism-title yel">Katunggan lt Ibajay</h1>
@@ -149,6 +147,8 @@
     <h1 class="tourism-title yel">Nawidwid Falls</h1>
   </div>
 </div>
+
+
 
 
   <!-- FOOTER -->
@@ -275,7 +275,18 @@
       </div>
     </div>
 
+<div class="tourism-panel" id="tourismPanel">
+  <div class="tourism-panel-content">
+    <span class="close-btn" id="closePanel">&times;</span>
+    <img id="panelImage" src="" alt="Tourism Image">
+    <div class="panel-text" id="panelText">
+      <h2 id="panelTitle">Title</h2>
+      <p id="panelDescription">Description goes here...</p>
+    </div>
+  </div>
+</div>
     <script src="script.js"></script>
+    <script src="tourism.js"></script>
     <script src="../globalScript.js"></script>
 </body>
 </html>
