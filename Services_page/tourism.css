@@ -237,9 +237,13 @@ body {
 
 .highlight-box.center img {
   width: 100%;
+  height: 400px; 
+  object-fit: cover; 
   border-radius: 20px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.3s ease-in-out; 
 }
+
 
 .tourism-wrapper {
   display: flex;
@@ -462,4 +466,50 @@ body {
   text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
   cursor: pointer;
   user-select: none;
+}
+
+.image-container {
+  position: relative;
+}
+
+.arrow-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 3;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.arrow-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.left-arrow {
+  left: 10px;
+}
+
+.right-arrow {
+  right: 10px;
+}
+
+
+#highlightList li {
+  transition: all 0.3s ease;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+#highlightList li.active {
+  background: #fff9c4; 
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+  font-weight: bold;
+  position: relative;
+  z-index: 1;
 }
