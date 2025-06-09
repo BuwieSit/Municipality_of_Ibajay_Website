@@ -1,7 +1,7 @@
 
 <?php
     session_start();
-    include '../../conn.php'; // Make sure this connects to your DB
+    include '../../conn.php'; 
 
     $sql = "SELECT * FROM news_table ORDER BY created_at DESC";
     $result = mysqli_query($conn, $sql);

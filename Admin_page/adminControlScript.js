@@ -27,18 +27,18 @@ if (announce) {
 
 if (health) {
     health.addEventListener('click', () => {
-        window.location.href = `${basePath}adm_pages/adm_health.html`;
+        window.location.href = `${basePath}adm_pages/adm_health.php`;
     });
-    if (window.location.pathname.endsWith("adm_health.html")) {
+    if (window.location.pathname.endsWith("adm_health.php")) {
         health.classList.add('selected');
     }
 }
 
 if (permit) {
     permit.addEventListener('click', () => {
-        window.location.href = `${basePath}adm_pages/adm_permits.html`;
+        window.location.href = `${basePath}adm_pages/adm_permits.php`;
     });
-    if (window.location.pathname.endsWith("adm_permits.html")) {
+    if (window.location.pathname.endsWith("adm_permits.php")) {
         permit.classList.add('selected');
     }
 }

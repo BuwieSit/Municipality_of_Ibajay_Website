@@ -272,7 +272,6 @@ body {
     padding: 20px;
     height: 80%;
     aspect-ratio: 1;
-    background-color: rgba(0, 0, 0, 0);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -280,7 +279,7 @@ body {
     transition: all 0.3s ease;
     cursor: pointer;
 
-    background: rgba( 255, 255, 255, 0.25 );
+    background: rgba( 255, 255, 255, 0.9 );
     box-shadow: 0 0px 50px 0 rgba( 0, 0, 0, 0.5 );
     backdrop-filter: blur( 15px );
     -webkit-backdrop-filter: blur( 15px);
@@ -289,7 +288,7 @@ body {
 }
 .add-btn:hover {
     transform: scale(1.05);
-    background: rgba(0, 255, 136, 0.25);
+    background: rgba(0, 255, 136, 0.9);
 }
 .add-btn > img {
     width: 50px;
@@ -329,7 +328,100 @@ body {
 }
 
 .opt-buttons:hover {
-    filter: drop-shadow(0px 0px 10px black);
-    transform: scale(1.1);
-
+    filter: drop-shadow(0px 0px 2px black);
+    transform: scale(1.1) rotate(-50deg);
 }
+
+
+/* HEALTHCARE */
+
+
+.health-main-cont {
+    width: 80%;
+    height: auto;
+    background-color: black;
+    float: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+.book-list {
+    width: 80%;
+    height: auto;
+
+    padding: 2rem;
+    border-radius: 30px;
+    background: #e0e0e0;
+    box-shadow: inset 35px -35px 70px #bebebe,
+                inset -35px 35px 70px #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.booking {
+    width: 100%;
+    height: 100px;
+    padding-left: 10%;
+    padding-right: 10%;
+    background: rgba( 255, 255, 255, 0.05 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 6px );
+    -webkit-backdrop-filter: blur( 6px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.health-div{
+    width: 70%;
+    max-width: 600px;
+    height: auto;
+
+    padding: 2rem;
+    border-radius: 30px;
+    background: #e0e0e0;
+    box-shadow: inset 35px -35px 70px #bebebe,
+                inset -35px 35px 70px #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-doctors-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.add-doctors-form input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.add-doctors-form label {
+    font-weight: 600;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+}
+
+#docadd-btn {
+    padding: 0.75rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#docadd-btn:hover {
+    background-color: #0056b3;
+}
+

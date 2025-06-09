@@ -1,94 +1,184 @@
-@import url(../style.css);
 @import url(../global.css);
 
 
 body {
   margin: 0;
-  height: 100vh;
+  background: url('../z-resources/h-resources/cover_nobg.png') 100% repeat fixed;
+  background-color: rgba(40, 102, 110, 0.4);
+  background-blend-mode: darken;
+  background-size: cover;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: var(--subtitle-font);
+}
+h4 {
+  font-family: var(--title-font);
+  font-size: 20px;
+}
+p {
+  font-size: 15px;
+}
+.doctors-list {
+  width: 80%;
+  margin-top: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.doctor-cont {
+  padding: 3%;
+  width: 100%;
+  height: 100px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow:  10px 10px 39px #777777,
+              -25px -25px 39px #ffffff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.docleft-wrapper {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 50px;
+
+}
+.docProfile {
+  width: 50px;
+  
+}
+.doctor-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+}
+
+.docright-wrapper {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+
+}
+#appoint-btn {
+  height: 100%;
+  width: 50%;
+  padding: 5%;
+  background-color: #3a94a0;
+  display: table-caption;
+  font-family: var(--subtitle-font);
+  font-weight: 700;
+  font-size: 20px;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#appoint-btn:hover {
+  background-color: var(--blueGreen);
+
+}
+
+.doctor-popup {
+  width: 50%;
+  height: 400px;
+  opacity: 0;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  background: rgba(40, 102, 110, 0.4);
+  box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.5 );
+  backdrop-filter: blur( 10px );
+  -webkit-backdrop-filter: blur( 10px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.pop-cont {
+  width: 50%;
+  height: 100%;
+}
+
+.popleft {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+
+}
+.popleft > * {
+    font-size: 30px;
+}
+
+.popright {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.book-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100%;
+}
+.form-group {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: var(--darkBlue);
-}
 
-.card-container{
-    display: flex;
-    text-align: center;
-    padding: 10px 20px;
-    border-radius: 20px;
+  gap: 10px;
+  padding: 5%;
 }
-.right-panel {
-  display: flex;
-  flex: 1;
-  padding: 60px;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 500px
-
-}
-
-.left-panel{
-display: flex;    
-padding: 20px;
-justify-content: center;
-background: skyblue;
-width: 400px;
-align-items: center;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  text-align: left;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-}
-
-.form-group label {
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-.form-group input {
+.form-group > * {
+  width: 50%;
   padding: 10px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  font-size: 14px;
+  background: rgba(40, 102, 110, 0.4);
+  border: 1px solid white;
+}
+.book-form > input {
+  padding: 10px;
+  background: rgba(40, 102, 110, 0.4);
+  border: 1px solid white;
+}
+input::placeholder, input, select {
+  color: white;
 }
 
-.time{
-    height: 35px;
-}
-
-.submit-button{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.submit-button button{
-    display: flex;
-    color: black;
-    background-color:#bcb4b4;
-    border-radius: 13px;
-    padding: 15px;
-    transition: transform .2s ease, box-shadow .2s ease;
-    width: 100px;
-    justify-content: center;
-    align-items: center;
-    
-}
-
-.submit-button button:hover:not(:disabled) {
-   background: red;
-   color: black;
-   text-shadow: 0 0.1rem whitesmoke;
-
-}
-
+#bookBtn {
+  width: 50%;
+  padding: 3%;
+  font-family: var(--subtitle-font);
+  font-weight: 600;
+  font-size: 15px;
+} 

@@ -12,12 +12,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id'])) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Edit News</title>
+    <title>Ibajay Admin</title>
     <link rel="stylesheet" href="admin_controls.css">
 </head>
 <body>
     <div class="container-box">
-        <h2>Edit News</h2>
+        <h2>EDIT MODE</h2>
         <form id="editForm" action="update_news.php" method="post">
             <input type="hidden" name="id" value="<?php echo $news['news_id']; ?>">
 

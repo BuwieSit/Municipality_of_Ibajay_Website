@@ -16,13 +16,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id'])) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>View News</title>
+    <title>Ibajay Admin</title>
     <link rel="stylesheet" href="../ADMIN_CONTROLS/admin_controls.css">
 </head>
 <body>
 
     <div class="container-box">
-        <h2 class="view-title">View News</h2>
+        <h2 class="view-title">VIEW MODE</h2>
         <div class="view-section">
 
             <div class="headline-box">
