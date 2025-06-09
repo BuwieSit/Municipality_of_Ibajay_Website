@@ -24,11 +24,12 @@ window.addEventListener('DOMContentLoaded', () => {
         
     });
 
+    toggleBtn.textContent = 'why subscribe?';
+
     toggleBtn.addEventListener('click', () => {
 
         if (slider.style.transform == 'translateX(50%)') { //if slider is in the right side
             slider.style.transform = 'translateX(-50%)';
-            toggleBtn.textContent = 'Register';
             slider.style.boxShadow = '10px 0px 10px black';
             pleft.style.opacity = '0';
             pleft.style.transform = 'scale(0.1)'
@@ -37,7 +38,6 @@ window.addEventListener('DOMContentLoaded', () => {
         }
         else {
             slider.style.transform = 'translateX(50%)'; //if slider is in the left side
-            toggleBtn.textContent = 'Login';
             slider.style.boxShadow = '-10px 0px 10px black';
             pright.style.opacity = '0';
             pright.style.transform = 'scale(0.1)'
@@ -80,33 +80,20 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // number.addEventListener('click', () => {
-    //     const textToCopy = number.textContent;
+let count = 0; 
 
-    //     navigator.clipboard.writeText(textToCopy).then(() => {
+const admin_acc = document.querySelector('.admin-access');
 
-    //         const div = document.createElement('div');
-    //         const p = document.createElement('p');
+admin_acc.addEventListener('click', () => {
+    count += 1; 
+    console.log(count);
 
-    //         div.classList.add('toast');
-    //         p.id = 'toastText';
-    //         p.textContent = 'Copied text';
-
-    //         div.appendChild(p);
-    //         document.body.appendChild(div);
-
-    //         div.style.opacity = '1';
-
-    //         setTimeout(() => {
-    //             div.style.opacity = '0';
-    //             setTimeout(() => {
-    //                 div.remove();
-    //             }, 500); 
-    //         }, 3000);
-    //     }).catch(err => {
-    //         alert("Failed to copy text: " + err);
-    //     });
-    // });
+    if (count > 5) {
+        alert('admin login accessed');
+        window.location.href = './admin.php';
+        count = 0;
+    }
+});
 
    
 });

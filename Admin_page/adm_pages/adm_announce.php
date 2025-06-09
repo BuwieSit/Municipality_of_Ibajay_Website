@@ -54,10 +54,23 @@
             <h2 class="headline-text"><?php echo htmlspecialchars($row['headline']); ?></h2>
             <small class="timestamp"><?php echo date('F j, Y, g:i a', strtotime($row['created_at'])); ?></small>
 
-            <form class="trash-form" action="../../ADMIN_CONTROLS/delete_news.php" method="post" onsubmit="return confirmDelete();">
-            <input type="hidden" name="id" value="<?php echo $row['news_id']; ?>">
-            <button id="trash" type="submit"><img src="../../admin-resources/trash.png"><button>
-            </form>
+            <div class="opt-wrapper">
+
+                <form class="form-options trash-form" action="../../ADMIN_CONTROLS/delete_news.php" method="post" onsubmit="return confirmDelete();">
+                    <input type="hidden" name="id" value="<?php echo $row['news_id']; ?>">
+                    <button class="opt-buttons" id="trash" type="submit"><img src="../../admin-resources/trash.png"><button>
+                </form>
+
+                <form class="form-options edit-form" action="../../ADMIN_CONTROLS/edit_news.php" method="post">
+                    <input type="hidden" name="id" value="<?php echo $row['news_id']; ?>">
+                    <button class="opt-buttons" id="edit" type="submit"><img src="../../admin-resources//edit.png"></button>
+                </form>
+
+                <form class="form-options view-form" action="../../ADMIN_CONTROLS/view_news.php" method="post">
+                    <input type="hidden" name="id" value="<?php echo $row['news_id']; ?>">
+                    <button class="opt-buttons" id="view" type="submit"><img src="../../admin-resources//preview.png"></button>
+                </form>
+            </div>
         </div>
         <?php endwhile; ?>
     </div>
@@ -69,13 +82,9 @@
             <input type="text" name="headline" id="headline" placeholder="Headline" required>
             <textarea name="headline-description" id="headline-description" placeholder="Description" required></textarea>
         
-        <div class="customization">
-            <img onclick="wrapText('**', '**')" src="../../admin-resources/bold.png">
-            <img onclick="wrapText('*', '*')" src="../../admin-resources/italic.png">
-            <img onclick="wrapText('[Link text](url)')" src="../../admin-resources/link.png">
-        </div>
-        
+
         <button type="submit" class="add-btn"> <img src="../../admin-resources/plus.png"></button>
+
         </form>
     </div>
 

@@ -300,6 +300,13 @@ footer {
     left: 10%;
     transform: translateX(0%);
 }
+.text-container {
+    padding: 30px;
+    color: white;
+    font-weight: 600;
+    text-wrap: wrap;
+    font-size: 20px;
+}
 
 .sign-button {
     width: 200px;
@@ -497,4 +504,12 @@ footer {
     color: white;
     text-decoration: underline;
     cursor: pointer;
+}
+
+
+.admin-access {
+    position: absolute;
+    bottom: 3%;
+    right: 5%;
+    width: 20px;
 }
