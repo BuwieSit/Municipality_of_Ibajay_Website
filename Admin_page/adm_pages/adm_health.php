@@ -19,7 +19,7 @@
         $id = intval($_POST['id']);
         $sql = "SELECT * FROM doctors_list WHERE doctor_id = $id";
         $result = mysqli_query($conn, $sql);
-        $news = mysqli_fetch_assoc($result);
+        $doctorInfo = mysqli_fetch_assoc($result);
     }
 ?>
 
@@ -55,11 +55,15 @@
     </div>
 
     <header class="head">
-        <h2>Healthcare Doctors/Appointments</h2>
+        <h2>Healthcare </h2>
     </header>
 
     <div class="health-main-cont">
 
+        <div class="titles">
+            <h2>Healthcare Appointments</h2>
+        </div>
+        
         <div class="listings book-list">
 
             <div class="booking">
@@ -71,9 +75,13 @@
             </div>
         </div>
 
-        <h2>Healthcare Doctors/Appointments</h2>
+        <div class="titles">
+            <h2>Healthcare Doctors</h2>
+        </div>
+        
 
         <div class="health-div">
+            
             <form class="add-doctors-form" method="post" action="../../ADMIN_CONTROLS/add_doctors.php" enctype="multipart/form-data">
                 <label>
                     Doctor's Picture
@@ -134,6 +142,7 @@
                 <p id="card-spec"><?php echo htmlspecialchars($row['doctor_for'], ENT_QUOTES); ?></p>
                 <p id="card-exp"><?php echo htmlspecialchars($row['exp'], ENT_QUOTES); ?></p>
                 <p id="card-fee">₱<?php echo htmlspecialchars($row['fee'], ENT_QUOTES); ?></p>
+
             </div>
             <?php endforeach; ?> 
         </div>
@@ -142,22 +151,24 @@
 
     <div class="card-popup">
         <img src="../../admin-resources/close.png" alt="close" id="closeBtn">
-        <form id="card-popup-form">
-            <input type="hidden" name="id" value="<?php echo $news['doctor_id']; ?>">
-            <input type="text" name="docname" class="card-input" placeholder="Doctor name" required value="<?php echo htmlspecialchars($row['doctor_name']); ?>">
 
-            <input type="text" name="docfor" class="card-input" placeholder="Doctor specialization" required value="<?php echo htmlspecialchars($row['doctor_for']); ?>">
+        <form id="card-popup-form" action="../../ADMIN_CONTROLS/update_doctors.php" method="post">
+            <input type="hidden" name="id" value="<?php echo $row['doctor_id']; ?>">
+            <input id="docname" type="text" name="docname" class="card-input" placeholder="Doctor name" required value="<?php echo htmlspecialchars($row['doctor_name']); ?>">
 
-            <input type="number" name="docexp" class="card-input" placeholder="Experience" required value="<?php echo htmlspecialchars($row['exp']); ?>">
-            <input type="number" name="docfee" class="card-input" placeholder="Doctor Fee" required value="<?php echo htmlspecialchars($row['fee']); ?>">
+            <input id="docfor" type="text" name="docfor" class="card-input" placeholder="Doctor specialization" required value="<?php echo htmlspecialchars($row['doctor_for']); ?>">
+
+            <input id="docexp" type="number" name="docexp" class="card-input" placeholder="Experience" required value="<?php echo htmlspecialchars($row['exp']); ?>">
+            <input id="docfee" type="number" name="docfee" class="card-input" placeholder="Doctor Fee" required value="<?php echo htmlspecialchars($row['fee']); ?>">
+
+            <button type="submit" id="card-update">Update</button>
         </form>
             
     </div>
 
     <script src="../adminControlScript.js"></script>
     <script src="../confirm.js"></script>
-
-
+    <script src="../updateHandler.js"></script>
 
 
 </body>

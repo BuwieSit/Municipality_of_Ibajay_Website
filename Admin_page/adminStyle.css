@@ -11,6 +11,16 @@ body {
     float: right;
     z-index: -5;
     color: white;
+    font-family: var(--title-font);
+    font-size: 25px;
+}
+.titles {
+    width: 80%;
+    float: right;
+    z-index: -5;
+    color: white;
+    font-family: var(--title-font);
+    font-size: 20px;
 }
 .side-nav {
     overflow: hidden;
@@ -493,13 +503,21 @@ body {
     font-size: 25px;
 }
 #card-spec {
-
+    font-style: italic;
+    font-weight: 600;
+    border: 1px solid black;
+    background: linear-gradient(to bottom right, var(--lightYellow), var(--lightGreen));
+    padding: 10px;
+    border-radius: 10px;
 }
-#card-exp {
-
+#card-exp::after {
+    content: " year/s";
+}
+#card-exp::before {
+    content: "Exp: ";
 }
 #card-fee {
-
+    text-decoration: underline;
 }
 
 .card-popup {
