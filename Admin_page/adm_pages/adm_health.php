@@ -61,30 +61,36 @@
 
 
         <div class="health-div">
-            <form class="add-doctors-form" method="post" action="../../ADMIN_CONTROLS/add_doctors.php" >
+            <form class="add-doctors-form" method="post" action="../../ADMIN_CONTROLS/add_doctors.php" enctype="multipart/form-data">
                 <label>
-                    Doctor Name
+                    Doctor's Picture
+                    <input type="file" id="docimage" name="docimage">
+                </label>
+                <label>
+                    Doctor's Name
                     <input type="text" id="docname" name="docname" placeholder="Doctor's Name" required>
                 </label>
 
                 <label>
-                    Doctor Specialization
+                    Doctor's Specialization
                     <input type="text" id="docfield" name="docfield" placeholder="Specialization" required>
                 </label>
 
                 <label>
-                    Experience
+                    Doctor's Experience
                     <input type="number" id="docexp" name="docexp" placeholder="Years of Experience" required>
                 </label>
 
                 <label>
-                    Fee
+                    Doctor's Fee
                     <input type="number" id="docfee" name="docfee" placeholder="Consultation Fee (₱)" required>
                 </label>
 
                 <button type="submit" id="docadd-btn">Add doctor</button>
             </form>
         </div>
+
+
     </div>
 
 <script src="../adminControlScript.js"></script>

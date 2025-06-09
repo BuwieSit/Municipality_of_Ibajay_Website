@@ -38,6 +38,18 @@
             </a>
         </div>
 
+      <img id="listIcon" src="../z-resources/list.png">
+      
+      <div class="mobile-nav">
+        <ul>
+          <a href="../About_page/about.html"><li>About</li></a>
+          <a href="../Services_page/services.html"><li>Services</li></a>
+          <a href="../News_page/news.php"><li>News</li></a>
+          <a href="../Contacts_page/contact.html"><li>Contacts</li></a>
+          <button id="accButton">Account</button>
+        </ul>
+      </div>
+
         <div class="nav-list">
             <ul>
                 <a href="../About_page/about.html"><li>About</li></a>

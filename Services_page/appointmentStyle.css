@@ -54,8 +54,10 @@ p {
   gap: 50px;
 
 }
-.docProfile {
-  width: 50px;
+#docProfile {
+  width: 70px;
+  aspect-ratio: 1;
+  object-fit: cover;
   
 }
 .doctor-info {

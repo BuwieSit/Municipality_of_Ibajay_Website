@@ -36,6 +36,18 @@
             </a>
         </div>
 
+        <img id="listIcon" src="../z-resources/list.png">
+        
+        <div class="mobile-nav">
+            <ul>
+                <a href="../About_page/about.html"><li>About</li></a>
+                <a href="../Services_page/services.html"><li>Services</li></a>
+                <a href="../News_page/news.php"><li>News</li></a>
+                <a href="../Contacts_page/contact.html"><li>Contacts</li></a>
+                <button id="accButton">Account</button>
+            </ul>
+        </div>
+
         <div class="nav-list">
             <ul>
                 <a href="../About_page/about.html"><li>About</li></a>
@@ -58,7 +70,13 @@
             data-docfee="<?php echo htmlspecialchars($row['fee'], ENT_QUOTES); ?>"
         >
           <div class="docleft-wrapper">
-            <img id="docProfile" src="" alt="doctor profile">
+            <img id="docProfile" 
+            src="../ADMIN_CONTROLS/doctor_images/<?php echo htmlspecialchars($row['doctor_image'] 
+            ?? 'default_image.png', ENT_QUOTES); ?>" 
+            alt="doctor profile" 
+            onerror="this.src='../ADMIN_CONTROLS/doctor_images/default_image.png'">
+
+
             <div class="doctor-info">
               <h4 id="docname"><?php echo htmlspecialchars($row['doctor_name'], ENT_QUOTES); ?></h4>
               <p id="docpost"><?php echo htmlspecialchars($row['doctor_for'], ENT_QUOTES); ?></p>

@@ -3,6 +3,20 @@
 // })
 
 window.addEventListener('DOMContentLoaded', () => {
+    
+    const mobileIcon = document.getElementById('listIcon');
+    const mobileNav = document.querySelector('.mobile-nav');
+
+    mobileIcon.addEventListener('click', () => {
+        if (mobileNav.style.opacity == '0') {
+            mobileNav.style.opacity = '1';
+            mobileNav.style.pointerEvents = 'all';
+        }
+        else {
+            mobileNav.style.opacity = '0';
+            mobileNav.style.pointerEvents = 'none';
+        }
+    });
 
     const slider = document.querySelector('.slider');
     const toggleBtn = document.querySelector('.toggle');
@@ -80,20 +94,21 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-let count = 0; 
+    let count = 0; 
 
-const admin_acc = document.querySelector('.admin-access');
+    const admin_acc = document.querySelector('.admin-access');
 
-admin_acc.addEventListener('click', () => {
-    count += 1; 
-    console.log(count);
+    admin_acc.addEventListener('click', () => {
+        count += 1; 
+        console.log(count);
 
-    if (count > 5) {
-        alert('admin login accessed');
-        window.location.href = './admin.php';
-        count = 0;
-    }
-});
+        if (count > 5) {
+            alert('admin login accessed');
+            window.location.href = './admin.php';
+            count = 0;
+        }
+    });
+
 
    
 });

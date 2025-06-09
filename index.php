@@ -35,6 +35,17 @@
           
         </a>
       </div>
+      <img id="listIcon" src="./z-resources/list.png">
+      
+      <div class="mobile-nav">
+        <ul>
+          <a href="About_page/about.html"><li>About</li></a>
+          <a href="Services_page/services.html"><li>Services</li></a>
+          <a href="News_page/news.php"><li>News</li></a>
+          <a href="Contacts_page/contact.html"><li>Contacts</li></a>
+          <button id="accButton">Account</button>
+        </ul>
+      </div>
 
       <div class="nav-list">
         <ul>
@@ -212,7 +223,11 @@
             </ul>
           </section>
         </div>
-        <div class="footer-column">
+        <div class="footer-column terms-policy">
+          <section class="logo-text mobile-logo">
+            <img src="../z-resources/ibajay_logo.png" />
+            <h1 id="footerTitle">Municipality of Ibajay</h1>
+          </section>
             <div class="terms-wrapper">
               <a><p>Terms of Service</p></a>
               <a><p>Privacy Policy</p></a>

@@ -241,7 +241,7 @@ body {
     position: absolute;
     top: 80%;
     right: 52%;
-    z-index: 100;
+    z-index: 90;
     width: 300px;
     max-width: 30%;
     display: flex;
@@ -290,7 +290,7 @@ body {
 }
 
 
-@media screen and (max-width: 999px){
+@media screen and (max-width: 1000px){
     
     header{
         padding-left: 50px;
@@ -301,7 +301,7 @@ body {
     }
 
     .content .title, .content .name{
-        font-size: 70px;
+        font-size: 1rem;
     }
 
     .content .des{
@@ -321,7 +321,7 @@ body {
     }
 
     .content .title, .content .name{
-        font-size: 45px;
+        font-size: 1rem;
     }
 
     .content .btn button{
@@ -500,4 +500,54 @@ body {
     width: 70px;
     aspect-ratio: 1;
     object-fit: cover;
+}
+
+
+@media screen and (max-width: 1000px) {
+
+    .main-title {
+        font-size: 4rem;
+    }
+    .hotlines-container {
+        margin-bottom: 100%;
+        height: 1000px;
+    }
+    .hotlines {
+        width: 80%;
+    }
+    .hotlines-container > h1 {
+        font-size: 2rem;
+        margin-bottom: 2%;
+    }
+    .hotlines > section > ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .carousel-wrapper {
+        transition: all 0.3s ease;
+        transform-style: preserve-3d;
+        transform: perspective(1000px) rotateX(-15deg);
+        animation: rotating 30s linear ;
+        animation-timeline: view(-10% 0%);
+
+    }
+    .carousel-content {
+        text-align: center;
+    }
+    .carousel-content > h1 {
+        font-size: 4rem;
+        
+    }
+
+    .image-container {
+    transform: 
+        rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg ))
+        translateZ(550px)
+        scale(0.5);
+
+    }
 }
