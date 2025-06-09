@@ -36,14 +36,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id'])) {
         const description = document.getElementById('description');
         let isDirty = false;
 
-        // Detect changes
+
         [headline, description].forEach(input => {
             input.addEventListener('input', () => {
                 isDirty = true;
             });
         });
 
-        // Confirm before form submission
+   
         form.addEventListener('submit', function(e) {
             if (!headline.value.trim() || !description.value.trim()) {
                 e.preventDefault();
@@ -55,11 +55,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id'])) {
             if (!confirmUpdate) {
                 e.preventDefault();
             } else {
-                isDirty = false; // Allow page unload
+                isDirty = false; 
             }
         });
 
-        // Warn on close if unsaved
+
         window.addEventListener("beforeunload", function(e) {
             if (isDirty) {
                 e.preventDefault();

@@ -9,6 +9,18 @@
 //     while($row = mysqli_fetch_assoc($result)) {
 //       $bookings[] = $row;
 //   }
+      $doctorInfo = [];
+        while($row = mysqli_fetch_assoc($result)) {
+            $doctorInfo[] = $row;
+        }
+
+        
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id'])) {
+        $id = intval($_POST['id']);
+        $sql = "SELECT * FROM doctors_list WHERE doctor_id = $id";
+        $result = mysqli_query($conn, $sql);
+        $news = mysqli_fetch_assoc($result);
+    }
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +60,7 @@
 
     <div class="health-main-cont">
 
-        <div class="book-list">
+        <div class="listings book-list">
 
             <div class="booking">
                 <div class="sched-time"><p>8 am</p></div>
@@ -59,6 +71,7 @@
             </div>
         </div>
 
+        <h2>Healthcare Doctors/Appointments</h2>
 
         <div class="health-div">
             <form class="add-doctors-form" method="post" action="../../ADMIN_CONTROLS/add_doctors.php" enctype="multipart/form-data">
@@ -90,10 +103,60 @@
             </form>
         </div>
 
+        <div class="listings doctor-list">
+
+            <?php foreach($doctorInfo as $row ): ?> 
+            <div class="doc-card"
+                data-docname="<?php echo htmlspecialchars($row['doctor_name'], ENT_QUOTES); ?>"  
+                data-docfor="<?php echo htmlspecialchars($row['doctor_for'], ENT_QUOTES); ?>"
+                data-docexp="<?php echo htmlspecialchars($row['exp'], ENT_QUOTES); ?>"
+                data-docfee="<?php echo htmlspecialchars($row['fee'], ENT_QUOTES); ?>"
+                >
+
+                <div class="card-options">
+                    <form action="../../ADMIN_CONTROLS/delete_doctors.php" method="post" onsubmit="return confirmDelete()">
+                        <input type="hidden" name="id" value="<?php echo $row['doctor_id']; ?>">
+                        <button type="submit" class="card-buttons"><img src="../../admin-resources/trash.png"></button>
+                    </form>
+
+
+                    <button class="card-buttons" id="editBtn"><img src="../../admin-resources/edit.png"></button>
+
+                </div>
+
+                <img id="docProfile" 
+                src="../../ADMIN_CONTROLS/doctor_images/<?php echo htmlspecialchars($row['doctor_image'] 
+                ?? 'default_image.png', ENT_QUOTES); ?>" 
+                alt="doctor profile" 
+                onerror="this.src='../../ADMIN_CONTROLS/doctor_images/default_image.png'">
+
+                <h3 id="card-name"><?php echo htmlspecialchars($row['doctor_name'], ENT_QUOTES); ?></h3>
+                <p id="card-spec"><?php echo htmlspecialchars($row['doctor_for'], ENT_QUOTES); ?></p>
+                <p id="card-exp"><?php echo htmlspecialchars($row['exp'], ENT_QUOTES); ?></p>
+                <p id="card-fee">₱<?php echo htmlspecialchars($row['fee'], ENT_QUOTES); ?></p>
+            </div>
+            <?php endforeach; ?> 
+        </div>
 
     </div>
 
-<script src="../adminControlScript.js"></script>
+    <div class="card-popup">
+        <img src="../../admin-resources/close.png" alt="close" id="closeBtn">
+        <form id="card-popup-form">
+            <input type="hidden" name="id" value="<?php echo $news['doctor_id']; ?>">
+            <input type="text" name="docname" class="card-input" placeholder="Doctor name" required value="<?php echo htmlspecialchars($row['doctor_name']); ?>">
+
+            <input type="text" name="docfor" class="card-input" placeholder="Doctor specialization" required value="<?php echo htmlspecialchars($row['doctor_for']); ?>">
+
+            <input type="number" name="docexp" class="card-input" placeholder="Experience" required value="<?php echo htmlspecialchars($row['exp']); ?>">
+            <input type="number" name="docfee" class="card-input" placeholder="Doctor Fee" required value="<?php echo htmlspecialchars($row['fee']); ?>">
+        </form>
+            
+    </div>
+
+    <script src="../adminControlScript.js"></script>
+    <script src="../confirm.js"></script>
+
 
 
 
