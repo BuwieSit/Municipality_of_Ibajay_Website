@@ -21,14 +21,16 @@ boxes.forEach(box => {
   box.addEventListener('click', () => {
     const imgSrc = box.querySelector('img').src;
     const title = box.querySelector('h1').innerText;
+    const description = box.getAttribute('data-description') || `More information about ${title} will go here.`; // fallback
 
     updatePanelImage(imgSrc);
     panelTitle.innerText = title;
-    panelDesc.innerText = `More information about ${title} will go here. You can customize this text.`;
+    panelDesc.innerText = description;
 
     panel.classList.add('open');
   });
 });
+
 
 closeBtn.addEventListener('click', () => {
   panel.classList.remove('open');

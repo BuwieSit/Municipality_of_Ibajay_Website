@@ -410,37 +410,44 @@ body {
 .tourism-panel {
   position: fixed;
   top: 0;
-  left: -100%; 
-  width: 400px;
+  left: 0;
+  width: 100%;
   height: 100%;
-  z-index: 9999; 
-  overflow-y: auto;
-  transition: left 0.4s ease;
-
-  background-color: var(--darkBlue);
-  box-shadow: -10px 0px 10px black;
+  background: rgba(10, 10, 20, 0.8); 
   display: flex;
-  transition: all 0.5s ease;
-  color: white; 
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); 
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
 }
 
 .tourism-panel.open {
-  left: 0;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .tourism-panel-content {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
   padding: 20px;
+  width: 90%;
+  max-width: 500px;
+  backdrop-filter: blur(12px);
+  color: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  position: relative;
+  text-align: center;
 }
 
-/* POPUP FOR THE BOTTOM IMAGES */
 .tourism-panel img {
   width: 100%;
   max-height: 250px;
   object-fit: cover;
   border-radius: 10px;
-
-  opacity: 0; 
+  opacity: 0;
   transition: opacity 0.6s ease-in-out;
 }
 
@@ -450,23 +457,31 @@ body {
 
 .panel-text {
   margin-top: 15px;
-  background: rgba(0, 0, 0, 0.4);
-  padding: 10px;
-  border-radius: 6px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.05);
 }
-
 
 .close-btn {
   position: absolute;
   top: 10px;
   right: 15px;
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+  background: rgba(0, 0, 0, 0.3);
+  padding: 6px 10px;
+  border-radius: 50%;
   cursor: pointer;
   user-select: none;
+  transition: background 0.3s;
 }
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
 
 .image-container {
   position: relative;
@@ -512,4 +527,21 @@ body {
   font-weight: bold;
   position: relative;
   z-index: 1;
+}
+
+.resizable-box {
+  resize: both;
+  overflow: auto;
+  min-width: 250px;
+  min-height: 250px;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.resizable-box * {
+  max-width: 100%;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  font-size: clamp(0.8rem, 1.2vw, 1rem);
 }
