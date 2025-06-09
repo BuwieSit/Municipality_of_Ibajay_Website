@@ -68,7 +68,7 @@
 
           <div class="docright-wrapper">
             <div class="schedule-cont">
-                <h4 id="schedtitle">Earliest Available Schedule</h4>
+                <h4 id="schedtitle">Doctor's Fee</h4>
                 <p id="docfee">₱<?php echo htmlspecialchars($row['fee'], ENT_QUOTES); ?></p>
             </div>  
             
