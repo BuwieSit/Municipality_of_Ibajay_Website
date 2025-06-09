@@ -27,7 +27,7 @@
     <div class="loader"></div>
     <header>
       <div class="header-logo-cont">
-        <a href="index.html">
+        <a href="index.php">
           <div class="left-wrapper">
             <img src="../z-resources/ibajay_logo.png" />
             <h1 id="headerTitle">Municipality of Ibajay</h1>

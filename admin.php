@@ -56,7 +56,7 @@ unset($_SESSION['unique']);
               <span class="error"><?php echo $password_error;?></span>
             </div>
             <button type="submit" class="sign-button" name="signIn">Sign in</button>
-            <a href="index.html"><sub id="adminText"></sub></a>
+            <a href="index.php"><sub id="adminText"></sub></a>
           </form>
           
       </div>
