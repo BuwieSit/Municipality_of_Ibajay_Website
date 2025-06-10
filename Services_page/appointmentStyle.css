@@ -78,7 +78,7 @@ p {
   gap: 50px;
 
 }
-#appoint-btn {
+.appoint-btn {
   height: 100%;
   width: 50%;
   padding: 5%;
@@ -92,7 +92,7 @@ p {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-#appoint-btn:hover {
+.appoint-btn:hover {
   background-color: var(--blueGreen);
 
 }
@@ -176,6 +176,9 @@ p {
 input::placeholder, input, select {
   color: white;
 }
+option {
+  color: black;
+}
 
 #bookBtn {
   width: 50%;
@@ -183,4 +186,21 @@ input::placeholder, input, select {
   font-family: var(--subtitle-font);
   font-weight: 600;
   font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 } 
+#bookBtn:hover {
+  background-color: #cacaca;
+}
+.backBtn {
+  width: 40px;
+  position: absolute;
+  top: 3%;
+  left: 3%;
+  z-index: 10;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.backBtn:hover {
+  transform: scale(1.1);
+}

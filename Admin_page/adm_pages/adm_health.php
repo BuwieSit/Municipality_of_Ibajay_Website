@@ -5,15 +5,10 @@
     $sql = "SELECT * FROM doctors_list";
     $result = mysqli_query($conn, $sql);
 
-//     $bookings = [];
-//     while($row = mysqli_fetch_assoc($result)) {
-//       $bookings[] = $row;
-//   }
-      $doctorInfo = [];
+    $doctorInfo = [];
         while($row = mysqli_fetch_assoc($result)) {
             $doctorInfo[] = $row;
         }
-
         
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id'])) {
         $id = intval($_POST['id']);
@@ -21,6 +16,16 @@
         $result = mysqli_query($conn, $sql);
         $doctorInfo = mysqli_fetch_assoc($result);
     }
+
+
+    $list = 'SELECT * FROM book_list ORDER BY date';
+    $list_result = mysqli_query($conn, $list);
+
+    $bookList = [];
+    while($bookRow = mysqli_fetch_assoc($list_result)) {
+        $bookList[] = $bookRow;
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -65,14 +70,40 @@
         </div>
         
         <div class="listings book-list">
+            
+        <?php foreach($bookList as $bookRow ): ?> 
+            <div class="booking"
+                data-doctor="<?php echo htmlspecialchars($bookRow['doctor_booked'], ENT_QUOTES); ?>"  
+                data-fname="<?php echo htmlspecialchars($bookRow['first_name'], ENT_QUOTES); ?>" 
+                data-lname="<?php echo htmlspecialchars($bookRow['last_name'], ENT_QUOTES); ?>" 
+                data-number="<?php echo htmlspecialchars($bookRow['phone_number'], ENT_QUOTES); ?>" 
+                data-email="<?php echo htmlspecialchars($bookRow['email'], ENT_QUOTES); ?>" 
+            >
+                <div class="book-div sched-time"><p id="time"><?php echo date('g:i a', strtotime($bookRow['time'])); ?></p></div>
 
-            <div class="booking">
-                <div class="sched-time"><p>8 am</p></div>
-                <div class="doctor-info">
-                    <h4>Doctor name</h4>
-                    <p>specialization</p>
+                <div class="book-div doctor-info">
+
+                    <img id="docProfile" class="doctor-prof"
+                    src="../../ADMIN_CONTROLS/doctor_images/<?php echo htmlspecialchars($row['doctor_image'] 
+                    ?? 'default_image.png', ENT_QUOTES); ?>" 
+                    alt="doctor profile" 
+                    onerror="this.src='../../ADMIN_CONTROLS/doctor_images/default_image.png'">
+
+                    <h4><?php echo htmlspecialchars($bookRow['doctor_booked'], ENT_QUOTES); ?></h4>
+                </div>
+
+                <div class="book-div client-details">
+                    <img src="../../admin-resources/patient.png" alt="patient" id="patientImg">
+                    <h4><?php echo htmlspecialchars($bookRow['first_name'], ENT_QUOTES) . ' ' . htmlspecialchars($bookRow['last_name'], ENT_QUOTES);  ?> </h4>
+                    <p><?php echo htmlspecialchars($bookRow['phone_number'], ENT_QUOTES); ?></p>
+                    <p><?php echo htmlspecialchars($bookRow['email'], ENT_QUOTES); ?></p> 
+                </div>
+                <div class="book-div date-sched">
+                        <p id="date"><?php echo date('F j, Y', strtotime($bookRow['date'])); ?></p>
                 </div>
             </div>
+
+            <?php endforeach; ?> 
         </div>
 
         <div class="titles">
@@ -127,9 +158,7 @@
                         <button type="submit" class="card-buttons"><img src="../../admin-resources/trash.png"></button>
                     </form>
 
-
                     <button class="card-buttons" id="editBtn"><img src="../../admin-resources/edit.png"></button>
-
                 </div>
 
                 <img id="docProfile" 
@@ -166,6 +195,18 @@
             
     </div>
 
+    <div class="confirm-box del-booking">
+            <p>Remove booking?</p>
+            <div class="wrapper">
+                <form id="confirm-form" action="../../ADMIN_CONTROLS/remove_booking.php" method="post">
+
+                    <input type="hidden" name="id" value="<?php echo $bookRow['book_id']; ?>">
+                    <button type="submit" class="confirm-buttons conf-yes">Yes, delete</button>
+
+                </form>
+                <button class="confirm-buttons conf-can">Cancel</button>
+            </div>
+    </div>
     <script src="../adminControlScript.js"></script>
     <script src="../confirm.js"></script>
     <script src="../updateHandler.js"></script>
