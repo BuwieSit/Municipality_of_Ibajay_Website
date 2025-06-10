@@ -77,7 +77,8 @@
                 data-fname="<?php echo htmlspecialchars($bookRow['first_name'], ENT_QUOTES); ?>" 
                 data-lname="<?php echo htmlspecialchars($bookRow['last_name'], ENT_QUOTES); ?>" 
                 data-number="<?php echo htmlspecialchars($bookRow['phone_number'], ENT_QUOTES); ?>" 
-                data-email="<?php echo htmlspecialchars($bookRow['email'], ENT_QUOTES); ?>" 
+                data-email="<?php echo htmlspecialchars($bookRow['email'], ENT_QUOTES); ?>"
+                data-id="<?= $bookRow['book_id'] ?>" 
             >
                 <div class="book-div sched-time"><p id="time"><?php echo date('g:i a', strtotime($bookRow['time'])); ?></p></div>
 
@@ -103,7 +104,8 @@
                 </div>
             </div>
 
-            <?php endforeach; ?> 
+        <?php endforeach; ?> 
+            
         </div>
 
         <div class="titles">
@@ -196,17 +198,17 @@
     </div>
 
     <div class="confirm-box del-booking">
-            <p>Remove booking?</p>
-            <div class="wrapper">
-                <form id="confirm-form" action="../../ADMIN_CONTROLS/remove_booking.php" method="post">
-
-                    <input type="hidden" name="id" value="<?php echo $bookRow['book_id']; ?>">
-                    <button type="submit" class="confirm-buttons conf-yes">Yes, delete</button>
-
-                </form>
-                <button class="confirm-buttons conf-can">Cancel</button>
-            </div>
+        <p>Remove booking?</p>
+        <div class="wrapper">
+            <form id="confirm-form" action="../../ADMIN_CONTROLS/remove_booking.php" method="post">
+                <input type="hidden" name="id" id="deleteBookingId">
+                <button type="submit" class="confirm-buttons conf-yes">Yes, delete</button>
+            </form>
+            <button class="confirm-buttons conf-can">Cancel</button>
+        </div>
     </div>
+
+    
     <script src="../adminControlScript.js"></script>
     <script src="../confirm.js"></script>
     <script src="../updateHandler.js"></script>

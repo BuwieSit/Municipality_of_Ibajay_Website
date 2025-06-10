@@ -1,3 +1,15 @@
+
+<?php
+    session_start();
+    include '../conn.php'; 
+
+    $sql = "SELECT * FROM news_table ORDER BY created_at DESC";
+    $result = mysqli_query($conn, $sql);
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,15 +48,20 @@
 
     <div class="main-container">
         <div class="overview-cont" id="announce-cont">
-            asdasd
+            <h1>News</h1>
+            <?php while($row = mysqli_fetch_assoc($result)): ?>
+                <div class="announce-list">
+                    <h2 class="headline-text"><?php echo htmlspecialchars($row['headline']); ?></h2>
+                    <small class="timestamp"><?php echo date('F j, Y, g:i a', strtotime($row['created_at'])); ?></small>
+                </div>
+            <?php endwhile; ?>
         </div>
-
         <div class="overview-cont" id="health-cont">
-            asdasdgsdgds
+            <h1>Healthcare</h1>
         </div>
 
         <div class="overview-cont" id="permit-cont">
-            12362345
+            <h1>Permits</h1>
         </div>
     </div>
 

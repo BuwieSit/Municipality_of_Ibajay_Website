@@ -36,7 +36,7 @@
 
                     $stmt->close();
                     $conn->close();
-                    header("Location: ./Admin_page/adminControl.html");
+                    header("Location: ./Admin_page/adminControl.php");
                     exit();
 
                 } else {

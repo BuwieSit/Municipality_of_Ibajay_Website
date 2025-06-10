@@ -9,9 +9,9 @@ const basePath = isInAdmPages ? "../" : "./";
 
 if (dashboard) {
     dashboard.addEventListener('click', () => {
-        window.location.href = `${basePath}adminControl.html`;
+        window.location.href = `${basePath}adminControl.php`;
     });
-    if (window.location.pathname.endsWith("adminControl.html")) {
+    if (window.location.pathname.endsWith("adminControl.php")) {
         dashboard.classList.add('selected');
     }
 }

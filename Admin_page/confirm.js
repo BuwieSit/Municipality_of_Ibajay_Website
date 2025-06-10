@@ -27,9 +27,15 @@ function confirmDelete() {
 const bookings = document.querySelectorAll('.booking');
 const box = document.querySelector('.confirm-box');
 const cancel = document.querySelector('.conf-can');
+const deleteInput = document.getElementById('deleteBookingId');
 
-bookings.forEach(book => {
-    book.addEventListener('click', () => {
+
+bookings.forEach(button => {
+    button.addEventListener('click', (e) => {
+        e.preventDefault(); 
+        const bookingId = button.getAttribute('data-id');
+        deleteInput.value = bookingId;
+
         box.style.opacity = '1';
         box.style.pointerEvents = 'all';
     });
