@@ -3,9 +3,14 @@
 function changeText(clickedElement) {
   const permit = clickedElement.querySelector('.permit-text');
   const popup_text = document.querySelector('.popup-text');
+  const hiddenPermitInput = document.getElementById('permitTypeInput'); // Get the hidden input
 
   if (permit && popup_text) {
-    popup_text.textContent = permit.textContent.trim();
+    const text = permit.textContent.trim();
+    popup_text.textContent = text;
+    if (hiddenPermitInput) {
+      hiddenPermitInput.value = text; // Store in form for submission
+    }
   }
 }
 

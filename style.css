@@ -135,7 +135,7 @@ body {
     width: 70vw;      
     text-align: left;
     color: #fff;
-    display: none;
+    display: block;
     word-wrap: break-word;
     overflow-wrap: break-word;
 }
@@ -144,6 +144,7 @@ body {
     padding: 20px;
     border-radius: 10px;
     width: 30vw;
+
 }
 .list .item:nth-child(2) .content{
     display: block;

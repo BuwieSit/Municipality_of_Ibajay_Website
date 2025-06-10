@@ -244,13 +244,18 @@
 
           <!-- LOWER PART -->
           <div class="payment-container">
-            <form class="payment-form">
+            <form class="payment-form" action="../ADMIN_CONTROLS/payment.php" method="post">
               <label for="usernumber">Enter your number</label>
               <input type="text" id="userNumber" name="usernumber" placeholder="Your Number">
-              <label for="usernumber">Enter your email</label>
+              
+              <label for="email">Enter your email</label>
               <input type="email" id="email" name="email" placeholder="Email" autocomplete="off">
+
+              <input type="hidden" name="permit_type" id="permitTypeInput">
+              
               <button type="submit" id="payButton">Pay now!</button>
             </form>
+
             <div class="qrcode"></div>
              <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
           </div>

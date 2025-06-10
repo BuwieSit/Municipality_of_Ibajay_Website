@@ -14,29 +14,29 @@
         });
 
    
-        form.addEventListener('submit', function(e) {
+        // form.addEventListener('submit', function(e) {
         
-            // if (!docname.value.trim() || !docfor.value.trim() || !exp.value.trim() || !fee.value.trim() ) {
-            //     // e.preventDefault();
-            //     alert("Fields cannot be empty.");
-            //     return;
-            // }
+        //     if (!docname.value.trim() || !docfor.value.trim() || !exp.value.trim() || !fee.value.trim() ) {
+        //         e.preventDefault();
+        //         alert("Fields cannot be empty.");
+        //         return;
+        //     }
 
-            const confirmUpdate = confirm("Are you sure you want to apply these updates?");
-            if (!confirmUpdate) {
-                e.preventDefault();
-            } else {
-                isDirty = false; 
-            }
-        });
+        //     const confirmUpdate = confirm("Are you sure you want to apply these updates?");
+        //     if (!confirmUpdate) {
+        //         e.preventDefault();
+        //     } else {
+        //         isDirty = false; 
+        //     }
+        // });
 
 
-        window.addEventListener("beforeunload", function(e) {
-            if (isDirty) {
-                e.preventDefault();
-                e.returnValue = "You have unsaved changes. Are you sure you want to leave?";
-            }
-        });
+        // window.addEventListener("beforeunload", function(e) {
+        //     if (isDirty) {
+        //         e.preventDefault();
+        //         e.returnValue = "You have unsaved changes. Are you sure you want to leave?";
+        //     }
+        // });
 
     const editButtons = document.querySelectorAll('.editBtn');
     const allPopups = document.querySelectorAll('.card-popup');
