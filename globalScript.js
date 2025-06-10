@@ -4,39 +4,53 @@
 
 window.addEventListener('DOMContentLoaded', () => {
     
-    const mobileIcon = document.getElementById('listIcon');
-    const mobileNav = document.querySelector('.mobile-nav');
+        const screenWidth = window.innerWidth;
+        const slider = document.querySelector('.slider');
+        const toggleBtn = document.querySelector('.toggle');
+        const accountBtn = document.querySelectorAll('.accButton');
+        const popup = document.querySelector('.acc-popup');
+        const pleft = document.querySelector('.pleft');
+        const pright = document.querySelector('.pright');
 
-    mobileIcon.addEventListener('click', () => {
-        if (mobileNav.style.opacity == '0') {
-            mobileNav.style.opacity = '1';
-            mobileNav.style.pointerEvents = 'all';
-        }
-        else {
-            mobileNav.style.opacity = '0';
-            mobileNav.style.pointerEvents = 'none';
-        }
-    });
+    if (screenWidth <= '1000') {
+        console.log('screen');
+        const mobileIcon = document.querySelectorAll('.listIcon');
+        const mobileNav = document.querySelector('.mobile-nav');
 
-    const slider = document.querySelector('.slider');
-    const toggleBtn = document.querySelector('.toggle');
-    const accountBtn = document.getElementById('accButton');
-    const popup = document.querySelector('.acc-popup');
-    const pleft = document.querySelector('.pleft');
-    const pright = document.querySelector('.pright');
+        mobileIcon.forEach(icon => {
+            icon.addEventListener('click', () => {
+                console.log('clicking');
+                if (mobileNav.style.opacity == '0') {
+                    mobileNav.style.opacity = '1';
+                    mobileNav.style.pointerEvents = 'all';
+                }
+                else {
+                    mobileNav.style.opacity = '0';
+                    mobileNav.style.pointerEvents = 'none';
+                }
+            });
+        });
+
+    }
+        accountBtn.forEach(btn => {
+            console.log('clicked');
+
+            btn.addEventListener('click', () => {
+                if (popup.style.opacity == '0') {
+                    popup.style.opacity = '1';
+                    popup.style.pointerEvents = 'all';
+                }
+                else {
+                    popup.style.opacity = '0';
+                    popup.style.pointerEvents = 'none';
+                }
+
+            });
+
+        });
 
 
-    accountBtn.addEventListener('click', () => {
-        if (popup.style.opacity == '0') {
-            popup.style.opacity = '1';
-            popup.style.pointerEvents = 'all';
-        }
-        else {
-            popup.style.opacity = '0';
-            popup.style.pointerEvents = 'none';
-        }
-        
-    });
+
 
     toggleBtn.textContent = 'why subscribe?';
 

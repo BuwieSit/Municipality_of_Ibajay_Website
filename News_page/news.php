@@ -38,7 +38,7 @@
             </a>
         </div>
 
-      <img id="listIcon" src="../z-resources/list.png">
+       <img class="listIcon" src="./z-resources/list.png">
       
       <div class="mobile-nav">
         <ul>
@@ -46,19 +46,19 @@
           <a href="../Services_page/services.html"><li>Services</li></a>
           <a href="../News_page/news.php"><li>News</li></a>
           <a href="../Contacts_page/contact.html"><li>Contacts</li></a>
-          <button id="accButton">Account</button>
+          <button class="accButton">Account</button>
         </ul>
       </div>
 
-        <div class="nav-list">
-            <ul>
-                <a href="../About_page/about.html"><li>About</li></a>
-                <a href="../Services_page/services.html"><li>Services</li></a>
-                <a href="../News_page/news.php"><li><span class="underline">News</span></li></a>
-                <a href="../Contacts_page/contact.html"><li>Contacts</li></a>
-                <button id="accButton">Account</button>
-            </ul>
-        </div>
+      <div class="nav-list">
+        <ul>
+          <a href="../About_page/about.html"><li>About</li></a>
+          <a href="../Services_page/services.html"><li>Services</li></a>
+          <a href="../News_page/news.php"><li>News</li></a>
+          <a href="../Contacts_page/contact.html"><li>Contacts</li></a>
+          <button class="accButton">Account</button>
+        </ul>
+      </div>
     </header>    
 
     <div class="navsnews">
@@ -184,20 +184,12 @@
           <img src="../z-resources/ibajay_logo.png" />
           <h1 id="headerTitle">Municipality of Ibajay</h1>
         </div>
-        <button class="sign-button log-button toggle">
-          <p>Login</p>
-        </button>
-        <a href="../admin.html"><sub id="adminText">sign in as admin?</sub></a>
+        <button class="sign-button log-button toggle"></button>
+        <img class="admin-access" src="../z-resources/admin.png" alt="adm">
       </div>
+
       <div class="popup-wrapper pleft">
         <form class="popup-form reg-form" autocomplete="off">
-          <input
-            type="text"
-            id="username"
-            name="username"
-            placeholder="username"
-            required
-          />
 
           <input
             type="email"
@@ -207,37 +199,13 @@
             required
           />
 
-          <input
-            type="password"
-            id="password"
-            name="password"
-            placeholder="password"
-            required
-          />
-
-          <button type="submit" class="sign-button reg-button">Sign up</button>
+          <button type="submit" class="sign-button reg-button">Subscribe</button>
         </form>
       </div>
       <div class="popup-wrapper pright">
-        <form class="popup-form login-form" autocomplete="off">
-          <input
-            type="text"
-            id="username"
-            name="username"
-            placeholder="username"
-            required
-          />
-          <input
-            type="password"
-            id="password"
-            name="password"
-            placeholder="password"
-            required
-          />
-
-          <button type="submit" class="sign-button reg-button">Sign in</button>
-          <p class="forgot-pass">Forgot password?</p>
-        </form>
+        <div class="text-container">
+          <p>Subscribe to our newsletter for updates about the Municipality of Ibajay, Aklan's events, recommended destinations, new handicrafts, local delicacies, available services, etc. </p>
+          </div>
       </div>
     </div>
 

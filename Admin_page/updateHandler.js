@@ -17,7 +17,7 @@
         form.addEventListener('submit', function(e) {
         
             // if (!docname.value.trim() || !docfor.value.trim() || !exp.value.trim() || !fee.value.trim() ) {
-            //     e.preventDefault();
+            //     // e.preventDefault();
             //     alert("Fields cannot be empty.");
             //     return;
             // }
@@ -37,4 +37,35 @@
                 e.returnValue = "You have unsaved changes. Are you sure you want to leave?";
             }
         });
-   
+
+    const editButtons = document.querySelectorAll('.editBtn');
+    const allPopups = document.querySelectorAll('.card-popup');
+    const closeButtons = document.querySelectorAll('.closeBtn');
+
+    editButtons.forEach(btn => {
+        btn.addEventListener('click', function () {
+            const doctorCard = btn.closest('.doc-card');
+            const docId = doctorCard.getAttribute('data-docid');
+
+    
+            allPopups.forEach(popup => {
+                popup.style.opacity = '0';
+                popup.style.pointerEvents = 'none';
+            });
+
+
+            const popupToShow = document.querySelector(`.card-popup[data-docid='${docId}']`);
+            if (popupToShow) {
+                popupToShow.style.opacity = '1';
+                popupToShow.style.pointerEvents = 'all';
+            }
+        });
+    });
+
+
+    closeButtons.forEach(closeBtn => {
+        closeBtn.addEventListener('click', () => {
+            closeBtn.closest('.card-popup').style.opacity = '0';
+            closeBtn.closest('.card-popup').style.pointerEvents = 'none';
+        });
+    });

@@ -140,7 +140,9 @@ body {
     overflow-wrap: break-word;
 }
 .content {
-
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 10px;
     width: 30vw;
 }
 .list .item:nth-child(2) .content{

@@ -15,9 +15,6 @@ const card = document.querySelector('.card-popup');
 
     });
 
- 
-
-
     addNews.addEventListener('click', () => {
         popup.style.opacity = '1';
         popup.style.pointerEvents = 'all';

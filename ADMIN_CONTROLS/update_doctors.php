@@ -5,11 +5,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = intval($_POST['id']);
     $docname = trim($_POST['docname']);
     $docspec = trim($_POST['docfor']);
-    $docexp = trim($_POST['docexp']);
-    $docfee = trim($_POST['docfee']);
+    $docexp = intval($_POST['docexp']);
+    $docfee = intval($_POST['docfee']);
 
+
+    if (!isset($_POST['id']) || !is_numeric($_POST['id'])) {
+        echo "Invalid ID.";
+        exit;
+    }
     if ($docname === '' || $docspec === '' || $docexp === '' || $docfee === '') {
         echo "Error: Fields cannot be empty";
+        exit;
+    }
+
+    if ($docexp < 0 || $docfee < 0) {
+        echo "Experience and fee must be non-negative.";
         exit;
     }
 

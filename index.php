@@ -35,7 +35,7 @@
           
         </a>
       </div>
-      <img id="listIcon" src="./z-resources/list.png">
+      <img class="listIcon" src="./z-resources/list.png">
       
       <div class="mobile-nav">
         <ul>
@@ -43,7 +43,7 @@
           <a href="Services_page/services.html"><li>Services</li></a>
           <a href="News_page/news.php"><li>News</li></a>
           <a href="Contacts_page/contact.html"><li>Contacts</li></a>
-          <button id="accButton">Account</button>
+          <button class="accButton">Account</button>
         </ul>
       </div>
 
@@ -53,9 +53,10 @@
           <a href="Services_page/services.html"><li>Services</li></a>
           <a href="News_page/news.php"><li>News</li></a>
           <a href="Contacts_page/contact.html"><li>Contacts</li></a>
-          <button id="accButton">Account</button>
+          <button class="accButton">Account</button>
         </ul>
       </div>
+
     </header>
 
 
@@ -258,7 +259,7 @@
     <div class="acc-popup">
       <div class="slider">
         <div class="slider-wrapper">
-          <img src="../z-resources/ibajay_logo.png" />
+          <img src="./z-resources/ibajay_logo.png" />
           <h1 id="headerTitle">Municipality of Ibajay</h1>
         </div>
         <button class="sign-button log-button toggle"></button>

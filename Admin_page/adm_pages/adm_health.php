@@ -69,7 +69,7 @@
             <h2>Healthcare Appointments</h2>
         </div>
         
-        <div class="listings book-list">
+    <div class="listings book-list">
             
         <?php foreach($bookList as $bookRow ): ?> 
             <div class="booking"
@@ -152,6 +152,7 @@
                 data-docfor="<?php echo htmlspecialchars($row['doctor_for'], ENT_QUOTES); ?>"
                 data-docexp="<?php echo htmlspecialchars($row['exp'], ENT_QUOTES); ?>"
                 data-docfee="<?php echo htmlspecialchars($row['fee'], ENT_QUOTES); ?>"
+                data-docid="<?php echo $row['doctor_id']; ?>"
                 >
 
                 <div class="card-options">
@@ -160,7 +161,7 @@
                         <button type="submit" class="card-buttons"><img src="../../admin-resources/trash.png"></button>
                     </form>
 
-                    <button class="card-buttons" id="editBtn"><img src="../../admin-resources/edit.png"></button>
+                    <button class="card-buttons editBtn" id="editBtn"><img src="../../admin-resources/edit.png"></button>
                 </div>
 
                 <img id="docProfile" 
@@ -179,11 +180,13 @@
         </div>
 
     </div>
+<?php foreach ($doctorInfo as $row): ?>
 
-    <div class="card-popup">
-        <img src="../../admin-resources/close.png" alt="close" id="closeBtn">
+    <div class="card-popup" data-docid="<?php echo $row['doctor_id']; ?>">
+        <img src="../../admin-resources/close.png" alt="close" id="closeBtn" class="closeBtn">
 
-        <form id="card-popup-form" action="../../ADMIN_CONTROLS/update_doctors.php" method="post">
+        <form id="card-popup-form" action="../../ADMIN_CONTROLS/update_doctors.php" method="post"
+        >   
             <input type="hidden" name="id" value="<?php echo $row['doctor_id']; ?>">
             <input id="docname" type="text" name="docname" class="card-input" placeholder="Doctor name" required value="<?php echo htmlspecialchars($row['doctor_name']); ?>">
 
@@ -196,7 +199,7 @@
         </form>
             
     </div>
-
+<?php endforeach; ?>
     <div class="confirm-box del-booking">
         <p>Remove booking?</p>
         <div class="wrapper">
