@@ -14,6 +14,14 @@
         $bookList[] = $bookRow;
     }
 
+    $permitList= 'SELECT * FROM payments ORDER BY request_at';
+    $permitList_result = mysqli_query($conn, $permitList);
+
+    $reqList = [];
+    while($reqRow = mysqli_fetch_assoc($permitList_result)) {
+        $reqList[] = $reqRow;
+    }
+
 ?>
 
 
@@ -105,6 +113,24 @@
 
         <div class="overview-cont" id="permit-cont">
             <h1>Permits</h1>
+                <?php foreach($reqList as $reqRow ): ?>
+
+            <div class="request"
+                data-doctor="<?php echo htmlspecialchars($reqRow['permit_type'], ENT_QUOTES); ?>" 
+            >
+                <div class="req-wrapper">
+                    <h4><?php echo htmlspecialchars($reqRow['permit_type']); ?></h4>
+                </div>
+                <div class="req-wrapper">
+                    <p><?php echo htmlspecialchars($reqRow['usernumber']); ?></p>
+                </div>
+                <div class="req-wrapper">
+                    <p><?php echo htmlspecialchars($reqRow['email']); ?></p>
+                </div>
+
+            </div>
+
+        <?php endforeach; ?> 
         </div>
     </div>
 

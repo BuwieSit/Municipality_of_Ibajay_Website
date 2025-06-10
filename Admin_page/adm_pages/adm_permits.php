@@ -1,3 +1,19 @@
+<?php 
+
+    session_start();
+    include '../../conn.php';
+
+    $list = 'SELECT * FROM payments ORDER BY request_at';
+    $list_result = mysqli_query($conn, $list);
+
+    $reqList = [];
+    while($reqRow = mysqli_fetch_assoc($list_result)) {
+        $reqList[] = $reqRow;
+    }
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,6 +48,27 @@
     <header class="head">
         <h2>Permit Requests</h2>
     </header>
+
+    <div class="requests-cont">
+        <?php foreach($reqList as $reqRow ): ?>
+
+        <div class="request"
+            data-doctor="<?php echo htmlspecialchars($reqRow['permit_type'], ENT_QUOTES); ?>" 
+        >
+            <div class="req-wrapper">
+                <h4><?php echo htmlspecialchars($reqRow['permit_type']); ?></h4>
+            </div>
+            <div class="req-wrapper">
+                <p><?php echo htmlspecialchars($reqRow['usernumber']); ?></p>
+            </div>
+            <div class="req-wrapper">
+                <p><?php echo htmlspecialchars($reqRow['email']); ?></p>
+            </div>
+
+        </div>
+
+        <?php endforeach; ?> 
+    </div>
 
 <script src="../adminControlScript.js"></script>
 
