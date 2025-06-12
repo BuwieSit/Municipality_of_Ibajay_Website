@@ -24,7 +24,7 @@ function routing() {
       <ul>
         <a href="${prefix}About_page/about.html"><li>About</li></a>
         <a href="${prefix}Services_page/services.html"><li>Services</li></a>
-        <a href="${prefix}News_page/news.php"><li>News</li></a>
+        <a href="${prefix}News_page/news.html"><li>News</li></a>
         <a href="${prefix}Contacts_page/contact.html"><li>Contacts</li></a>
         <button class="accButton">Account</button>
       </ul>
@@ -34,7 +34,7 @@ function routing() {
       <ul>
         <a href="${prefix}About_page/about.html"><li>About</li></a>
         <a href="${prefix}Services_page/services.html"><li>Services</li></a>
-        <a href="${prefix}News_page/news.php"><li>News</li></a>
+        <a href="${prefix}News_page/news.html"><li>News</li></a>
         <a href="${prefix}Contacts_page/contact.html"><li>Contacts</li></a>
         <button class="accButton">Account</button>
       </ul>

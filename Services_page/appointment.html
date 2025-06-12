@@ -29,46 +29,9 @@
       <script src="../renderHeader.js"></script>
     </header>
 
-    <div class="doctors-list">
-
-    <?php foreach($doctorInfo as $row ): ?> 
-    
-        <div class="doctor-cont"
-            data-docname="<?php echo htmlspecialchars($row['doctor_name'], ENT_QUOTES); ?>"  
-            data-docfor="<?php echo htmlspecialchars($row['doctor_for'], ENT_QUOTES); ?>"
-            data-docexp="<?php echo htmlspecialchars($row['exp'], ENT_QUOTES); ?>"
-            data-docfee="<?php echo htmlspecialchars($row['fee'], ENT_QUOTES); ?>"
-        >
-          <div class="docleft-wrapper">
-            <img id="docProfile" 
-            src="../ADMIN_CONTROLS/doctor_images/<?php echo htmlspecialchars($row['doctor_image'] 
-            ?? 'default_image.png', ENT_QUOTES); ?>" 
-            alt="doctor profile" 
-            onerror="this.src='../ADMIN_CONTROLS/doctor_images/default_image.png'">
-
-
-            <div class="doctor-info">
-              <h4 id="docname" name="docname"><?php echo htmlspecialchars($row['doctor_name'], ENT_QUOTES); ?></h4>
-              <p id="docpost"><?php echo htmlspecialchars($row['doctor_for'], ENT_QUOTES); ?></p>
-              <p id="docexp"><?php echo htmlspecialchars($row['exp'], ENT_QUOTES); ?></p>
-            </div>
-          </div>
-
-          <div class="docright-wrapper">
-            <div class="schedule-cont">
-                <h4 id="schedtitle">Doctor's Fee</h4>
-                <p id="docfee">₱<?php echo htmlspecialchars($row['fee'], ENT_QUOTES); ?></p>
-            </div>  
-            
-            <button class="appoint-btn"
-            data-docname="<?php echo htmlspecialchars($row['doctor_name'], ENT_QUOTES); ?>"
-            >
-            Book Appointment
-            </button>
-
-          </div>
-        </div>
-    <?php endforeach; ?> 
+    <div class="doctors-list" id="doctors">
+        <!-- <div class="doctor-cont"></div> -->
+    <script src='./appointmentScript.js'></script>
     </div>
 
     <div class="doctor-popup">

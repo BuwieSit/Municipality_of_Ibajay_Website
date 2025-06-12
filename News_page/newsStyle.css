@@ -233,7 +233,6 @@ content: "";
     padding: 0px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     border: 1px solid white;
-
     cursor: pointer;
 }
 
@@ -270,7 +269,6 @@ content: "";
     padding-top: 20px;
     gap: 1px;
     margin-bottom: -50px;
-    cursor: pointer;
 }
 
 .news-desc-popup {
@@ -295,15 +293,16 @@ content: "";
     align-items: flex-start;
     justify-content: space-evenly;
     font-family: var(--subtitle-font);
-    transition: all 0.3s ease;
-    z-index: 50;
-}
-#newsPopup {
     opacity: 0;
     pointer-events: none;
-
-
+    transition: all 0.3s ease;
+    z-index: 10;
 }
+.news-desc-popup.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .head-text {    
     width: 90%;
     height: 10%;
