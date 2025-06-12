@@ -3,7 +3,7 @@
 // })
 
 window.addEventListener('DOMContentLoaded', () => {
-    
+
         const screenWidth = window.innerWidth;
         const slider = document.querySelector('.slider');
         const toggleBtn = document.querySelector('.toggle');
