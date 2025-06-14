@@ -1,7 +1,6 @@
 body {
-  font-family: Arial, sans-serif;
   line-height: 1.6;
-  background: linear-gradient(to bottom, #3868A6, #358578, #C0913E);
+  background: #FAF9F5;
 }
 
 body,
@@ -18,12 +17,7 @@ p {
 }
 
 .main-content > div {
-    background: linear-gradient(
-        to bottom right,
-        rgba(56, 104, 166, 0.8),
-        rgba(53, 133, 120, 0.8),
-        rgba(192, 145, 62, 0.8)
-    );
+    background: rgb(250, 249, 245);
     padding: 16px 20px;
     margin-bottom: 16px;
     border-radius: 12px;
@@ -38,13 +32,18 @@ p {
 }
 
 h1 {
+  font-family: poppins, sans-serif;
   font-size: clamp(1.5rem, 3vw, 2.5rem);
-  margin-bottom: 0.5em;
 }
 
 h3 {
+  font-family: poppins, sans-serif;
   font-size: clamp(1.25rem, 2vw, 1.75rem);
-  margin-bottom: 0.5em;
+}
+
+#italic {
+  font-style: italic;
+  margin-bottom: .7em;
 }
 
 .grid-container {
@@ -60,8 +59,8 @@ h3 {
 .main-content {
   display: flex;
   flex-direction: column;
-  background-color: rgba(255, 255, 255, 0.2);
-  padding: 1.5em;
+  background-color: rgba(3, 62, 99, 0.8);
+  padding: 1em;
   max-width: clamp(320px, 90vw, 1000px);
   border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -80,6 +79,10 @@ h3 {
 .sidebar h3 {
   margin-top: 0;
   color: rgba(0, 0, 0, 0.7);
+}
+
+.main-content > p {
+  font-family: 'montserrat', sans-serif;
 }
 
 .main-content p,
