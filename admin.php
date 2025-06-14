@@ -3,7 +3,7 @@ session_start();
 
 $unique_error = isset($_SESSION['unique_error']) ? $_SESSION['unique_error'] : '';
 $password_error = isset($_SESSION['password_error']) ? $_SESSION['password_error'] : '';
-
+$invalid_error = $_SESSION['unique_error'] ?? $_SESSION['password_error'] ?? '';
 unset($_SESSION['unique_error']);
 unset($_SESSION['password_error']);
 unset($_SESSION['unique']);
@@ -30,30 +30,33 @@ unset($_SESSION['unique']);
       <div class="admin-wrapper signIn-wrapper">
           <form class="admin-forms" id="admin-login" method="post" action="./adminLogin.php" novalidate>
 
-              <label for="login-unique">Unique ID</label>
-              <div class="input-wrapper">
+            <div class="input-wrapper">
+              <label class="inp-label" for="login-unique">Unique ID</label>
+              
                 <input
                 type="text"
                 id="login-unique"
                 name="unique"
                 placeholder="Enter unique ID"
                 autocomplete="off"
+                class="inp-normal"
                 required
               />
-              <span class="error" name="unique"><?php echo $unique_error;?></span>
+              <span class="error" name="unique" id="uniqueErr"><?php echo $unique_error;?></span>
             </div>
             
-
-            <label for="login-password">Password</label>
             <div class="input-wrapper">
-              <input
-                type="password"
-                id="login-password"
-                name="password"
-                placeholder="Enter login-password"
-                required
-              />
-              <span class="error"><?php echo $password_error;?></span>
+              <label class="inp-label" for="login-password">Password</label>
+              
+                <input
+                  type="password"
+                  id="login-password"
+                  name="password"
+                  placeholder="Enter password"
+                  class="inp-normal"
+                  required
+                />
+                <span class="error" name="password" id="passErr"><?php echo $password_error;?></span>
             </div>
             <button type="submit" class="sign-button" name="signIn">Sign in</button>
             <a href="index.php"><sub id="adminText"></sub></a>

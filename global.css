@@ -420,36 +420,44 @@ footer {
     width: 100%;
     padding: 3%;
     display: flex;
+    flex-direction: column;
+
     align-items: center;
     justify-content: center;
 }
-.input-wrapper > span {
-    position: absolute;
-    right: 5%;
-    top: 30%;
+
+.error {
     color: red;
     font-family: var(--subtitle-font);
     font-weight: 600;
     font-size: 13px;
+    line-height: 0;
 }
 
-.input-wrapper > input {
+.inp-normal {
     width: 200px;
     height: 10px;
     padding: 20px;
     border-radius: 10px;
-    background: rgba( 255, 255, 255, 0.15 );
+    /* background: rgba( 255, 255, 255, 0.15 ); */
     box-shadow: 0px 0px 5px black;
     backdrop-filter: blur( 10.5px );
     -webkit-backdrop-filter: blur( 10.5px );
     border-radius: 10px;
-    border: 1px solid var(--darkGreen);
+    /* border: 1px solid var(--darkGreen); */
     color: black; 
     transition: all 0.3s ease;
     margin-bottom: 30px;
 
 }
-.admin-forms > label {
+.inp-error {
+
+    box-shadow: 0px 0px 10px red;
+}
+.inp-correct {
+    box-shadow: 0px 0px 10px green;
+}
+.inp-label {
     font-family: var(--subtitle-font);
     margin-bottom: 5px;
 }
