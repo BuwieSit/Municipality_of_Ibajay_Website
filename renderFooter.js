@@ -13,7 +13,7 @@ function routing() {
        <footer class = "footer">
             
             <section class="logo-text">
-                <img src= "${prefix}z-resources/ibajay_logo.png" style = "width: 200px; height: auto;" />
+                <img src= "${prefix}z-resources/ibajay_logo.png" style = "width: 150px; height: auto;" />
                 <h1 id="footerTitle">Municipality of Ibajay</h1>
             </section>
 
