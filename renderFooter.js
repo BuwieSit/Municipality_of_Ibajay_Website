@@ -10,57 +10,25 @@ function routing() {
   if (depth >= 3) prefix = '../../';
 
   const footContents = `
-       <footer>
-            <div class="footer-column">
+       <footer class = "footer">
+            
             <section class="logo-text">
-                <img src="${prefix}z-resources/ibajay_logo.png" />
+                <img src= "${prefix}z-resources/ibajay_logo.png" style = "width: 200px; height: auto;" />
                 <h1 id="footerTitle">Municipality of Ibajay</h1>
             </section>
-            <section class="tab-list">
 
-                <ul>
-                    <p class="list-title">Services</p>
-                    <li><a href="${prefix}Services_page/permits.html">Business Registration and Permits</a></li>
-                    <li><a href="${prefix}Services_page/healthcare.html">Healthcare</a></li>
-                    <li><a href="${prefix}Services_page/tourism.html">Tourism</a></li>
-
-                </ul>
-
-                <ul>
-                    <p class="list-title">News</p>
-                    <li><a href="${prefix}News_page/announcement.html">Announcements</a></li>
-                    <li><a href="${prefix}News_page/news.php">Events</a></li>
-                </ul>
+            <section class = "paragraph">
+                <p>Ibajay lies in the northwest section of Aklan province on Panay Island. It is 
+                bounded on the north by the Sibuyan Sea, east by Tangalan, west by Nabas, and south
+                 by Antique. The distance from Kalibo, the capital of Aklan, is 34 kilometres (21 mi) 
+                 and takes 45 minutes to one hour by road transport. Its road networks are composed of 
+                 16 kilometres (9.9 mi) of National Road, 32.918 kilometres (20.454 mi) of Provincial 
+                 Roads, and 75.430 kilometres (46.870 mi) of Barangay Road.
+                 </p>
+            
             </section>
-            </div>
-            <div class="footer-column terms-policy">
-            <section class="logo-text mobile-logo">
-                <img src=".${prefix}z-resources/ibajay_logo.png" />
-                <h1 id="footerTitle">Municipality of Ibajay</h1>
-            </section>
-                <div class="terms-wrapper">
-                <a><p>Terms of Service</p></a>
-                <a><p>Privacy Policy</p></a>
-                </div>
-                <p id="copyright">Copyright @ 2025 Team 1. All Rights Reserved.</p>
-            </div>
-            <div class="footer-column">
-                <p id="contact-title">Contact Us</p>
-                <div class="contact-list">
-                    <section class="contact-sections">
-                    <img src="${prefix}z-resources/facebook.png"><a class="contact-text" href="https://www.facebook.com/profile.php?id=100077757488639" target="_blank">LGU Ibajay</a>
-                    </section>
-                    <section class="contact-sections">
-                        <img src="${prefix}z-resources/facebook.png"><a class="contact-text" href="https://www.facebook.com/LGUIbajayInfoBoard" target="_blank">LGU Ibajay Information Board</a>
-                    </section>
-                    <section class="contact-sections">
-                        <img src="${prefix}z-resources/contact.png"><p class="contact-text cont-number" >(036) 289-2025</p>
-                    </section>
-                    <section class="contact-sections">
-                        <img src="${prefix}z-resources/email.png"><p class="contact-text">lguibajay@yahoo.com</p>
-                    </section>
-                </div>
-            </div>
+             
+           
         </footer>
   `;
 
