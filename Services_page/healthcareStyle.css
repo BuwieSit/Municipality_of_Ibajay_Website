@@ -219,7 +219,7 @@ body {
     background-color: white;
     justify-content: space-evenly;
     align-items: start;
-    padding: 15px;
+    padding: 20px;
     
 }
 
@@ -230,11 +230,5 @@ body {
 }      
 
 #footerTitle{
-    font-size: 50px;
-}
-
-.img{
-  width: 100px; /* Adjust size */
-  height: auto; /* Keeps aspect ratio */
-  object-fit: contain; /* Prevents distortion */
+    font-size: 40px;
 }
