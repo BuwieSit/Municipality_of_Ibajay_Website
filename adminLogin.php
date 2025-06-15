@@ -39,19 +39,19 @@ if (isset($_POST['signIn'])) {
         $conn->close();
 
         if ($role === 'super_admin') {
-            header("Location: ./Admin_page/adminControl.php");
+            header("Location: ./Admin_page/adminControl.html");
         } elseif ($role === 'content_manager') {
-            header("Location: ./Admin_page/Content_manager/content.php");
+            header("Location: ./Admin_page/Content_manager/content.html");
         } elseif ($role === 'appoint_officer') {
-            header("Location: ./Admin_page/Appoint_officer/appoint.php");
+            header("Location: ./Admin_page/Appoint_officer/appoint.html");
         } elseif ($role === 'helpdesk_officer') {
-            header("Location: ./Admin_page/Helpdesk_officer/helpdesk.php");
+            header("Location: ./Admin_page/Helpdesk_officer/helpdesk.html");
         } elseif ($role === 'tourism_coordinator') {
-            header("Location: ./Admin_page/Tourism_coor/tourism.php");
+            header("Location: ./Admin_page/Tourism_coor/tourism.html");
         } elseif ($role === 'transp_officer') {
-            header("Location: ./Admin_page/Transp_officer/transparency.php");
+            header("Location: ./Admin_page/Transp_officer/transparency.html");
         } elseif ($role === 'services_manager') {
-            header("Location: ./Admin_page/Services_manager/services.php");
+            header("Location: ./Admin_page/Services_manager/services.html");
         }
         else {
             $_SESSION['unique_error'] = "Unknown role.";
