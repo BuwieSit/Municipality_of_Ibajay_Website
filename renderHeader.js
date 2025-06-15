@@ -13,8 +13,7 @@ function routing() {
     <div class="header-logo-cont">
       <a href="${prefix}index.html">
         <div class="left-wrapper">
-          <img src="${prefix}z-resources/ibajay_logo.png" />
-          <h1 id="headerTitle">Municipality of Ibajay</h1>
+          <h1 id="headerTitle">IBAJAY</h1>
         </div>
       </a>
     </div>
