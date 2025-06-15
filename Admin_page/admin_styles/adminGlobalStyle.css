@@ -66,12 +66,16 @@ header {
 .adm-settings {
     width: clamp(5%, 20px, 20%);
     transition: all 0.5s ease;
+    cursor: pointer;
 }
 .adm-settings:hover {
     transform: rotate(90deg);
 }
 .left {
     font-size: clamp(0.5rem, 1vw, 2rem);
+}
+.right {
+    position: relative;
 }
 .admin-username {
     font-size: clamp(0.5rem, 1vw, 1.5rem);
@@ -123,3 +127,45 @@ header {
     position: absolute;
     bottom: 0%;
 }
+
+.settings-popup {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0 20px 10px rgba(255, 255, 255, 1);
+    padding: 20px;
+    top: 100%;
+    left: 10%;
+    opacity: 0;
+}
+
+.settings-list {
+    list-style-type: none;
+    font-family: var(--subtitle-font);
+    font-size: clamp( 0.5rem, 1vw, 1.5rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.settings-list > li {
+    cursor: pointer;
+    display: block;
+    padding: 10px;
+    width: 100%;
+    transition: all 0.3s ease;
+    border-radius: 20px;
+}
+.settings-list > li:hover {
+    background-color: rgba(3, 62, 99, 0.4);
+    
+}
+
