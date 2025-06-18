@@ -1,8 +1,7 @@
 @import url('../global.css');
 
 body {
-    background: linear-gradient(var(--darkBlue) 50%,#32A34A) 100% repeat fixed;
-    
+    background-color: FAF9F5;
     overflow-x: hidden;
     font-family: var(--subtitle-font);
 }
@@ -10,7 +9,7 @@ body {
     background: url('../z-resources/h-resources/cover_nobg.png');
     background-color: rgba(0, 0, 0, 0.4);
     background-blend-mode: darken;
-    height: 700px;
+    height: 900px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -72,86 +71,6 @@ body {
 }
 
 
-.booking{
-    background-color: var(--blueGreen);
-    padding: 20px;
-    border-radius: 30px;
-    text-align: left;
-    font-size: 20px;
-    color: white;
-    box-shadow: 0px 0px 20px black;
-    width: 350px;
-    height: 120px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.booking-container{
-
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: end;
-    padding-left: 35px;
-    padding-bottom: 27px;
-
-}
-#eTitle {
-    font-weight: 700;
-    text-align: center;
-}
-.emergency{
-
-    background-color: var(--blueGreen);
-    padding: 20px;
-    border-radius: 30px;
-    font-size: 20px;
-    color: white;
-    box-shadow: 0px 0px 20px black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    width: 350px;
-}
-.emergency > ul {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    list-style-type: none;
-}
-.eme-num:nth-child(1) {
-    list-style-type: "📱";
-}
-.eme-num:nth-child(2) {
-    list-style-type: "☎️";
-}
-.eme-num:nth-child(3) {
-    list-style-type: "📧";
-}
-.emergency > ul > li:hover {
-    text-decoration: underline;
-    cursor: pointer;
-}
-.emergency-container{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    display: flex;
-    align-items: end;
-    justify-content: end;
-    padding-right: 35px;
-    flex-direction: column;
-    padding-bottom: 27px;
-}
-
 .hotlines-container {
     margin-top: 25%;
     width: 100%;
@@ -161,8 +80,9 @@ body {
 .hotlines-container > h1 {
     font-weight: 600;
     font-size: 3rem;
-    color: white;
+    color:black;
     text-align: center;
+    background-color: red;
 }
 .hotlines-wrapper {
     width: 100%;
@@ -179,7 +99,7 @@ body {
 .hotlines {
     width: 20rem;
     aspect-ratio: 13/6;
-    background-image: linear-gradient(to bottom right, var(--blueGreen) 50%, var(--lightYellow));
+    
     box-shadow: 0px 0px 10px black;
     border-radius: 20px;
     display: flex;
@@ -187,6 +107,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: 20px;
+    background-color: #033f63;
     
 }
 
@@ -214,6 +135,11 @@ body {
     object-fit: cover;
 }
 
+.emergency, li {
+   color: white;
+}
+
+
 .footer{
     display: flex;
     background-color: white;
@@ -224,12 +150,4 @@ body {
     
 }
 
-.paragraph{
-    max-width: 600px;
-   text-align: justify;
-   font-size: 18px;
-}      
 
-#footerTitle{
-    font-size: 40px;
-}

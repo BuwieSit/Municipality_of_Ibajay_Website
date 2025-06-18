@@ -32,6 +32,8 @@ body {
     --lightGreen: #b5b682;
     --lightYellow: #fedc97;
     --semiWhite: #faf9f5;
+    --black: #000000;
+
 
 
 
@@ -42,7 +44,7 @@ header {
     top: 0;
     width: 100%;
     height: 60px;
-    background-color: var(--semiWhite);
+    background-color: var(--black);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,7 +52,7 @@ header {
 }
 
 #headerTitle {
-   -webkit-text-fill-color: #033e63;
+   -webkit-text-fill-color: whitesmoke;
    -webkit-background-clip: text;
    background-clip: text;
    text-decoration: none;
@@ -151,7 +153,7 @@ header {
     font-weight: 700;
     border-radius: 50px;
     background: var(--darkGreen);
-    color: black;
+    color: whitesmoke;
     cursor: pointer;
     z-index: 50;
     pointer-events: all;
@@ -163,7 +165,7 @@ header {
 
 a {
     text-decoration: none;
-    color:#033e63;
+    color:whitesmoke;
     font-weight: 700;
 }
 

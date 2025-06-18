@@ -2,7 +2,7 @@
 
 footer {
     margin-top: 10%;
-    background-image: linear-gradient(rgba(40, 102, 110, 0), var(--darkBlue)); 
+    background-image: linear-gradient(#cbcbcb); 
     border: none;
     width: 100%;
     height: 400px;
