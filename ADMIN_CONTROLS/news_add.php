@@ -1,27 +1,40 @@
 <?php 
-
 session_start();
 include '../conn.php';
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $title = $_POST['headline'];
-        $desc = $_POST['headline-description'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
+    $newsImg = 'news_thumb.png'; 
+    
+    if (!empty($_FILES['headline-image']['name'])) {
+        $newsImg = $_FILES['headline-image']['name'];
+        $ext = pathinfo($newsImg, PATHINFO_EXTENSION);
+        $allowedTypes = array('jpg', 'jpeg', 'png');
+        $tempName = $_FILES['headline-image']['tmp_name'];
+        $targetPath = './news_thumbnails/' . basename($newsImg);
 
-
-        $title = mysqli_real_escape_string($conn, $title);
-        $desc = mysqli_real_escape_string($conn, $desc);
-        $sql = "INSERT INTO news_table (headline, description) VALUES ('$title', '$desc')";
-
-        if (mysqli_query($conn, $sql)) {
-            header('Location: ../../Admin_page/adm_pages/adm_announce.php');
-            exit;
+        if (in_array(strtolower($ext), $allowedTypes)) {
+            move_uploaded_file($tempName, $targetPath);
         } else {
-            echo "Error: " . mysqli_error($conn);
+            echo "Invalid file type. Only JPG, JPEG, PNG allowed.";
+            exit;
         }
-    } else {
-        echo "Invalid request.";
     }
 
+    $title = mysqli_real_escape_string($conn, $_POST['headline']);
+    $desc = mysqli_real_escape_string($conn, $_POST['headline-description']);
 
-    
+    $sql = "INSERT INTO news_table (news_image, headline, description) VALUES ('$newsImg', '$title', '$desc')";
+
+    if (mysqli_query($conn, $sql)) {
+        header("Location: " . $_SERVER['HTTP_REFERER']);
+        exit;
+    } else {
+        echo "Error: " . mysqli_error($conn);
+    }
+
+} else {
+    echo "Invalid request.";
+}
 ?>
+

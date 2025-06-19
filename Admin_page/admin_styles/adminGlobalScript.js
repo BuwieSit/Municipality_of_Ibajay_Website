@@ -1,5 +1,42 @@
 window.addEventListener('DOMContentLoaded', () => {
 
+    const header = document.querySelector('.head');
+
+function routing() {
+    const path = window.location.pathname;
+    const depth = path.split('/').filter(Boolean).length;
+
+
+  let prefix = './';
+  if (depth === 2) prefix = '../';
+
+     const headerContent = `
+        <div class="head-wrapper left">
+            <h1>Dashboard</h1>
+        </div>
+        <div class="head-wrapper right">
+            <img src="../../admin-resources/settings.png" alt="settings" id="admSettings" class="adm-settings">
+            <h2 class="admin-username" id="adminUsername">Admin</h2>
+            <img src="../../admin-resources/profile.png" alt="profile" id="profile" class="adm-profile">
+            <div class="settings-popup" id="settingsPopup">
+                <ul class="settings-list">
+                    <li>User profile</li>
+                    <li>User settings</li>
+                </ul>
+            </div>
+        </div>`;
+
+
+if (header) {
+    header.innerHTML = headerContent;
+  } else {
+    console.error("No <header> element found on the page.");
+  }
+}
+
+routing();
+
+
     const settings = document.getElementById('admSettings');
     const popup = document.querySelector('.settings-popup');
 
@@ -21,94 +58,123 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
 
-function routing() {
-  const path = window.location.pathname;
-  const depth = path.split('/').filter(Boolean).length;
+document.addEventListener('click', (e) => {
+    const popup = document.querySelector('.news-action-popup');
+    const newsItem = e.target.closest('.admin-news-item');
 
 
-  let prefix = './';
-  if (depth === 2) prefix = '../';
 
-     const headerContent = `
-        <div class="head-wrapper left">
-            <h1>Dashboard</h1>
-        </div>
-        <div class="head-wrapper right">
-            <img src="../../admin-resources/settings.png" alt="settings" id="admSettings" class="adm-settings">
-            <h2 class="admin-username" id="adminUsername">Admin</h2>
-            <img src="../../admin-resources/profile.png" alt="profile" id="profile" class="adm-profile">
-            <div class="settings-popup" id="settingsPopup">
-                <ul class="settings-list">
-                    <li>User profile</li>
-                    <li>Settings</li>
-                </ul>
+    // === EDIT NEWS ===
+    if (e.target && e.target.classList.contains('edit-news-btn')) {
+        const newsId = newsItem.dataset.id;
+        const headline = newsItem.dataset.headline;
+        const description = newsItem.dataset.description;
+
+        popup.innerHTML = `
+            <form class="news-action-form news-edit-form" method="post" action="../../ADMIN_CONTROLS/update_news.php" enctype="multipart/form-data">
+                <input type="hidden" name="id" value="${newsId}">
+                <input type="file" name="headline_image"> 
+                <input type="text" name="headline" required class="headline-box" value="${headline}">
+                <textarea name="description" rows="6" required class="description-box">${description}</textarea>
+                <button id="actionBtn" type="submit">Update</button>
+                <button type="button" id="closePopup">Cancel</button>
+            </form>
+        `;
+
+        popup.style.display = 'block';
+        popup.style.pointerEvents = 'all';
+
+        document.getElementById('closePopup').addEventListener('click', () => {
+            popup.style.display = 'none';
+            popup.style.pointerEvents = 'none';
+        });
+    }
+
+    // === VIEW NEWS ===
+    if (e.target && e.target.classList.contains('view-news-btn')) {
+        const headline = newsItem.dataset.headline;
+        const description = newsItem.dataset.description;
+
+        popup.innerHTML = `
+            <div class="news-action-form news-edit-form">
+                <div class="headline-cont">
+                    <h1 id="headlineTitle">${headline}</h1>
+                </div>
+                <div class="description-cont">
+                    <p id="news-description">${description}</p>
+                </div>
+                <button type="button" id="closePopup">Close</button>
             </div>
-        </div>`;
+        `;
 
-    const sideContents = `
-        <div class="side-navigation">
-            <div class="side-wrapper">
-                <img src="../../z-resources/ibajay_logo.png" alt="ibajay logo">
-                <h2 id="userRole" class="user-role">User Role</h2>
-            </div>
-            <div class="admin-navlist">
-                <section class="admin-sidenav adm-dashboard">
-                    <img src="../../admin-resources/dashboard.png">
-                    <p>Dashboard</p>
-                </section>
+        popup.style.display = 'block';
+        popup.style.pointerEvents = 'all';
 
-                <section class="admin-sidenav adm-news">
-                    <img src="../../admin-resources/news.png">
-                    <p>Announcements</p>
-                </section>
+        document.getElementById('closePopup').addEventListener('click', () => {
+            popup.style.display = 'none';
+            popup.style.pointerEvents = 'none';
+        });
+    }
 
-                <section class="admin-sidenav adm-services">
-                    <img src="../../admin-resources/services.png">
-                    <p>Services</p>
-                </section>
+    // === ADD NEWS ===
+    if (e.target && e.target.classList.contains('add-news-btn')) {
+        // const newsId = newsItem.dataset.id;
+        // const headline = newsItem.dataset.headline;
+        // const description = newsItem.dataset.description;
 
-                <section class="admin-sidenav adm-tourism">
-                    <img src="../../admin-resources/tourism.png">
-                    <p>Tourism</p>
-                </section>
-                <section class="admin-sidenav adm-tourism">
-                    <img src="../../admin-resources/health.png">
-                    <p>Healthcare</p>
-                </section>
+        popup.innerHTML = `
+            <form class="news-action-form add-form" action="../../ADMIN_CONTROLS/news_add.php" method="post" enctype="multipart/form-data">
+                <input type="file" name="headline-image"> 
+                <input type="text" name="headline" placeholder="Headline" required>
+                <textarea name="headline-description" placeholder="Description" required></textarea>
+                <button type="submit">Add</button>
+                <button type="button" id="closePopup">Cancel</button>
+            </form>
+        `;
 
-                <section class="admin-sidenav adm-transp">
-                    <img src="../../admin-resources/reports.png">
-                    <p>Transparency</p>
-                </section>
+        popup.style.display = 'block';
+        popup.style.pointerEvents = 'all';
 
-                <section class="admin-sidenav adm-feedbacks">
-                    <img src="../../admin-resources/feedback.png">
-                    <p>Inquiries</p>
-                </section>
-                
-                <section class="admin-sidenav adm-bookings">
-                    <img src="../../admin-resources/booking.png">
-                    <p>Online Application</p>
-                </section>
+        document.getElementById('closePopup').addEventListener('click', () => {
+            popup.style.display = 'none';
+            popup.style.pointerEvents = 'none';
+        });
+    }
 
-                <section class="admin-sidenav adm-employees">
-                    <img src="../../admin-resources/employees.png">
-                    <p>Employees</p>
-                </section>
-            </div>
-        </div>
-    `
 
-if (head) {
-    head.innerHTML = headContents;
-  } else {
-    console.error("No <header> element found on the page.");
-  }
-}
+    if (e.target && e.target.classList.contains('delete-news-btn')) {
+        const newsId = newsItem.dataset.id;
+        const headline = newsItem.dataset.headline;
+        const description = newsItem.dataset.description;
+        popup.innerHTML = `
+            <form class="news-action-form delete-form" action="../../ADMIN_CONTROLS/delete_news.php" method="post">
 
-routing();
+                <input type="hidden" name="id" value="${newsId}">
+                <p id="delTitle">Do you really want to delete (Not recoverable):</p>
+                <div class="headline-cont">
+                    <h1 id="headlineTitle">${headline}</h1>
+                </div>
+                <button type="submit" id="deleteBtn">Delete</button>
+                <button type="button" id="closePopup" class="cancelBtn">Cancel</button>
+            </form>
+        `
+        popup.style.display = 'block';
+        popup.style.pointerEvents = 'all';
 
-   
+        document.getElementById('closePopup').addEventListener('click', () => {
+            popup.style.display = 'none';
+            popup.style.pointerEvents = 'none';
+        });
+    }
+
+
+});
+
+
+
+
+
+
 
 });
 

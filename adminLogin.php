@@ -39,7 +39,7 @@ if (isset($_POST['signIn'])) {
         $conn->close();
 
         if ($role === 'super_admin') {
-            header("Location: ./Admin_page/adminControl.html");
+            header("Location: ./Admin_page/Super_admin/super_admin.html");
         } elseif ($role === 'content_manager') {
             header("Location: ./Admin_page/Content_manager/content.html");
         } elseif ($role === 'appoint_officer') {

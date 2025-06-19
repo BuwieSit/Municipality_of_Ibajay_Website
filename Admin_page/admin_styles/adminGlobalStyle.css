@@ -15,15 +15,15 @@ header {
     grid-area: header;
     position: fixed;
     top: 0;
-    left: 15%;             /* to align with the nav */
+    left: 15%;            
     width: 85%;
     height: 50px;
     border-bottom: 1px solid #36454F;
-    background-color: white; /* Add background so content behind isn't visible */
+    background-color: white !important; 
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between !important;
     z-index: 100;
 }
 
@@ -215,9 +215,15 @@ header {
 .admin-news-container {
     width: 80%;
     height: auto;
-    background: rgba(0, 0, 0, 0.342);
+    padding: 5%;
+    background-color: rgba(3, 62, 99, 0.432);
     box-shadow: 0px 0px 10px black;
-
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 20px;
 }
 
 .admin-news-item {
@@ -231,7 +237,6 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    gap: 10px;
     overflow: hidden;
 }
 .headline-image {
@@ -254,41 +259,62 @@ header {
 }
 .headline-image-wrapper {
     position: absolute;
-    top: 50%;
+    top: 10%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    width: 100%;
-    height: 100%;
+    transform: translate(-50%, -100%);
+    background-color: #FAF9F5;
+    width: auto;    
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 10px 20px;
     opacity: 0;
-    pointer-events: 0;
+    pointer-events: 0; 
     transition: all 0.3s ease;
+    overflow: hidden;
 }
 .headline-image-wrapper > img {
     width: 30px;
     aspect-ratio: 1;
     object-fit: cover;
     cursor: pointer;
-    background-color: rgba(255, 255, 255, 0.5);
     border-radius: 20px;
 }
 .headline-image:hover > .headline-image-wrapper  {
     opacity: 1;
     pointer-events: 1;
+    transform: translate(-50%, -50%);
 }
-.headline-image-wrapper > img:hover {
-    filter: drop-shadow(0px 0px 10px white);
-    transform: scale(1.1);
+.action-buttons {
+    transition: all 0.3s ease;
 }
-
+.action-buttons:hover {
+    filter: drop-shadow(2px 2px 1px black);
+    transform: scale(1.04);  
+}
+.headline-wrapper {
+    
+    overflow: hidden;
+    width: 80%;
+    height: 20%;
+    transition: 0.3s ease;
+}
+.headline-wrapper > small {
+    font-family: var(--subtitle-font);
+    font-weight: 500;
+    font-style: italic;
+    font-size: 10px;
+    color: #36454F ;
+}
 .headline-title {
     font-family: var(--newtitle);
     font-size: 15px;
+    font-weight: 700;
+    text-overflow: ellipsis;
 }
 
 .announce-list {
@@ -340,8 +366,9 @@ header {
     align-items: center;
     justify-content: center;
     gap: 10px;
+
 }
-.add-news-form {
+.add-news {
     width: 80%;
     height: auto;
     overflow:visible;
@@ -375,4 +402,101 @@ header {
 .add-buttons:hover > img {
     transform: rotate(90deg);
 
+}
+.news-action-popup {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    padding: 5%;
+    border: 1px solid black;
+    box-shadow: 3px 3px 1px black;
+    background-image: url('../../admin-resources/newspaper.jpg');
+    background-color: rgba(255, 255, 255, 1);
+    
+}
+.news-action-form {
+    width: 500px;
+    aspect-ratio: 16/9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+.news-action-form > * {
+    padding: 2%;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    font-family: var(--subtitle-font);
+}
+.news-action-form > textarea {
+    max-height: 100px;
+    min-height: 100px;
+}
+#actionBtn {
+    background-color: #4caf50;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+#closePopup {
+    background-color:#D2042D;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+#updateBtn:hover {
+    background-color: #378039;
+}
+#closePopup:hover {
+    background-color:#83021c;
+}
+.delete-form {
+    justify-content: center;
+}
+#deleteBtn {
+    background-color: #D2042D;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+#deleteBtn:hover {
+    background-color: #83021c;
+}
+#delTitle {
+    font-weight: 700;
+}
+.cancelBtn {
+    background-color: #4caf50 !important;
+}
+.cancelBtn:hover {
+    background-color: #378039 !important;
+}
+
+.headline-cont {
+    width: 100%;
+    border: 1px solid black;
+}
+#headlineTitle {
+    font-weight: 600;
+    font-family: var(--newtitle);
+    font-size: clamp(0.7rem, 1.5vw, 2rem);
+}
+
+.description-cont {
+    width: 100%;
+    font-weight: 500;
+    font-family: var(--subtitle-font);
+    font-size: clamp(0.5rem, 1vw, 1.5rem);
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 2px 2px 1px black;
+    max-height: 100px;
+    min-height: 100px;
+    text-align: justify;
+    overflow-y: auto;
+    
 }
