@@ -37,6 +37,7 @@ if (isset($_POST['signIn'])) {
 
         $stmt->close();
         $conn->close();
+
         $_SESSION['role'] = $role;
 
         if ($role === 'super_admin') {

@@ -2,14 +2,6 @@
     <?php
         session_start();
         include '../../conn.php'; 
-        if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'content_manager') {
-
-            session_unset();
-            session_destroy();
-            header("Location: ../../admin.php");
-            exit();
-            echo "<script>alert('Access denied: You are not authorized to view this page.'); window.location.href = '../Content_manager/content.html';</script>";
-        }
 
         $sql = "SELECT * FROM news_table ORDER BY created_at DESC";
         $result = mysqli_query($conn, $sql);
@@ -58,7 +50,7 @@
     <div class="member-content-container">
 
         <div class="add-news-wrapper">
-                <div class="add-news">
+                <div class="general-add">
                     <button class="add-buttons add-news-btn" id="addNewsBtn"><img src="../../admin-resources/add.png">Add news</button>
                 </div>
                     
@@ -94,11 +86,11 @@
 
         
         <div class="add-news-wrapper">
-                <div class="add-news">
+                <div class="general-add">
                     <button class="add-buttons a-add" id="addAnnounceBtn"><img src="../../admin-resources/add.png">Add announcement</button>
                 </div>
 
-            <table class="announce-list">
+            <table class="general-list">
                 <thead>
                     <tr>
                         <th>What</th>

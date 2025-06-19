@@ -318,14 +318,14 @@ header {
     text-overflow: ellipsis;
 }
 
-.announce-list {
+.general-list {
     width: 90%;
     border-collapse: collapse; 
     border: 1px solid black;
 }
 
-.announce-list th,
-.announce-list td {
+.general-list th,
+.general-list td {
     font-family: var(--subtitle-font);
     background-color: rgba(3, 62, 99, 0.432);
     
@@ -333,16 +333,16 @@ header {
     padding: 8px;
     font-size: clamp(0.3rem, 1vw, 1.5rem);
 }
-.announce-list th {
+.general-list th {
     color: white;
     width: 16%;
     height: 100%;
 }
-.announce-list td {
+.general-list td {
     color: black;
 }
 
-.announce-list thead {
+.general-list thead {
     background-color: var(--darkBlue);
 }
 #aWhat {
@@ -376,7 +376,7 @@ header {
     gap: 10px;
 
 }
-.add-news {
+.general-add {
     width: 80%;
     height: auto;
     overflow:visible;
@@ -518,4 +518,13 @@ header {
     text-align: justify;
     overflow-y: auto;
     
+}
+
+
+/*  SERVICES */
+
+.dept-cont {
+    background-color: red;
+    width: 100%;
+    height: 100%;
 }
