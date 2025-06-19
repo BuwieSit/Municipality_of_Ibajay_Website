@@ -37,8 +37,10 @@ if (isset($_POST['signIn'])) {
 
         $stmt->close();
         $conn->close();
+        $_SESSION['role'] = $role;
 
         if ($role === 'super_admin') {
+            $_SESSION['role'] = $role;
             header("Location: ./Admin_page/Super_admin/super_admin.html");
         } elseif ($role === 'content_manager') {
             header("Location: ./Admin_page/Content_manager/content.html");

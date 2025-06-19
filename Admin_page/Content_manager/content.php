@@ -2,9 +2,21 @@
     <?php
         session_start();
         include '../../conn.php'; 
+        if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'content_manager') {
+
+            session_unset();
+            session_destroy();
+            header("Location: ../../admin.php");
+            exit();
+            echo "<script>alert('Access denied: You are not authorized to view this page.'); window.location.href = '../Content_manager/content.html';</script>";
+        }
 
         $sql = "SELECT * FROM news_table ORDER BY created_at DESC";
         $result = mysqli_query($conn, $sql);
+
+        $a_table = "SELECT * FROM announce_table ORDER BY publish_date DESC";
+        $a_result = mysqli_query($conn, $a_table);
+
     ?>
 
 <!DOCTYPE html>
@@ -83,33 +95,45 @@
         
         <div class="add-news-wrapper">
                 <div class="add-news">
-                    <button class="add-buttons add-announce-btn" id="addAnnounceBtn"><img src="../../admin-resources/add.png">Add announcement</button>
+                    <button class="add-buttons a-add" id="addAnnounceBtn"><img src="../../admin-resources/add.png">Add announcement</button>
                 </div>
 
             <table class="announce-list">
                 <thead>
                     <tr>
-                        <th>Headline</th>
-                        <th>Description</th>
+                        <th>What</th>
+                        <th>When</th>
+                        <th>Where</th>
+                        <th>Why</th>
                         <th>Date Published</th>
-                        <th>Date Updated</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td id="headline">The headliner</td>
-                        <td id="description">Some description</td>
-                        <td id="publishDate">2024-06-01</td>
-                        <td id="updateDate">2024-06-17</td>
+                    <?php while($a_row = mysqli_fetch_assoc($a_result)): ?>
+                    <tr class="a_row"
+                    data-a_id="<?php echo $a_row['announce_id']; ?>"
+                    data-a_what="<?php echo $a_row['a_what']; ?>"
+                    data-a_where="<?php echo $a_row['a_when']; ?>"
+                    data-a_when="<?php echo $a_row['a_where']; ?>"
+                    data-a_why="<?php echo $a_row['a_why']; ?>"
+                    data-a_publish="<?php echo $a_row['publish_date']; ?>"
+                    >
+                        
+                        <td id="aWhat"><?php echo $a_row['a_what']; ?></td>
+                        <td id="aWhen"><?php echo $a_row['a_when']; ?></td>
+                        <td id="aWhere"><?php echo $a_row['a_where']; ?></td>
+                        <td id="aWhy"><?php echo $a_row['a_why']; ?></td>
+                        <td id="publishDate"><?php echo $a_row['publish_date']; ?></td>
                         <td class="actions">
                             
-                            <img src="../../admin-resources/edit.png" alt="edit">
-                            <img src="../../admin-resources/preview.png" alt="edit">
-                            <img src="../../admin-resources/delete.png" alt="edit">
+                            <img class="a-edit" src="../../admin-resources/edit.png" alt="edit">
+                            <img class="a-view" src="../../admin-resources/preview.png" alt="edit">
+                            <img class="a-delete" src="../../admin-resources/delete.png" alt="edit">
 
                         </td>
                     </tr>
+                    <?php endwhile; ?>
                 </tbody>
             </table>
         </div>
@@ -121,7 +145,10 @@
         >
             <!-- news-action-form -->
         </div>
- 
+        
+        <div class="news-action-popup announce-action-popup">
+            <!-- announce-action-form -->
+        </div>
 
     </div>
 

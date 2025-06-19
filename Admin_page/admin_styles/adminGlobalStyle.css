@@ -199,6 +199,7 @@ header {
 
 .member-content-container {
     padding-top: 1%;
+    padding-bottom: 3%;
     z-index: 5;
     width: 100%;
     height: 100%;
@@ -207,7 +208,7 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-
+    gap: 50px;
 }
 
 /* CONTENTS */
@@ -318,7 +319,7 @@ header {
 }
 
 .announce-list {
-    width: 80%;
+    width: 90%;
     border-collapse: collapse; 
     border: 1px solid black;
 }
@@ -327,14 +328,15 @@ header {
 .announce-list td {
     font-family: var(--subtitle-font);
     background-color: rgba(3, 62, 99, 0.432);
-
+    
     text-align: center;
-
     padding: 8px;
     font-size: clamp(0.3rem, 1vw, 1.5rem);
 }
 .announce-list th {
     color: white;
+    width: 16%;
+    height: 100%;
 }
 .announce-list td {
     color: black;
@@ -343,11 +345,17 @@ header {
 .announce-list thead {
     background-color: var(--darkBlue);
 }
+#aWhat {
+    font-weight: 700;
+    font-family: var(--newtitle);
+}
 .actions {
+    height: auto !important;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+    
 }
 .actions > img {
     width: 20px;
@@ -417,6 +425,16 @@ header {
     background-color: rgba(255, 255, 255, 1);
     
 }
+.a-edit-form > label > * {
+    padding: 2%;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    font-family: var(--subtitle-font);
+}
+.a-edit-form > label {
+    font-weight: 700;
+}
 .news-action-form {
     width: 500px;
     aspect-ratio: 16/9;
@@ -459,14 +477,15 @@ header {
     justify-content: center;
 }
 #deleteBtn {
-    background-color: #D2042D;
+    background-color: #D2042D !important;
     color: white;
     font-weight: 600;
     cursor: pointer;
 }
 #deleteBtn:hover {
-    background-color: #83021c;
+    background-color: #83021c !important;
 }
+
 #delTitle {
     font-weight: 700;
 }
