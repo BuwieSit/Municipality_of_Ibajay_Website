@@ -27,14 +27,38 @@
         <table class="general-list">
             <thead>
                 <th>Document name</th>
+                <th>Availability</th>
                 <th>Upload date</th>
-                <th>Status</th>
                 <th>Actions</th>
-
             </thead>
+
+            <?php while($d_row = mysqli_fetch_assoc($list)): ?>
+            <tr class="d_row"
+            data-d_id="<?php echo $d_row['file_id']?>"
+            data-d_filename="<?php echo $d_row['filename']?>"
+            data-d_document="<?php echo $d_row['document']?>"
+            data-d_avail="<?php echo $d_row['availability']?>"
+            data-d_uploadDate="<?php echo $d_row['uploaded_at']?>"
+            >
+                <td class="docu-name"><?php echo $d_row['filename']?></td>
+                <td class="docu-date"><?php echo $d_row['availability']?></td>
+                <td class="docu-date"><?php echo $d_row['uploaded_at']?></td>
+                <td class="actions">
+                    <img class="d-edit" src="../../admin-resources/edit.png" alt="edit">
+                    <img class="d-view" src="../../admin-resources/preview.png" alt="edit">
+                    <img class="d-delete" src="../../admin-resources/delete.png" alt="edit">
+                </td>
+            </tr>
+
+            <?php endwhile; ?>
         </table>
+
+        <div class="news-action-popup documents-action-popup">
+            <!-- announce-action-form -->
+        </div>
     </div>
     
+
     <script src="../admin_styles/adminGlobalScript.js"></script>
     <script src="../admin_styles/adminAJAX.js"></script>
 </body>

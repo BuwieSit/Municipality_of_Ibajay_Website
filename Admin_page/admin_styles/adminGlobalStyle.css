@@ -444,13 +444,14 @@ header {
     justify-content: space-between;
     gap: 10px;
 }
-.news-action-form > * {
+.news-action-form > *, .news-action-form > * > * {
     padding: 2%;
     width: 100%;
     min-width: 100%;
     max-width: 100%;
     font-family: var(--subtitle-font);
 }
+
 .news-action-form > textarea {
     max-height: 100px;
     min-height: 100px;

@@ -38,7 +38,6 @@ routing();
 
 
     const settings = document.getElementById('admSettings');
-    const popup = document.querySelector('.settings-popup');
 
 
     settings.addEventListener('mouseover', () => {
@@ -58,239 +57,320 @@ routing();
     });
 
 
-document.addEventListener('click', (e) => {
-    const popup = document.querySelector('.news-action-popup');
-    const newsItem = e.target.closest('.admin-news-item');
+    document.addEventListener('click', (e) => {
 
+        const popup = document.querySelector('.news-action-popup');
+        const newsItem = e.target.closest('.admin-news-item');
+        
+        // === EDIT NEWS ===
+        if (e.target && e.target.classList.contains('edit-news-btn')) {
+            const newsId = newsItem.dataset.id;
+            const headline = newsItem.dataset.headline;
+            const description = newsItem.dataset.description;
 
+            popup.innerHTML = `
+                <form class="news-action-form news-edit-form" method="post" action="../../ADMIN_CONTROLS/update_news.php" enctype="multipart/form-data">
+                    <input type="hidden" name="id" value="${newsId}">
+                    <input type="file" name="headline_image"> 
+                    <input type="text" name="headline" required class="headline-box" value="${headline}">
+                    <textarea name="description" rows="6" required class="description-box">${description}</textarea>
+                    <button id="actionBtn" type="submit">Update</button>
+                    <button type="button" id="closePopup">Cancel</button>
+                </form>
+            `;
 
-    // === EDIT NEWS ===
-    if (e.target && e.target.classList.contains('edit-news-btn')) {
-        const newsId = newsItem.dataset.id;
-        const headline = newsItem.dataset.headline;
-        const description = newsItem.dataset.description;
+            popup.style.display = 'block';
+            popup.style.pointerEvents = 'all';
 
-        popup.innerHTML = `
-            <form class="news-action-form news-edit-form" method="post" action="../../ADMIN_CONTROLS/update_news.php" enctype="multipart/form-data">
-                <input type="hidden" name="id" value="${newsId}">
-                <input type="file" name="headline_image"> 
-                <input type="text" name="headline" required class="headline-box" value="${headline}">
-                <textarea name="description" rows="6" required class="description-box">${description}</textarea>
-                <button id="actionBtn" type="submit">Update</button>
-                <button type="button" id="closePopup">Cancel</button>
-            </form>
-        `;
+            document.getElementById('closePopup').addEventListener('click', () => {
+                popup.style.display = 'none';
+                popup.style.pointerEvents = 'none';
+            });
+        }
 
-        popup.style.display = 'block';
-        popup.style.pointerEvents = 'all';
+        // === VIEW NEWS ===
+        if (e.target && e.target.classList.contains('view-news-btn')) {
+            const headline = newsItem.dataset.headline;
+            const description = newsItem.dataset.description;
 
-        document.getElementById('closePopup').addEventListener('click', () => {
-            popup.style.display = 'none';
-            popup.style.pointerEvents = 'none';
-        });
-    }
-
-    // === VIEW NEWS ===
-    if (e.target && e.target.classList.contains('view-news-btn')) {
-        const headline = newsItem.dataset.headline;
-        const description = newsItem.dataset.description;
-
-        popup.innerHTML = `
-            <div class="news-action-form news-edit-form">
-                <div class="headline-cont">
-                    <h1 id="headlineTitle">${headline}</h1>
+            popup.innerHTML = `
+                <div class="news-action-form news-edit-form">
+                    <div class="headline-cont">
+                        <h1 id="headlineTitle">${headline}</h1>
+                    </div>
+                    <div class="description-cont">
+                        <p id="news-description">${description}</p>
+                    </div>
+                    <button type="button" id="closePopup">Close</button>
                 </div>
-                <div class="description-cont">
-                    <p id="news-description">${description}</p>
+            `;
+
+            popup.style.display = 'block';
+            popup.style.pointerEvents = 'all';
+
+            document.getElementById('closePopup').addEventListener('click', () => {
+                popup.style.display = 'none';
+                popup.style.pointerEvents = 'none';
+            });
+        }
+
+        // === ADD NEWS ===
+        if (e.target && e.target.classList.contains('add-news-btn')) {
+            // const newsId = newsItem.dataset.id;
+            // const headline = newsItem.dataset.headline;
+            // const description = newsItem.dataset.description;
+
+            popup.innerHTML = `
+                <form class="news-action-form add-form" action="../../ADMIN_CONTROLS/news_add.php" method="post" enctype="multipart/form-data">
+                    <input type="file" name="headline-image"> 
+                    <input type="text" name="headline" placeholder="Headline" required>
+                    <textarea name="headline-description" placeholder="Description" required></textarea>
+                    <button id="actionBtn" type="submit">Add</button>
+                    <button type="button" id="closePopup">Cancel</button>
+                </form>
+            `;
+
+            popup.style.display = 'block';
+            popup.style.pointerEvents = 'all';
+
+            document.getElementById('closePopup').addEventListener('click', () => {
+                popup.style.display = 'none';
+                popup.style.pointerEvents = 'none';
+            });
+        }
+
+
+        if (e.target && e.target.classList.contains('delete-news-btn')) {
+            const newsId = newsItem.dataset.id;
+            const headline = newsItem.dataset.headline;
+            popup.innerHTML = `
+                <form class="news-action-form delete-form" action="../../ADMIN_CONTROLS/delete_news.php" method="post">
+
+                    <input type="hidden" name="id" value="${newsId}">
+                    <p id="delTitle">Do you really want to delete (Not recoverable):</p>
+                    <div class="headline-cont">
+                        <h1 id="headlineTitle">${headline}</h1>
+                    </div>
+                    <button type="submit" id="deleteBtn">Delete</button>
+                    <button type="button" id="closePopup" class="cancelBtn">Cancel</button>
+                </form>
+            `
+            popup.style.display = 'block';
+            popup.style.pointerEvents = 'all';
+
+            document.getElementById('closePopup').addEventListener('click', () => {
+                popup.style.display = 'none';
+                popup.style.pointerEvents = 'none';
+            });
+        }
+
+        // ANNOUNCEMENTS
+
+        const announceItem = e.target.closest('.a_row');
+
+        // === ADD ANNOUNCEMENT ===
+        if (e.target && e.target.classList.contains('a-add')) {
+            popup.innerHTML = `
+                <form class="news-action-form a-edit-form" action="../../ADMIN_CONTROLS/announce_handler.php" method="post">
+                    <input type="hidden" name="action" value="add">
+                    <label>What: <input type="text" name="a_what" placeholder="What" required></label>
+                    <label>When: <input type="date" name="a_date"></label>
+                    <label>Where: <input type="text" name="a_loc" placeholder="Where"></label>
+                    <label>Why: <input type="text" name="a_why" placeholder="Why" required></label>
+                    <button id="actionBtn" type="submit">Add</button>
+                    <button type="button" id="closePopup">Cancel</button>
+                </form>
+            `;
+
+            popup.style.display = 'block';
+            popup.style.pointerEvents = 'all';
+
+            document.getElementById('closePopup').addEventListener('click', () => {
+                popup.style.display = 'none';
+                popup.style.pointerEvents = 'none';
+            });
+        }
+
+        // === EDIT ANNOUNCEMENT ===
+        if (e.target && e.target.classList.contains('a-edit')) {
+            const a_id = announceItem.dataset.a_id;
+            const a_what = announceItem.dataset.a_what;
+            const a_when = announceItem.dataset.a_where;
+            const a_where = announceItem.dataset.a_when;
+            const a_why = announceItem.dataset.a_why;
+
+            popup.innerHTML = `
+                <form class="news-action-form a-edit-form" action="../../ADMIN_CONTROLS/announce_handler.php" method="post">
+                    <input type="hidden" name="action" value="edit">
+                    <input type="hidden" name="announce_id" value="${a_id}">
+                    <label>What: <input type="text" name="a_what" value="${a_what}" required></label>
+                    <label>When: <input type="date" name="a_date" value="${a_when}"></label>
+                    <label>Where: <input type="text" name="a_loc" value="${a_where}"></label>
+                    <label>Why: <input type="text" name="a_why" value="${a_why}" required></label>
+                    <button id="actionBtn" type="submit">Update</button>
+                    <button type="button" id="closePopup">Cancel</button>
+                </form>
+            `;
+
+            popup.style.display = 'block';
+            popup.style.pointerEvents = 'all';
+
+            document.getElementById('closePopup').addEventListener('click', () => {
+                popup.style.display = 'none';
+                popup.style.pointerEvents = 'none';
+            });
+        }
+
+        // === VIEW ANNOUNCEMENT ===
+        if (e.target && e.target.classList.contains('a-view')) {
+            const a_what = announceItem.dataset.a_what;
+            const a_when = announceItem.dataset.a_where;
+            const a_where = announceItem.dataset.a_when;
+            const a_why = announceItem.dataset.a_why;
+            const a_publish = announceItem.dataset.a_publish;
+
+            popup.innerHTML = `
+                <div class="news-action-form a-view-form">
+                    <h2>${a_what}</h2>
+                    <p><strong>When:</strong> ${a_when}</p>
+                    <p><strong>Where:</strong> ${a_where}</p>
+                    <p><strong>Why:</strong> ${a_why}</p>
+                    <p><strong>Published:</strong> ${a_publish}</p>
+                    <button type="button" id="closePopup">Close</button>
                 </div>
-                <button type="button" id="closePopup">Close</button>
-            </div>
-        `;
+            `;
 
-        popup.style.display = 'block';
-        popup.style.pointerEvents = 'all';
+            popup.style.display = 'block';
+            popup.style.pointerEvents = 'all';
 
-        document.getElementById('closePopup').addEventListener('click', () => {
-            popup.style.display = 'none';
-            popup.style.pointerEvents = 'none';
-        });
-    }
+            document.getElementById('closePopup').addEventListener('click', () => {
+                popup.style.display = 'none';
+                popup.style.pointerEvents = 'none';
+            });
+        }
 
-    // === ADD NEWS ===
-    if (e.target && e.target.classList.contains('add-news-btn')) {
-        // const newsId = newsItem.dataset.id;
-        // const headline = newsItem.dataset.headline;
-        // const description = newsItem.dataset.description;
+        if (e.target && e.target.classList.contains('a-delete')) {
+            const aItem = e.target.closest('.a_row');
+            const announceId = aItem.dataset.a_id;
+            const what = aItem.dataset.a_what;
 
-        popup.innerHTML = `
-            <form class="news-action-form add-form" action="../../ADMIN_CONTROLS/news_add.php" method="post" enctype="multipart/form-data">
-                <input type="file" name="headline-image"> 
-                <input type="text" name="headline" placeholder="Headline" required>
-                <textarea name="headline-description" placeholder="Description" required></textarea>
-                <button id="actionBtn" type="submit">Add</button>
-                <button type="button" id="closePopup">Cancel</button>
-            </form>
-        `;
-
-        popup.style.display = 'block';
-        popup.style.pointerEvents = 'all';
-
-        document.getElementById('closePopup').addEventListener('click', () => {
-            popup.style.display = 'none';
-            popup.style.pointerEvents = 'none';
-        });
-    }
-
-
-    if (e.target && e.target.classList.contains('delete-news-btn')) {
-        const newsId = newsItem.dataset.id;
-        const headline = newsItem.dataset.headline;
-        popup.innerHTML = `
-            <form class="news-action-form delete-form" action="../../ADMIN_CONTROLS/delete_news.php" method="post">
-
-                <input type="hidden" name="id" value="${newsId}">
+            popup.innerHTML = `
+            <form class="news-action-form delete-form" action="../../ADMIN_CONTROLS/announce_handler.php" method="post">
+                <input type="hidden" name="action" value="delete">
+                <input type="hidden" name="announce_id" value="${announceId}">
                 <p id="delTitle">Do you really want to delete (Not recoverable):</p>
                 <div class="headline-cont">
-                    <h1 id="headlineTitle">${headline}</h1>
+                    <h1 id="headlineTitle">${what}</h1>
                 </div>
                 <button type="submit" id="deleteBtn">Delete</button>
                 <button type="button" id="closePopup" class="cancelBtn">Cancel</button>
             </form>
-        `
-        popup.style.display = 'block';
-        popup.style.pointerEvents = 'all';
-
-        document.getElementById('closePopup').addEventListener('click', () => {
-            popup.style.display = 'none';
-            popup.style.pointerEvents = 'none';
-        });
-    }
-
-    // ANNOUNCEMENTS
-
-    const announceItem = e.target.closest('.a_row');
-
-    // === ADD ANNOUNCEMENT ===
-    if (e.target && e.target.classList.contains('a-add')) {
-        popup.innerHTML = `
-            <form class="news-action-form a-edit-form" action="../../ADMIN_CONTROLS/announce_handler.php" method="post">
-                <input type="hidden" name="action" value="add">
-                <label>What: <input type="text" name="a_what" placeholder="What" required></label>
-                <label>When: <input type="date" name="a_date"></label>
-                <label>Where: <input type="text" name="a_loc" placeholder="Where"></label>
-                <label>Why: <input type="text" name="a_why" placeholder="Why" required></label>
-                <button id="actionBtn" type="submit">Add</button>
-                <button type="button" id="closePopup">Cancel</button>
-            </form>
-        `;
-
-        popup.style.display = 'block';
-        popup.style.pointerEvents = 'all';
-
-        document.getElementById('closePopup').addEventListener('click', () => {
-            popup.style.display = 'none';
-            popup.style.pointerEvents = 'none';
-        });
-    }
-
-    // === EDIT ANNOUNCEMENT ===
-    if (e.target && e.target.classList.contains('a-edit')) {
-        const a_id = announceItem.dataset.a_id;
-        const a_what = announceItem.dataset.a_what;
-        const a_when = announceItem.dataset.a_where;
-        const a_where = announceItem.dataset.a_when;
-        const a_why = announceItem.dataset.a_why;
-
-        popup.innerHTML = `
-            <form class="news-action-form a-edit-form" action="../../ADMIN_CONTROLS/announce_handler.php" method="post">
-                <input type="hidden" name="action" value="edit">
-                <input type="hidden" name="announce_id" value="${a_id}">
-                <label>What: <input type="text" name="a_what" value="${a_what}" required></label>
-                <label>When: <input type="date" name="a_date" value="${a_when}"></label>
-                <label>Where: <input type="text" name="a_loc" value="${a_where}"></label>
-                <label>Why: <input type="text" name="a_why" value="${a_why}" required></label>
-                <button id="actionBtn" type="submit">Update</button>
-                <button type="button" id="closePopup">Cancel</button>
-            </form>
-        `;
-
-        popup.style.display = 'block';
-        popup.style.pointerEvents = 'all';
-
-        document.getElementById('closePopup').addEventListener('click', () => {
-            popup.style.display = 'none';
-            popup.style.pointerEvents = 'none';
-        });
-    }
-
-    // === VIEW ANNOUNCEMENT ===
-    if (e.target && e.target.classList.contains('a-view')) {
-        const a_what = announceItem.dataset.a_what;
-        const a_when = announceItem.dataset.a_where;
-        const a_where = announceItem.dataset.a_when;
-        const a_why = announceItem.dataset.a_why;
-        const a_publish = announceItem.dataset.a_publish;
-
-        popup.innerHTML = `
-            <div class="news-action-form a-view-form">
-                <h2>${a_what}</h2>
-                <p><strong>When:</strong> ${a_when}</p>
-                <p><strong>Where:</strong> ${a_where}</p>
-                <p><strong>Why:</strong> ${a_why}</p>
-                <p><strong>Published:</strong> ${a_publish}</p>
-                <button type="button" id="closePopup">Close</button>
-            </div>
-        `;
-
-        popup.style.display = 'block';
-        popup.style.pointerEvents = 'all';
-
-        document.getElementById('closePopup').addEventListener('click', () => {
-            popup.style.display = 'none';
-            popup.style.pointerEvents = 'none';
-        });
-    }
-
-    if (e.target && e.target.classList.contains('a-delete')) {
-        const aItem = e.target.closest('.a_row');
-        const announceId = aItem.dataset.a_id;
-        const what = aItem.dataset.a_what;
-
-        popup.innerHTML = `
-        <form class="news-action-form delete-form" action="../../ADMIN_CONTROLS/announce_handler.php" method="post">
-            <input type="hidden" name="action" value="delete">
-            <input type="hidden" name="announce_id" value="${announceId}">
-            <p id="delTitle">Do you really want to delete (Not recoverable):</p>
-            <div class="headline-cont">
-                <h1 id="headlineTitle">${what}</h1>
-            </div>
-            <button type="submit" id="deleteBtn">Delete</button>
-            <button type="button" id="closePopup" class="cancelBtn">Cancel</button>
-        </form>
-        `;
+            `;
 
 
-        popup.style.display = 'block';
-        popup.style.pointerEvents = 'all';
+            popup.style.display = 'block';
+            popup.style.pointerEvents = 'all';
 
-        document.getElementById('closePopup').addEventListener('click', () => {
-            popup.style.display = 'none';
-            popup.style.pointerEvents = 'none';
-        });
-    }
+            document.getElementById('closePopup').addEventListener('click', () => {
+                popup.style.display = 'none';
+                popup.style.pointerEvents = 'none';
+            });
+        }
+
+        
+            // SERVICES
+        if (e.target && e.target.classList.contains('d-add')) {
+            popup.innerHTML = `
+                <form class="news-action-form d-edit-form" 
+                    action="../../ADMIN_CONTROLS/serviceHandler.php" 
+                    method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="action" value="add">
+                    <label>Document type: <input type="file" name="d_file" required></label>
+                    <label>Document name: <input type="text" name="d_name" placeholder="Document name" required></label>
+                    <button id="actionBtn" type="submit">Add</button>
+                    <button type="button" id="closePopup">Cancel</button>
+                </form>
+            `;
+            popup.style.display = 'block';
+            popup.style.pointerEvents = 'all';
+
+            document.getElementById('closePopup').addEventListener('click', () => {
+                popup.style.display = 'none';
+                popup.style.pointerEvents = 'none';
+            });
+        }
+
+
+        const row = e.target.closest('.d_row');
+        if (e.target && e.target.classList.contains('d-edit')) {
+            const docId = row.dataset.d_id;
+            const filename = row.dataset.d_filename;
+            const fileRef = row.dataset.d_document;
+            const availability = row.dataset.d_avail;
+
+            popup.innerHTML = `
+                <form class="news-action-form d-edit-form" 
+                    action="../../ADMIN_CONTROLS/serviceHandler.php" 
+                    method="post" enctype="multipart/form-data">
+                    
+                    <input type="hidden" name="action" value="edit">
+                    <input type="hidden" name="d_id" value="${docId}">
+
+                    <label>Document name: 
+                        <input type="text" name="d_name" value="${filename}" required>
+                    </label>
+
+                    <label>Replace file (optional): 
+                        <input type="file" name="d_file" accept=".pdf,.docx">
+                        <small>Current file: <em>${fileRef}</em></small>
+                    </label>
+
+                    <label>Availability: 
+                        <select name="d_avail" required>
+                            <option value="Available" ${availability === 'Available' ? 'selected' : ''}>Available</option>
+                            <option value="Unavailable" ${availability === 'Unavailable' ? 'selected' : ''}>Unavailable</option>
+                        </select>
+                    </label>
+
+                    <button id="actionBtn" type="submit">Update</button>
+                    <button type="button" id="closePopup">Cancel</button>
+                </form>
+            `;
+
+            popup.style.display = 'block';
+            popup.style.pointerEvents = 'all';
+
+            document.getElementById('closePopup').addEventListener('click', () => {
+                popup.style.display = 'none';
+                popup.style.pointerEvents = 'none';
+            });
+        }
+
+        if (e.target && e.target.classList.contains('d-view')) {
+            const docId = row.dataset.d_id;
+            const filename = row.dataset.d_filename;
+            const availability = row.dataset.d_avail;
+
+            popup.innerHTML = `
+                <div class="news-action-form a-view-form">
+                    <p>Filename: ${filename}</p>
+                    <p>Availability: ${availability}</p>
+                    <button type="button" id="closePopup">Close</button>
+                </div>
+            `;
+
+            popup.style.display = 'block';
+            popup.style.pointerEvents = 'all';
+
+            document.getElementById('closePopup').addEventListener('click', () => {
+                popup.style.display = 'none';
+                popup.style.pointerEvents = 'none';
+            });
+        }
 
 
 
-});
-
-
-
-
-    // SERVICES
-    
-
-
-
+    });
 
 });
 
