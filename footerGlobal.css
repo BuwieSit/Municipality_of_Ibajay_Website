@@ -165,18 +165,45 @@ footer {
     justify-content: space-around;
 }
 .socials-list {
+    width: 100%;
+    height: 50px;
     list-style-type: none;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
+    justify-content: flex-end;
+    gap: 20px;
+    transition: all 0.3s ease;
 
 }
+.socials-list > li {
+    position: relative;
+    height: 100%;
+    width: 10%;
+    transition: all 0.3s ease;
+
+}
+.socials-list > li > a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    background-color: var(--darkBlue);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
 .socials-list > li > a > img {
-    width: 30px;
+    width: 40px;
     aspect-ratio: 1;
     object-fit: cover;
+    filter: invert();
 }
+.socials-list > li > a > img:hover { 
+    transform: scale(1.1);
+}
+
 .copyright {
     font-weight: 400;
     color: black;

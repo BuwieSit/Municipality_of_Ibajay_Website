@@ -84,9 +84,9 @@ function routing() {
 
               <section class="ftrow-sect ftrow-right">
                   <ul class="socials-list">
-                    <li><a><img src= "${prefix}z-resources/ibajay_logo.png"></a></li>
-                    <li><a><img src= "${prefix}z-resources/ibajay_logo.png"></a></li>
-                    <li><a><img src= "${prefix}z-resources/ibajay_logo.png"></a></li>
+                    <li><a><img src= "${prefix}z-resources/phone.png"></a></li>
+                    <li><a><img src= "${prefix}z-resources/facebook.png"></a></li>
+                    <li><a><img src= "${prefix}z-resources/email.png"></a></li>
                   </ul>
 
                   <p class="copyright">&copy2025 Team 1 Web Development Team. All rights reserved.</p>
