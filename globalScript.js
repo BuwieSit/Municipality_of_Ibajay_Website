@@ -32,6 +32,28 @@ window.addEventListener('DOMContentLoaded', () => {
         });
 
     }
+    
+    const accessibilityTrigger = document.getElementById('accessTrigger');
+    const access_dropdown = document.getElementById('accessDrop');
+
+    accessibilityTrigger.addEventListener('mouseenter', () => {
+        access_dropdown.style.opacity = '1';
+    });
+
+    accessibilityTrigger.addEventListener('click', () => {
+        access_dropdown.style.opacity = '0';
+    });
+
+    access_dropdown.addEventListener('mouseleave', () => {
+        access_dropdown.style.opacity = '0';
+    });
+            
+
+
+
+
+
+
         accountBtn.forEach(btn => {
             console.log('clicked');
 
@@ -48,32 +70,6 @@ window.addEventListener('DOMContentLoaded', () => {
             });
 
         });
-
-
-
-
-    toggleBtn.textContent = 'why subscribe?';
-
-    toggleBtn.addEventListener('click', () => {
-
-        if (slider.style.transform == 'translateX(50%)') { //if slider is in the right side
-            slider.style.transform = 'translateX(-50%)';
-            slider.style.boxShadow = '10px 0px 10px black';
-            pleft.style.opacity = '0';
-            pleft.style.transform = 'scale(0.1)'
-            pright.style.transform = 'scale(1)'
-            pright.style.opacity = '1';
-        }
-        else {
-            slider.style.transform = 'translateX(50%)'; //if slider is in the left side
-            slider.style.boxShadow = '-10px 0px 10px black';
-            pright.style.opacity = '0';
-            pright.style.transform = 'scale(0.1)'
-            pleft.style.transform = 'scale(1)'
-            pleft.style.opacity = '1';
-        }
-        
-    });
 
 
     const number = document.querySelectorAll('.cont-number');

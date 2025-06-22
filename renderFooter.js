@@ -10,7 +10,7 @@ function routing() {
   if (depth >= 3) prefix = '../../';
 
   const footContents = `
-       <footer class = "footer">
+       <footer class = "footer" id="foot">
             
             <section class="logo-text">
                 <img src= "${prefix}z-resources/ibajay_logo.png" style = "width: 150px; height: auto;" />

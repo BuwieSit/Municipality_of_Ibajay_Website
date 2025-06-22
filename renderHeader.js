@@ -10,7 +10,8 @@ function routing() {
   if (depth >= 3) prefix = '../../';
 
   const headContents = `
-    <div class="header-logo-cont">
+
+    <div class="header-logo-cont" id="head">
       <a href="${prefix}index.html">
         <div class="left-wrapper">
           <h1 id="headerTitle">IBAJAY</h1>
@@ -25,7 +26,7 @@ function routing() {
         <a href="${prefix}Services_page/services.html"><li>Services</li></a>
         <a href="${prefix}News_page/news.html"><li>News</li></a>
         <a href="${prefix}Contacts_page/contact.html"><li>Contacts</li></a>
-        <button class="accButton">Account</button>
+        
       </ul>
     </div>
 
@@ -34,10 +35,19 @@ function routing() {
         <a href="${prefix}About_page/about.html"><li>About</li></a>
         <a href="${prefix}Services_page/services.html"><li>Services</li></a>
         <a href="${prefix}News_page/news.html"><li>News</li></a>
+        <a href="${prefix}Transp_page/transparency.html"><li>Transparency</li></a>
         <a href="${prefix}Contacts_page/contact.html"><li>Contacts</li></a>
-        <button class="accButton">Account</button>
       </ul>
     </div>
+    <div class="accessibility" id="accessTrigger">
+      <img src="${prefix}z-resources/accessi.png">
+    </div>
+    <div class="access-drop" id="accessDrop">
+      <img src="${prefix}z-resources/note.png">
+      <a href="#"><img src="${prefix}z-resources/up.png"></a>
+      <a href="#foot"><img src="${prefix}z-resources/down.png"></a>
+    </div>
+
   `;
 
   if (head) {
@@ -48,3 +58,4 @@ function routing() {
 }
 
 routing();
+
