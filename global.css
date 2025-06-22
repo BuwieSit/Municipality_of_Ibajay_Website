@@ -14,7 +14,7 @@ body {
     border: 0;
     padding: 0;
     scroll-behavior: smooth;
-    background-color: white !important;
+    background-color: #FAF9F5;
 }
 .margin {
     margin: 25% 0;
@@ -27,7 +27,7 @@ body {
 
     --newtitle: "Poppins", sans-serif;
 
-    --darkBlue: #033f63;
+    --darkBlue: #033E63;
     --blueGreen: #28666e;
     --darkGreen: rgb(124, 152, 133);
     --lightGreen: #b5b682;

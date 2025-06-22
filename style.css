@@ -1,7 +1,7 @@
 @import url(global.css);
 
 body {
-    background-image: linear-gradient(var(--darkBlue), var(--blueGreen), var(--lightGreen));
+    background-color: #FAF9F5;
     overflow-x: hidden;
     font-family: var(--subtitle-font);
 }
