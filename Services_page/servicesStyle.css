@@ -1,7 +1,7 @@
 @import url('../global.css');
 
 body {
-    background-image: linear-gradient(#033F63, #28666E, #FEDC97);
+    background-image: linear-gradient(whitesmoke);
     background-attachment: fixed;
 }
 
@@ -23,7 +23,7 @@ body {
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     backdrop-filter: blur( 9px );
     -webkit-backdrop-filter: blur( 9px );
-    border-radius: 10px;
+    border-radius: 30px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
     display: flex;
     flex-direction: column;
@@ -35,7 +35,50 @@ body {
     animation: idleCard 10s ease;
     transition: all 0.2s ease;
 }
-.service-innerbox > h2 {
+
+.bg-permits::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: url(../z-resources/h-resources/logo_permits.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 30px;
+    filter: blur(1px);
+    z-index: -1;
+   
+}
+
+.bg-healthcare::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: url(../z-resources/h-resources/healthcare_bg.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 30px;
+    filter: blur(1px); 
+    z-index: -1;
+}
+
+.bg-tourism::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: url(../z-resources/h-resources/tourism.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 30px;
+    filter: blur(1px);
+    z-index: -1;
+ 
+}
+
+
+.service-innerbox > h1 {
     font-family: var(--title-font);
     color: black;
 }
@@ -52,7 +95,7 @@ body {
 
 
 .service-innerbox:hover {
-    background-image: linear-gradient(to top, var(--darkGreen), rgba(0, 0, 0, 0.2));
+   background-image: linear-gradient(to top, var(--darkGreen), rgba(0, 0, 0, 0.2));
 }
 
 .service-innerbox:nth-child(2) {
@@ -64,7 +107,7 @@ body {
 .service-innerbox:hover {
     animation-play-state: paused;
 }
-.service-innerbox:hover > h2 {
+.service-innerbox:hover > h1 {
     opacity: 0.1;
 }
 .service-innerbox:hover > .innercontent{
@@ -160,7 +203,7 @@ body {
         padding: 10px 5px;
         height: 70vw;
     }
-    .service-innerbox > h2 {
+    .service-innerbox > h1 {
         font-size: 1.2rem;
     }
     .innercontent {
@@ -177,5 +220,6 @@ body {
         max-width: 98vw;
         padding: 10px 5px;
         height: 70vw;
+        
     }
 }
