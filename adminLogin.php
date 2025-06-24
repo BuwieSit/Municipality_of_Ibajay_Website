@@ -42,7 +42,7 @@ if (isset($_POST['signIn'])) {
 
         if ($role === 'super_admin') {
             $_SESSION['role'] = $role;
-            header("Location: ./Admin_page/Super_admin/super_admin.html");
+            header("Location: ./Admin_page/Super_admin/super_admin.html?content=dashboard");
         } elseif ($role === 'content_manager') {
             header("Location: ./Admin_page/Content_manager/content.html");
         } elseif ($role === 'appoint_officer') {

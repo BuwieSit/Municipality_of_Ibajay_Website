@@ -54,7 +54,7 @@ window.addEventListener('DOMContentLoaded', () => {
         nav.addEventListener('click', () => {
             const text = nav.querySelector('.nav-text');
             if (!text) return;
-            loadContent(text.textContent);
+            loadContent(text);
         });
     });
 

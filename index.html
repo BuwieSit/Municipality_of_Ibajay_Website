@@ -16,45 +16,25 @@
     </header>
 
     <div class="main-container" id="head">
-          <img id="main-logo" src="./z-resources/ibajay_logo.png" alt="logo">
-          <h1 class="main-title">IBAJAY</h1>
-          <p class="main-motto">Paradise in Seclusion</p>
+
+      <input type="radio" name="images" id="i1" class="i-navs">
+      <input type="radio" name="images" id="i2">
+      <input type="radio" name="images" id="i3">
+          <img class="slider-images" id="sImage-1" src="./z-resources/hall_front.jpg">
+          <img class="slider-images" id="sImage-2" src="./z-resources/Ibajayy.jpg">
+          <img class="slider-images" id="sImage-3" src="./z-resources/ibajay_rizal.jpg">
+
+        <div class="slider-nav">
+          <a href="#sImage-1"></a>
+          <a href="#sImage-2"></a>
+          <a href="#sImage-3"></a>
+        </div>
     </div>
 
 <!-- EXPERIMENT -->
 <div class="carousel">
 
         <div class="list" id="list"></div>
-          <script>
-            fetch('indexHandler.php')
-              .then(response => response.json())
-              .then(data => {
-                const container = document.getElementById('list');
-
-                data.forEach(row => {
-                  const item = document.createElement('div');
-                  item.className = 'item';
-                  item.style.backgroundImage = "url('./z-resources/news_thumb.png')";
-                  item.setAttribute('data-headline', row.headline);
-                  item.setAttribute('data-desc', row.description);
-
-                  item.innerHTML = `
-                    <div class="content">
-                      <div class="title">${row.headline}</div>
-                      <div class="name">${row.description}</div>
-                      <div class="btn">
-                        <button><a href="News_page/news.php">See More</a></button>
-                      </div>
-                    </div>
-                  `;
-
-                  container.appendChild(item);
-                });
-              })
-              .catch(err => {
-                console.error('Error fetching news:', err);
-              });
-          </script>  
 
         <!--next prev button-->
         <div class="arrows">

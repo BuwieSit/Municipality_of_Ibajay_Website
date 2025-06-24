@@ -370,7 +370,7 @@ footer {
     width: 200px;
     height: 50px;
     border-radius: 10px;
-    background-color: var(--darkGreen);
+    background-color: var(--darkblue);
     box-shadow: 3px 3px 10px black;
     font-family: var(--subtitle-font);
     font-weight: 700;
@@ -442,12 +442,11 @@ footer {
     font-weight: 700;
 }
 .admin-wrapper {
-    background: rgb(3, 47, 75);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5) inset;
+    background: #FAF9F5;
+    box-shadow: 0 8px 50px  rgba(0, 0, 0, 0.5) inset;
     backdrop-filter: blur( 12.5px );
     -webkit-backdrop-filter: blur( 12.5px );
     border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
     width: 600px;
     height: 500px;
     padding: 20px;
@@ -535,13 +534,7 @@ footer {
     align-items: center;
 }
 
-.admin-toggle-btn {
-    width: 200px;
-    height: 50px;
-    border-top-right-radius: 25px;
-    border-bottom-right-radius: 25px;
-    cursor: pointer;
-}
+
 
 .toast {
     width: 100px;
