@@ -9,7 +9,6 @@
     $action = $_POST['action'] ?? $_GET['action'] ?? '';
     $uploadDir = './documents/';
     $allowed = ['pdf', 'docx'];
-    $now = date('Y-m-d H:i:s');
 
     function safeFilename($name, $ext) {
         return uniqid('doc_', true) . '.' . $ext;
@@ -22,8 +21,8 @@
                 if (in_array($ext, $allowed)) {
                     $fileName = safeFilename($_FILES['d_file']['name'], $ext);
                     move_uploaded_file($_FILES['d_file']['tmp_name'], $uploadDir . $fileName);
-                    $stmt = $conn->prepare("INSERT INTO documents_list (filename, document, uploaded_at) VALUES (?, ?, ?)");
-                    $stmt->bind_param("sss", $_POST['d_name'], $fileName, $now);
+                    $stmt = $conn->prepare("INSERT INTO documents_list (filename, document, dept, availability) VALUES (?, ?, ?, ?)");
+                    $stmt->bind_param("sss", $_POST['d_name'], $fileName, $_POST['d_dept'] ,$_POST['d_avail']);  
                     $stmt->execute();
                 }
             }
@@ -32,6 +31,8 @@
         case 'edit':
             $fileId = $_POST['d_id'];
             $name = $_POST['d_name'];
+            $dept = $_POST['d_dept'];
+            $avail = $_POST['d_avail'];
             $newFileName = null;
 
             if (!empty($_FILES['d_file']['name'])) {
@@ -43,11 +44,11 @@
             }
 
             if ($newFileName) {
-                $stmt = $conn->prepare("UPDATE services_files SET filename=?, document=?, availability=?, uploaded_at=? WHERE file_id=?");
-                $stmt->bind_param("ssssi", $name, $newFileName, $avail, $now, $fileId);
+                $stmt = $conn->prepare("UPDATE services_files SET filename=?, document=?, dept=?, availability=? WHERE file_id=?");
+                $stmt->bind_param("ssssi", $name, $newFileName, $dept, $avail, $fileId);
             } else {
-                $stmt = $conn->prepare("UPDATE documents_list SET filename=?, uploaded_at=? WHERE file_id=?");
-                $stmt->bind_param("ssi", $name, $now, $fileId);
+                $stmt = $conn->prepare("UPDATE documents_list SET filename=?, dept=?, availability=? WHERE file_id=?");
+                $stmt->bind_param("sssi", $name, $dept, $avail, $fileId);
             }
 
             $stmt->execute();

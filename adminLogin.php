@@ -50,7 +50,7 @@ if (isset($_POST['signIn'])) {
         } elseif ($role === 'helpdesk_officer') {
             header("Location: ./Admin_page/Helpdesk_officer/helpdesk.html");
         } elseif ($role === 'tourism_coordinator') {
-            header("Location: ./Admin_page/Tourism_coor/tourism.html");
+            header("Location: ./Admin_page/Tourism_coor/tourism.php");
         } elseif ($role === 'transp_officer') {
             header("Location: ./Admin_page/Transp_officer/transparency.html");
         } elseif ($role === 'services_manager') {

@@ -529,3 +529,46 @@ header {
     width: 100%;
     height: 100%;
 }
+
+
+
+/* TOURISM */
+
+.t-add-main {
+    position: relative;
+    padding: 0%;
+    justify-content: space-between;
+}
+.t-add {
+    width: 100px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+.t-add-wrapper {
+    padding: 0 5%;
+    height: 200px;
+    width: auto;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+.t-button {
+    background-color: rgba(3, 62, 99, 0.432);
+    cursor: pointer;
+}
+.t-button:hover > .t-add {
+    transform: scale(1.1);
+}
+.tourism-title {
+    font-weight: 700;
+    font-family: var(--newtitle);
+    font-size: clamp(1rem, 2vw, 2rem);
+}
+.tourism-desc {
+    font-weight: 500;
+    font-family: var(--subtitle-font);
+    font-size: clamp(0.5rem, 1vw, 1rem);
+}

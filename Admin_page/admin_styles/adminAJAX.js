@@ -7,7 +7,7 @@ window.addEventListener('DOMContentLoaded', () => {
         'dashboard': { folder: 'Super_admin', file: 'super_admin.html' }, 
         'announcements': { folder: 'Content_manager', file: 'content.php' },
         'services': { folder: 'Services_manager', file: 'services.php' },
-        'tourism': { folder: 'Tourism_coor', file: 'tourism.html' },
+        'tourism': { folder: 'Tourism_coor', file: 'tourism.php' },
         'healthcare': { folder: 'Health_officer', file: 'health.html' },
         'transparency': { folder: 'Transp_officer', file: 'transparency.html' },
         'inquiries': { folder: 'Helpdesk_officer', file: 'helpdesk.html' }, 
@@ -54,7 +54,7 @@ window.addEventListener('DOMContentLoaded', () => {
         nav.addEventListener('click', () => {
             const text = nav.querySelector('.nav-text');
             if (!text) return;
-            loadContent(text);
+            loadContent(text.textContent);
         });
     });
 

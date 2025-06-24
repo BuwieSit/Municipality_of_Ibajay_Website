@@ -58,6 +58,7 @@ body {
     font-size: clamp(1rem, 1.5vw, 2rem);
     text-align: center;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 .department:hover {
     background-color: #283B51;
@@ -68,6 +69,7 @@ body {
     height: auto;
     display: flex;
     position: relative;
+    transition: all 0.3s ease;
 
 }
 .side-tuts {
@@ -101,6 +103,7 @@ body {
     align-items: center;
     justify-content: space-evenly;
     text-wrap: wrap;
+    gap: 20px;
 
 }
 .side-bold {

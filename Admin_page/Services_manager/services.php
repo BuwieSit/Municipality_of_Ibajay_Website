@@ -27,6 +27,7 @@
         <table class="general-list">
             <thead>
                 <th>Document name</th>
+                <th>Department</th>
                 <th>Availability</th>
                 <th>Upload date</th>
                 <th>Actions</th>
@@ -37,11 +38,13 @@
             data-d_id="<?php echo $d_row['file_id']?>"
             data-d_filename="<?php echo $d_row['filename']?>"
             data-d_document="<?php echo $d_row['document']?>"
+            data-d_dept="<?php echo $d_row['dept']?>"
             data-d_avail="<?php echo $d_row['availability']?>"
             data-d_uploadDate="<?php echo $d_row['uploaded_at']?>"
             >
                 <td class="docu-name"><?php echo $d_row['filename']?></td>
-                <td class="docu-date"><?php echo $d_row['availability']?></td>
+                <td class="docu-dept"><?php echo $d_row['dept']?></td>
+                <td class="docu-avail"><?php echo $d_row['availability']?></td>
                 <td class="docu-date"><?php echo $d_row['uploaded_at']?></td>
                 <td class="actions">
                     <img class="d-edit" src="../../admin-resources/edit.png" alt="edit">

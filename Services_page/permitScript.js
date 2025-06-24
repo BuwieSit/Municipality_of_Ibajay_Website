@@ -2,60 +2,60 @@
 window.addEventListener('DOMContentLoaded', () => {
 
   const deptNav = document.querySelectorAll('.department');
-const deptContent = document.getElementById('servicesContent');
+  const deptContent = document.getElementById('servicesContent');
 
-const baseFolder = 'dept_pages/';
+  const baseFolder = 'dept_pages/';
 
-const deptMap = {
-  'civilregistry': 'civil_reg.html',
-  'engineering': 'eng_dept.html',
-  'healthoffice': 'health_dept.html',
-  'treasury': 'treasury.html',
-  'businesspermits&licensingoffice': 'business_dept.html'
-};
+  const deptMap = {
+    'civilregistry': 'civil_reg.html',
+    'engineering': 'eng_dept.html',
+    'healthoffice': 'health_dept.html',
+    'treasury': 'treasury.html',
+    'businesspermits&licensingoffice': 'business_dept.html'
+  };
 
-function normalize(str) {
-  return str.trim().toLowerCase().replace(/\s+/g, '');
-}
-
-function loadContent(deptKey, updateURL = true) {
-  const key = normalize(deptKey);
-  const file = deptMap[key];
-
-  if (!file) {
-    deptContent.innerHTML = `<p>Content not available for "${key}"</p>`;
-    return;
+  function normalize(str) {
+    return str.trim().toLowerCase().replace(/\s+/g, '');
   }
 
-  const path = baseFolder + file;
+  function loadContent(deptKey, updateURL = true) {
+    const key = normalize(deptKey);
+    const file = deptMap[key];
 
-  fetch(path)
-    .then(response => {
-      if (!response.ok) throw new Error('Page not found');
-      return response.text();
-    })
-    .then(html => {
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(html, 'text/html');
-      const inner = doc.querySelector('.services-container');
-      deptContent.innerHTML = inner ? inner.outerHTML : html;
+    if (!file) {
+      deptContent.innerHTML = `<p>Content not available for "${key}"</p>`;
+      return;
+    }
 
-      if (updateURL) {
-        history.pushState(null, '', `?content=${encodeURIComponent(key)}`);
-      }
-    })
-    .catch(err => {
-      deptContent.innerHTML = `<p>Error loading content: ${err.message}</p>`;
+    const path = baseFolder + file;
+
+    fetch(path)
+      .then(response => {
+        if (!response.ok) throw new Error('Page not found');
+        return response.text();
+      })
+      .then(html => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        const inner = doc.querySelector('.services-container');
+        deptContent.innerHTML = inner ? inner.outerHTML : html;
+
+        if (updateURL) {
+          history.pushState(null, '', `?content=${encodeURIComponent(key)}`);
+        }
+      })
+      .catch(err => {
+        deptContent.innerHTML = `<p>Error loading content: ${err.message}</p>`;
+      });
+  }
+
+  deptNav.forEach(dnav => {
+    dnav.addEventListener('click', () => {
+      const deptText = dnav.querySelector('p')?.textContent;
+      if (!deptText) return;
+      loadContent(deptText);
     });
-}
-
-deptNav.forEach(dnav => {
-  dnav.addEventListener('click', () => {
-    const deptText = dnav.querySelector('p')?.textContent;
-    if (!deptText) return;
-    loadContent(deptText);
   });
-});
 
   
     const params = new URLSearchParams(window.location.search);

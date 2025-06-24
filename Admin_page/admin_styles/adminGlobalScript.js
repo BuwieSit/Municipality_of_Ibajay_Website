@@ -286,7 +286,24 @@ routing();
                     method="post" enctype="multipart/form-data">
                     <input type="hidden" name="action" value="add">
                     <label>Document type: <input type="file" name="d_file" required></label>
+
                     <label>Document name: <input type="text" name="d_name" placeholder="Document name" required></label>
+                    <label>Department: 
+                        <select name="d_avail" required>
+                            <option value="civilreg">Civil Registry</option>
+                            <option value="engdept">Engineering</option>
+                            <option value="healthoffice">Health Office</option>
+                            <option value="treasury">Treasury</option>
+                            <option value="business">Business Permits</option>
+                        </select>
+                    </label>
+                    <label>Availability: 
+                        <select name="d_avail" required>
+                            <option value="Available">Available</option>
+                            <option value="Unavailable">Unavailable</option>
+                        </select>
+                    </label>
+
                     <button id="actionBtn" type="submit">Add</button>
                     <button type="button" id="closePopup">Cancel</button>
                 </form>
@@ -306,7 +323,9 @@ routing();
             const docId = row.dataset.d_id;
             const filename = row.dataset.d_filename;
             const fileRef = row.dataset.d_document;
+            const dept = row.dataset.d_dept;
             const availability = row.dataset.d_avail;
+           
 
             popup.innerHTML = `
                 <form class="news-action-form d-edit-form" 
@@ -324,7 +343,15 @@ routing();
                         <input type="file" name="d_file" accept=".pdf,.docx">
                         <small>Current file: <em>${fileRef}</em></small>
                     </label>
-
+                    <label>Department: 
+                        <select name="d_dept" required>
+                            <option value="Civil Registry">Civil Registry</option>
+                            <option value="Engineering">Engineering</option>
+                            <option value="Health Office">Health Office</option>
+                            <option value="Treasury">Treasury</option>
+                            <option value="Business Permits">Business Permits</option>
+                        </select>
+                    </label>
                     <label>Availability: 
                         <select name="d_avail" required>
                             <option value="Available" ${availability === 'Available' ? 'selected' : ''}>Available</option>
@@ -358,6 +385,34 @@ routing();
                     <button type="button" id="closePopup">Close</button>
                 </div>
             `;
+
+            popup.style.display = 'block';
+            popup.style.pointerEvents = 'all';
+
+            document.getElementById('closePopup').addEventListener('click', () => {
+                popup.style.display = 'none';
+                popup.style.pointerEvents = 'none';
+            });
+        }
+
+        if(e.target && e.target.closest('.d-delete')) {
+            const dItem = e.target.closest('.d_row');
+            const docuId = dItem.dataset.d_id;
+            const fileName = dItem.dataset.d_filename;
+
+            popup.innerHTML = `
+            <form class="news-action-form d-delete-form" action="../../ADMIN_CONTROLS/serviceHandler.php" method="post">
+                <input type="hidden" name="action" value="delete">
+                <input type="hidden" name="d_id" value="${docuId}">
+                <p id="delTitle">Do you really want to delete (Not recoverable):</p>
+                <div class="headline-cont">
+                    <h1 id="headlineTitle">${fileName}</h1>
+                </div>
+                <button type="submit" id="deleteBtn">Delete</button>
+                <button type="button" id="closePopup" class="cancelBtn">Cancel</button>
+            </form>
+            `;
+
 
             popup.style.display = 'block';
             popup.style.pointerEvents = 'all';
