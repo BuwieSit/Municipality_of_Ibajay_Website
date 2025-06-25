@@ -1,10 +1,19 @@
 
-    <?php
-        session_start();
-        include '../../conn.php'; 
+<?php
+    session_start();
+    include '../../conn.php'; 
 
-        $sql = "SELECT * FROM news_table ORDER BY created_at DESC";
-        $result = mysqli_query($conn, $sql);
+    if (!in_array($_SESSION['role'] ?? '', ['super_admin', 'content_manager'])) {
+        exit("<script>alert('Access denied.'); location.href='../../admin.php';</script>");
+    }
+
+    $sql = 'SELECT * FROM admin_accounts WHERE role="content_manager" ';
+    $result = mysqli_query($conn, $sql);
+    $data = mysqli_fetch_assoc($result);
+
+
+        $newsTable = "SELECT * FROM news_table ORDER BY created_at DESC";
+        $newsRes = mysqli_query($conn, $newsTable);
 
         $a_table = "SELECT * FROM announce_table ORDER BY publish_date DESC";
         $a_result = mysqli_query($conn, $a_table);
@@ -30,7 +39,7 @@
     <div class="side-navigation">
         <div class="side-wrapper">
             <img src="../../z-resources/ibajay_logo.png" alt="ibajay logo">
-            <h2 id="userRole" class="user-role">User Role</h2>
+            <h2 id="userRole" class="user-role"><?php echo htmlspecialchars($data['admin_username']); ?></h2>
         </div>
         <div class="admin-navlist">
             <section class="admin-sidenav adm-news">
@@ -41,6 +50,9 @@
         </div>
     </div>
 
+    <div id="adminContent" class="admin-content-container">
+        
+    </div>
 
 
     <div class="member-content-container">
@@ -71,7 +83,7 @@
                     
 
             <div class="admin-news-container">
-                <?php while($row = mysqli_fetch_assoc($result)): ?>
+                <?php while($row = mysqli_fetch_assoc($newsRes)): ?>
                 <div class="admin-news-item"
                 data-id="<?php echo $row['news_id']; ?>"
                 data-headline="<?php echo htmlspecialchars($row['headline'], ENT_QUOTES); ?>"

@@ -37,8 +37,8 @@ window.addEventListener('DOMContentLoaded', () => {
       .then(html => {
         const parser = new DOMParser();
         const doc = parser.parseFromString(html, 'text/html');
-        const inner = doc.querySelector('.services-container');
-        deptContent.innerHTML = inner ? inner.outerHTML : html;
+        const inner = doc.querySelector('.services-content');
+        deptContent.innerHTML = inner ? inner.outerHTML : html; //line 41 here
 
         if (updateURL) {
           history.pushState(null, '', `?content=${encodeURIComponent(key)}`);

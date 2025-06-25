@@ -2,10 +2,18 @@
 
     session_start();
     include '../../conn.php';
+    if (!in_array($_SESSION['role'] ?? '', ['super_admin', 'content_manager'])) {
+        exit("<script>alert('Access denied.'); location.href='../../admin.php';</script>");
+    }
+
+    $sql = 'SELECT * FROM admin_accounts WHERE role="transp_officer" ';
+    $result = mysqli_query($conn, $sql);
+    $data = mysqli_fetch_assoc($result);
     
 
-    $sql = 'SELECT * FROM documents_list ORDER BY uploaded_at';
-    $list = mysqli_query($conn, $sql);
+
+    $table = 'SELECT * FROM documents_list ORDER BY uploaded_at';
+    $list = mysqli_query($conn, $table);
 
 
 ?>
@@ -23,6 +31,29 @@
     <header class="head">
         <div class="settings-popup" id="settingsPopup"></div>
     </header>
+
+
+       <div class="side-navigation">
+        <div class="side-wrapper">
+            <img src="../../z-resources/ibajay_logo.png" alt="ibajay logo">
+           <h2 id="userRole" class="user-role"><?php echo htmlspecialchars($data['admin_username']); ?></h2>
+
+        </div>
+        <div class="admin-navlist">
+
+            <section class="admin-sidenav adm-transp">
+                <img src="../../admin-resources/reports.png">
+                <p class="nav-text">Services</p>
+            </section>
+
+        </div>
+    </div>
+
+    
+    <div id="adminContent" class="admin-content-container">
+        
+    </div>
+
     <div class="member-content-container">
 
         <div class="admin-news-container" >
@@ -72,7 +103,7 @@
             <!-- announce-action-form -->
         </div>
     </div>
-    
+
 
     <script src="../admin_styles/adminGlobalScript.js"></script>
     <script src="../admin_styles/adminAJAX.js"></script>

@@ -1,8 +1,6 @@
 const params = new URLSearchParams(window.location.search);
 const dept = params.get('content') || 'civilregistry';
 
-console.log("Fetching:", './documentHandler.php?content=' + dept); // ✔️ DEBUG
-
 fetch('./documentHandler.php?content=' + dept)
 
     .then(response => response.json())
@@ -10,7 +8,7 @@ fetch('./documentHandler.php?content=' + dept)
         const container = document.getElementById('serviceDocuments');
 
         if (!Array.isArray(data) || data.length === 0) {
-            container.innerHTML = '<p>No documents available at the moment</p>';
+            container.innerHTML = '<p>No     documents available at the moment</p>';
             return;
         }
 
