@@ -133,3 +133,11 @@ highlightListItems.forEach(li => {
     }
   });
 });
+
+function openpopup() {
+  document.getElementById("popup").style.display = "flex";
+}
+
+function closepopup(){
+    document.getElementById("popup").style.display = "none";
+}
