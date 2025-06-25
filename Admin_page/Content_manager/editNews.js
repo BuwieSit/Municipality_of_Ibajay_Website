@@ -1,28 +1,36 @@
-document.getElementById('newsActionForm').addEventListener('submit', function (e) {
-    e.preventDefault(); 
 
-    const formData = new FormData(this);
+// setTimeout(() => {
+//     const form = document.querySelector('.news-action-form');
+//     const popupBox = document.getElementById('addedPopup');
 
-    fetch('./update_news.php', {
-        method: 'POST',
-        body: formData,
-        headers: {
-            'X-Requested-With': 'XMLHttpRequest' 
-        }
-    })
-    .then(res => res.json())
-    .then(data => {
-        if (data.success) {
-            alert("✅ " + data.message);
+//     if (form) {
+//         form.addEventListener('submit', async (e) => {
+//             e.preventDefault();
 
-            document.querySelector('.news-action-popup').style.display = 'none';
+//             const formData = new FormData(form);
 
-            location.reload();
-        } else {
-            alert("❌ Error: " + data.message);
-        }
-    })
-    .catch(err => {
-        alert("❌ AJAX error: " + err.message);
-    });
-});
+//             try {
+//                 const response = await fetch(form.action, {
+//                     method: 'POST',
+//                     body: formData,
+//                 });
+
+//                 const result = await response.text();
+//                 if (result.trim() === "success") {
+//                     popupBox.style.display = 'block';
+
+//                     setTimeout(() => {
+//                         popupBox.style.display = 'none';
+//                         // Optionally reload:
+//                         // window.location.reload();
+//                     }, 2000);
+//                 } else {
+//                     alert("Submission failed: " + result);
+//                 }
+//             } catch (err) {
+//                 console.error("AJAX Error:", err);
+//                 alert("An error occurred.");
+//             }
+//         });
+//     }
+// }, 0);

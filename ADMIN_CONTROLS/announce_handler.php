@@ -2,6 +2,10 @@
 session_start();
 include '../conn.php';
 
+    if (!in_array($_SESSION['role'] ?? '', ['super_admin', 'content_manager'])) {
+        exit("<script>alert('Access denied.'); location.href='../../admin.php';</script>");
+    }
+
 $action = $_POST['action'] ?? $_GET['action'] ?? '';
 
 switch ($action) {
@@ -43,9 +47,11 @@ switch ($action) {
 if (isset($sql)) {
     if (mysqli_query($conn, $sql)) {
         header("Location: " . $_SERVER['HTTP_REFERER']);
+        // echo "success";
         exit;
     } else {
         echo "Error: " . mysqli_error($conn);
     }
 }
+
 ?>

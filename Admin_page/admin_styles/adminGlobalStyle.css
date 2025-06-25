@@ -11,6 +11,94 @@ body {
         "sidebar content";
     overflow: hidden;
 }
+.added-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    box-shadow: 2px 2px 10px black;
+    padding: 3%;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    display: none;
+}
+.added-popup-btn {
+    width: 100px;
+    height: 50px;
+    padding: 5%;
+    background-color: #4caf50;
+    color: white;
+    font-weight: 600;
+    font-family: var(--subtitle-font);
+
+}
+svg {
+  width: 100px;
+  display: block;
+  margin: 40px auto 0;
+}
+
+.path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
+  &.circle {
+    -webkit-animation: dash .9s ease-in-out;
+    animation: dash .9s ease-in-out;
+  }
+  &.line {
+    stroke-dashoffset: 1000;
+    -webkit-animation: dash .9s .35s ease-in-out forwards;
+    animation: dash .9s .35s ease-in-out forwards;
+  }
+  &.check {
+    stroke-dashoffset: -100;
+    -webkit-animation: dash-check .9s .35s ease-in-out forwards;
+    animation: dash-check .9s .35s ease-in-out forwards;
+  }
+}
+
+@-webkit-keyframes dash {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@-webkit-keyframes dash-check {
+  0% {
+    stroke-dashoffset: -100;
+  }
+  100% {
+    stroke-dashoffset: 900;
+  }
+}
+
+@keyframes dash-check {
+  0% {
+    stroke-dashoffset: -100;
+  }
+  100% {
+    stroke-dashoffset: 900;
+  }
+}
+
+
 header {
     grid-area: header;
     position: fixed;
@@ -309,7 +397,7 @@ header {
     font-weight: 500;
     font-style: italic;
     font-size: 10px;
-    color: #36454F ;
+    color: #36454F;
 }
 .headline-title {
     font-family: var(--newtitle);
@@ -319,7 +407,9 @@ header {
 }
 
 .general-list {
-    width: 90%;
+    width: 80%;
+    padding: 5% 0;
+    height: auto;
     border-collapse: collapse; 
     border: 1px solid black;
 }
@@ -328,20 +418,28 @@ header {
 .general-list td {
     font-family: var(--subtitle-font);
     background-color: rgba(3, 62, 99, 0.432);
-    
     text-align: center;
-    padding: 8px;
+    height: auto;
     font-size: clamp(0.3rem, 1vw, 1.5rem);
+
 }
 .general-list th {
     color: white;
     width: 16%;
     height: 100%;
+    padding: 2% 0;
 }
 .general-list td {
-    color: black;
-}
+    height: 100%;
 
+    color: black;
+    padding: 2% 2%;
+}
+.general-list > tbody > tr {
+}
+.general-list > tbody > tr:hover {
+    background-color: rgba(5, 104, 165, 0.432);
+}
 .general-list thead {
     background-color: var(--darkBlue);
 }
@@ -349,21 +447,22 @@ header {
     font-weight: 700;
     font-family: var(--newtitle);
 }
+
 .actions {
-    height: auto !important;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
+
+    height: 100%;
+    background-color: rgba(3, 62, 99, 0.432);
     
 }
-.actions > img {
-    width: 20px;
+.action-img {
+    width: 30px;
+    aspect-ratio: 1;
+    object-fit: cover;
     cursor: pointer;
     transition: all 0.3s ease;
     filter: drop-shadow(1px 1px 1px black);
 }
-.actions > img:hover {
+.action-img:hover {
     transform: scale(1.1);
 }
 
@@ -386,7 +485,6 @@ header {
 }
 .add-buttons {
     background-color:#4caf50;
-    padding: 0.5%;
     border-radius: 10px;
     display: flex;
     flex-direction: row;
@@ -395,8 +493,9 @@ header {
     cursor: pointer;
     font-family: var(--subtitle-font);
     font-weight: 600;
-    font-size: clamp(0.3rem, 0.8vw, 1rem);
+    font-size: clamp(0.5rem, 1vw, 1rem);
     transition: all 0.3s ease;
+    padding: 1% 1%;
 }
 .add-buttons > img {
     width: 30px;
@@ -405,7 +504,7 @@ header {
     transition: all 0.5s ease;
 }
 .add-buttons:hover {
-    transform: scale(1.1);
+    transform: scale(1.02);
 }
 .add-buttons:hover > img {
     transform: rotate(90deg);
@@ -534,18 +633,18 @@ header {
 
 /* TOURISM */
 
-.t-add-main {
+.admin-news-container {
     position: relative;
     padding: 0%;
     justify-content: space-between;
 }
-.t-add {
+.admin-add-img {
     width: 100px;
     aspect-ratio: 1;
     object-fit: cover;
     transition: all 0.3s ease;
 }
-.t-add-wrapper {
+.admin-news-wrapper {
     padding: 0 5%;
     height: 200px;
     width: auto;
@@ -555,19 +654,24 @@ header {
     justify-content: center;
     transition: all 0.3s ease;
 }
-.t-button {
+.admin-button {
     background-color: rgba(3, 62, 99, 0.432);
+    height: 100%;
+    padding: 0% 5%;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.t-button:hover > .t-add {
+.admin-button:hover > .admin-add-img {
     transform: scale(1.1);
 }
-.tourism-title {
+.admin-title {
     font-weight: 700;
     font-family: var(--newtitle);
     font-size: clamp(1rem, 2vw, 2rem);
 }
-.tourism-desc {
+.admin-desc {
     font-weight: 500;
     font-family: var(--subtitle-font);
     font-size: clamp(0.5rem, 1vw, 1rem);

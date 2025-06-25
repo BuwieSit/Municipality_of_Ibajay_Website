@@ -2,17 +2,19 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const navbars = document.querySelectorAll('.admin-sidenav');
     const contentDiv = document.getElementById('adminContent');
+    const contentTitle = document.getElementById('headTitle');
+
 
     const pageMap = {
-        'dashboard': { folder: 'Super_admin', file: 'super_admin.html' }, 
+        'dashboard': { folder: 'Super_admin', file: 'super_admin.php' }, 
         'announcements': { folder: 'Content_manager', file: 'content.php' },
         'services': { folder: 'Services_manager', file: 'services.php' },
         'tourism': { folder: 'Tourism_coor', file: 'tourism.php' },
-        'healthcare': { folder: 'Health_officer', file: 'health.html' },
-        'transparency': { folder: 'Transp_officer', file: 'transparency.html' },
-        'inquiries': { folder: 'Helpdesk_officer', file: 'helpdesk.html' }, 
-        'online application': { folder: 'Appoint_officer', file: 'appoint.html' },
-        'employees': { folder: 'Employees', file: 'employees.html' } 
+        'healthcare': { folder: 'Health_officer', file: 'health.php' },
+        'transparency': { folder: 'Transp_officer', file: 'transparency.php' },
+        'inquiries': { folder: 'Helpdesk_officer', file: 'helpdesk.php' }, 
+        'online application': { folder: 'Appoint_officer', file: 'appoint.php' },
+        'employees': { folder: 'Employees', file: 'employees.php' } 
     };
 
     function normalize(str) {
@@ -23,7 +25,7 @@ window.addEventListener('DOMContentLoaded', () => {
         const key = normalize(contentLink);
         const pageInfo = pageMap[key];
 
-        if (!pageInfo) {
+            if (!pageInfo) {
             contentDiv.innerHTML = `<p>Content not available for "${key}"</p>`;
             return;
         }
@@ -39,10 +41,15 @@ window.addEventListener('DOMContentLoaded', () => {
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(html, 'text/html');
                 const inner = doc.querySelector('.member-content-container');
+
                 contentDiv.innerHTML = inner ? inner.outerHTML : html;
 
                 if (updateURL) {
                     history.pushState(null, '', `?content=${encodeURIComponent(key)}`);
+                }
+            
+                if (contentTitle) {
+                    contentTitle.textContent = contentLink;
                 }
             })
             .catch(err => {
@@ -55,6 +62,7 @@ window.addEventListener('DOMContentLoaded', () => {
             const text = nav.querySelector('.nav-text');
             if (!text) return;
             loadContent(text.textContent);
+            contentTitle.textContent = text.textContent;
         });
     });
 

@@ -10,6 +10,6 @@
     while($row = mysqli_fetch_assoc($result)) {
         $newsItems[] = $row;
     }
-
+    
     echo json_encode($newsItems);
 ?>

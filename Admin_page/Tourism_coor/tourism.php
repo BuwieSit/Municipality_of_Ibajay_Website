@@ -18,16 +18,18 @@
 </head>
 <body>
     
+    <header class="head">
+        <div class="settings-popup" id="settingsPopup"></div>
+    </header>
     <div class="member-content-container">
         
             <div class="admin-news-container t-add-main" >
-                <div class="t-add-wrapper">
-                    <p class="tourism-title">Tourism Page</p>
-                    <p class="tourism-desc">Add contents to Tourism Sections!</p>
+                <div class="admin-news-wrapper t-add-wrapper">
+                    <p class="admin-title tourism-title">Tourism Page</p>
+                    <p class="admin-desc tourism-desc">Post tourism-related articles, upcoming events, and community programs</p>
                 </div>
-
-                <div class="t-add-wrapper t-button">
-                    <img class="t-add" src="../../admin-resources/add.png">
+                <div class="admin-add-wrapper n-add-wrapper admin-button">
+                    <img class="admin-add-img" src="../../admin-resources/add.png">
                 </div>
             </div>
 

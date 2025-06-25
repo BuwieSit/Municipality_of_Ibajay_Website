@@ -7,11 +7,19 @@
     <title>Ibajay Admin</title>
 </head>
 <body>
+        
+    <header class="head">
+        <div class="settings-popup" id="settingsPopup"></div>
+    </header>
     
     <div class="member-content-container">
-        test
+        <div class="admin-news-container" >
+            <div class="admin-news-wrapper ">
+                <p class="admin-title ">Online appointmentes</p>
+                <p class="admin-desc ">Approve, reschedule, or reject online applications and appointment requests </p>
+            </div>
+        </div>
     </div>
-    
     <script src="../admin_styles/adminGlobalScript.js"></script>
     <script src="../admin_styles/adminAJAX.js"></script>
 </body>

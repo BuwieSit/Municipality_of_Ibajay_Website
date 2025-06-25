@@ -20,7 +20,19 @@
 </head>
 <body>
     
+    <header class="head">
+        <div class="settings-popup" id="settingsPopup"></div>
+    </header>
     <div class="member-content-container">
+
+        <div class="admin-news-container" >
+                <div class="admin-news-wrapper ">
+                    <p class="admin-title">Services Page</p>
+                    <p class="admin-desc ">List of services per department with requirements and processing times</p>
+                </div>
+        </div>
+
+
         <div class="general-add">
             <button class="add-buttons d-add" id="addDocuBtn"><img src="../../admin-resources/add.png">Add document</button>
         </div>
@@ -47,9 +59,9 @@
                 <td class="docu-avail"><?php echo $d_row['availability']?></td>
                 <td class="docu-date"><?php echo $d_row['uploaded_at']?></td>
                 <td class="actions">
-                    <img class="d-edit" src="../../admin-resources/edit.png" alt="edit">
-                    <img class="d-view" src="../../admin-resources/preview.png" alt="edit">
-                    <img class="d-delete" src="../../admin-resources/delete.png" alt="edit">
+                    <img class="action-img d-edit" src="../../admin-resources/edit.png" alt="edit">
+                    <img class="action-img d-view" src="../../admin-resources/preview.png" alt="edit">
+                    <img class="action-img d-delete" src="../../admin-resources/delete.png" alt="edit">
                 </td>
             </tr>
 
