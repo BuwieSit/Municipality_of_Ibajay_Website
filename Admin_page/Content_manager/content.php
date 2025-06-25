@@ -24,6 +24,7 @@
 <body>
     
     <header class="head">
+        <div class="settings-popup" id="settingsPopup"></div>
     </header>
 
     <div class="side-navigation">
@@ -40,14 +41,28 @@
         </div>
     </div>
 
-    
-    <div id="adminContent" class="admin-content-container">
-        
-    </div>
-
 
 
     <div class="member-content-container">
+        
+
+    <div class="added-popup" id="addedPopup">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+            <circle class="path circle" fill="none" stroke="#73AF55" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1"/>
+            <polyline class="path check" fill="none" stroke="#73AF55" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 "/>
+        </svg>
+        <p class="added-text">Successful!</p>
+    </div>
+    <script src="./editNews.js"></script>
+
+
+            <div class="admin-news-container t-add-main" >
+                <div class="admin-news-wrapper t-add-wrapper">
+                    <p class="admin-title tourism-title">Contents/Announcements Page</p>
+                    <p class="admin-desc tourism-desc">Latest Advisories, government bulletins, projects, and activities</p>
+                </div>
+            </div>
+
 
         <div class="add-news-wrapper">
                 <div class="general-add">
@@ -119,9 +134,9 @@
                         <td id="publishDate"><?php echo $a_row['publish_date']; ?></td>
                         <td class="actions">
                             
-                            <img class="a-edit" src="../../admin-resources/edit.png" alt="edit">
-                            <img class="a-view" src="../../admin-resources/preview.png" alt="edit">
-                            <img class="a-delete" src="../../admin-resources/delete.png" alt="edit">
+                                <img class="action-img a-edit" src="../../admin-resources/edit.png" alt="edit">
+                                <img class="action-img a-view" src="../../admin-resources/preview.png" alt="edit">
+                                <img class="action-img a-delete" src="../../admin-resources/delete.png" alt="edit">
 
                         </td>
                     </tr>
@@ -147,7 +162,7 @@
 
     <script src="../admin_styles/adminGlobalScript.js"></script>
     <script src="../admin_styles/adminAJAX.js"></script>
-    <script src="editNews.js">
+
 
     </script>
 </body>

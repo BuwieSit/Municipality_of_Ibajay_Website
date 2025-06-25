@@ -1,6 +1,7 @@
 window.addEventListener('DOMContentLoaded', () => {
 
-    const header = document.querySelector('.head');
+
+const header = document.querySelector('.head');
 
 function routing() {
     const path = window.location.pathname;
@@ -12,7 +13,7 @@ function routing() {
 
      const headerContent = `
         <div class="head-wrapper left">
-            <h1>Dashboard</h1>
+            <h1 id='headTitle'>Dashboard</h1>
         </div>
         <div class="head-wrapper right">
             <img src="../../admin-resources/settings.png" alt="settings" id="admSettings" class="adm-settings">
@@ -20,8 +21,9 @@ function routing() {
             <img src="../../admin-resources/profile.png" alt="profile" id="profile" class="adm-profile">
             <div class="settings-popup" id="settingsPopup">
                 <ul class="settings-list">
-                    <li>User profile</li>
-                    <li>User settings</li>
+                    <li>Profile</li>
+                    <li>Settings</li>
+                    <li>Log out</li>
                 </ul>
             </div>
         </div>`;
@@ -36,24 +38,70 @@ if (header) {
 
 routing();
 
+function bindNewsFormSubmit() {
+    const popup = document.querySelector('.news-action-popup');
+    const form = document.querySelectorAll('.news-action-form');
+    const popupBox = document.getElementById('addedPopup');
 
+    if (!form) return;
+    form.forEach(addf => {
+        addf.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(addf);
+
+        try {
+            const response = await fetch(addf.action, {
+                method: 'POST',
+                body: formData,
+            });
+
+            const result = await response.text();
+
+            if (result.trim() === "success") {
+                popupBox.style.display = 'block';
+                popup.style.display = 'none';
+
+                setTimeout(() => {
+                    popupBox.style.display = 'none';
+                    setTimeout(() => window.location.reload(), 1000);
+                }, 1000);
+
+                
+            } else {
+                alert("Error: " + result);
+            }
+        } catch (err) {
+            console.error("AJAX error:", err);
+        }
+        });
+    });
+}
+
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("status") === "success") {
+        const addpopup = document.getElementById("addedPopup");
+        if (addpopup) addpopup.style.display = "block";
+
+        history.replaceState({}, document.title, window.location.pathname);
+    }
+
+    const settingPopup = document.getElementById('settingsPopup');
     const settings = document.getElementById('admSettings');
-
-
     settings.addEventListener('mouseover', () => {
-        if (popup.style.opacity = '0') {
-            popup.style.opacity = '1' 
-            popup.style.pointerEvents = 'all'
+        if (settingPopup.style.opacity = '0') {
+            settingPopup.style.opacity = '1' 
+            settingPopup.style.pointerEvents = 'all'
         }
         else {
-            popup.style.opacity = '0';
-            popup.style.pointerEvents = 'none'
+            settingPopup.style.opacity = '0';
+            settingPopup.style.pointerEvents = 'none'
         }
     });
 
     settings.addEventListener('click', () => {
-        popup.style.pointerEvents = 'none'
-        popup.style.opacity = '0';
+        settingPopup.style.pointerEvents = 'none'
+        settingPopup.style.opacity = '0';
     });
 
 
@@ -116,9 +164,6 @@ routing();
 
         // === ADD NEWS ===
         if (e.target && e.target.classList.contains('add-news-btn')) {
-            // const newsId = newsItem.dataset.id;
-            // const headline = newsItem.dataset.headline;
-            // const description = newsItem.dataset.description;
 
             popup.innerHTML = `
                 <form class="news-action-form add-form" action="../../ADMIN_CONTROLS/news_add.php" method="post" enctype="multipart/form-data">
@@ -129,6 +174,8 @@ routing();
                     <button type="button" id="closePopup">Cancel</button>
                 </form>
             `;
+
+            // bindNewsFormSubmit();
 
             popup.style.display = 'block';
             popup.style.pointerEvents = 'all';
@@ -171,7 +218,7 @@ routing();
         // === ADD ANNOUNCEMENT ===
         if (e.target && e.target.classList.contains('a-add')) {
             popup.innerHTML = `
-                <form class="news-action-form a-edit-form" action="../../ADMIN_CONTROLS/announce_handler.php" method="post">
+                <form class="news-action-form a-add-form" action="../../ADMIN_CONTROLS/announce_handler.php" method="post">
                     <input type="hidden" name="action" value="add">
                     <label>What: <input type="text" name="a_what" placeholder="What" required></label>
                     <label>When: <input type="date" name="a_date"></label>
@@ -181,6 +228,8 @@ routing();
                     <button type="button" id="closePopup">Cancel</button>
                 </form>
             `;
+
+            bindNewsFormSubmit();
 
             popup.style.display = 'block';
             popup.style.pointerEvents = 'all';
@@ -289,12 +338,12 @@ routing();
 
                     <label>Document name: <input type="text" name="d_name" placeholder="Document name" required></label>
                     <label>Department: 
-                        <select name="d_avail" required>
-                            <option value="civilreg">Civil Registry</option>
-                            <option value="engdept">Engineering</option>
-                            <option value="healthoffice">Health Office</option>
-                            <option value="treasury">Treasury</option>
-                            <option value="business">Business Permits</option>
+                        <select name="d_dept" required>
+                            <option value="CivilRegistry">Civil Registry</option>
+                            <option value="Engineering">Engineering</option>
+                            <option value="Health Office">HealthOffice</option>
+                            <option value="Treasury">Treasury</option>
+                            <option value="BusinessPermits">BusinessPermits</option>
                         </select>
                     </label>
                     <label>Availability: 
@@ -308,6 +357,7 @@ routing();
                     <button type="button" id="closePopup">Cancel</button>
                 </form>
             `;
+
             popup.style.display = 'block';
             popup.style.pointerEvents = 'all';
 
@@ -345,11 +395,11 @@ routing();
                     </label>
                     <label>Department: 
                         <select name="d_dept" required>
-                            <option value="Civil Registry">Civil Registry</option>
+                            <option value="CivilRegistry">Civil Registry</option>
                             <option value="Engineering">Engineering</option>
-                            <option value="Health Office">Health Office</option>
+                            <option value="Health Office">HealthOffice</option>
                             <option value="Treasury">Treasury</option>
-                            <option value="Business Permits">Business Permits</option>
+                            <option value="BusinessPermits">BusinessPermits</option>
                         </select>
                     </label>
                     <label>Availability: 

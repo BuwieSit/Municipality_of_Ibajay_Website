@@ -27,8 +27,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO news_table (news_image, headline, description) VALUES ('$newsImg', '$title', '$desc')";
 
     if (mysqli_query($conn, $sql)) {
-        header("Location: " . $_SERVER['HTTP_REFERER']);
-        exit;
+        // $referer = $_SERVER['HTTP_REFERER'];
+        // header("Location: " . $referer . (strpos($referer, '?') === false ? '?' : '&') . "status=success");
+        echo "success";
+
     } else {
         echo "Error: " . mysqli_error($conn);
     }

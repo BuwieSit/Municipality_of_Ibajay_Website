@@ -20,9 +20,12 @@
                 $ext = strtolower(pathinfo($_FILES['d_file']['name'], PATHINFO_EXTENSION));
                 if (in_array($ext, $allowed)) {
                     $fileName = safeFilename($_FILES['d_file']['name'], $ext);
+
                     move_uploaded_file($_FILES['d_file']['tmp_name'], $uploadDir . $fileName);
+
                     $stmt = $conn->prepare("INSERT INTO documents_list (filename, document, dept, availability) VALUES (?, ?, ?, ?)");
-                    $stmt->bind_param("sss", $_POST['d_name'], $fileName, $_POST['d_dept'] ,$_POST['d_avail']);  
+                    
+                    $stmt->bind_param("ssss", $_POST['d_name'], $fileName, $_POST['d_dept'] ,$_POST['d_avail']);  
                     $stmt->execute();
                 }
             }

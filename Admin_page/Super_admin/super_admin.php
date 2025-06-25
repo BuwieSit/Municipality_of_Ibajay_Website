@@ -11,7 +11,7 @@
 </head>
 <body>
     <header class="head">
-
+        <div class="settings-popup" id="settingsPopup"></div>
     </header>
     <div class="side-navigation">
         <div class="side-wrapper">

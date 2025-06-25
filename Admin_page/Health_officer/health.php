@@ -8,10 +8,19 @@
 </head>
 <body>
     
-    <div class="member-content-container">
-        test
-    </div>
     
+    <header class="head">
+        <div class="settings-popup" id="settingsPopup"></div>
+    </header>
+    <div class="member-content-container">
+        <div class="admin-news-container" >
+            <div class="admin-news-wrapper ">
+                <p class="admin-title ">Health Care</p>
+                <p class="admin-desc ">Update emergency hotlines, manage doctors, </p>
+            </div>
+        </div>
+    </div>
+
     <script src="../admin_styles/adminGlobalScript.js"></script>
     <script src="../admin_styles/adminAJAX.js"></script>
 </body>
