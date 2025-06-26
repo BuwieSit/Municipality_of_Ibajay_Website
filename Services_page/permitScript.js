@@ -1,8 +1,7 @@
 
 window.addEventListener('DOMContentLoaded', () => {
-
   const deptNav = document.querySelectorAll('.department');
-  const deptContent = document.getElementById('servicesContent');
+  const deptContent = document.getElementById('serviceContent');
 
   const baseFolder = 'dept_pages/';
 
@@ -37,15 +36,46 @@ window.addEventListener('DOMContentLoaded', () => {
       .then(html => {
         const parser = new DOMParser();
         const doc = parser.parseFromString(html, 'text/html');
-        const inner = doc.querySelector('.services-content');
-        deptContent.innerHTML = inner ? inner.outerHTML : html; //line 41 here
+        const inner = doc.querySelector('.services-contents');
+        deptContent.innerHTML = inner ? inner.outerHTML : html;
 
         if (updateURL) {
           history.pushState(null, '', `?content=${encodeURIComponent(key)}`);
         }
+
+
+        fetchDocuments(key);
       })
       .catch(err => {
         deptContent.innerHTML = `<p>Error loading content: ${err.message}</p>`;
+      });
+  }
+
+  function fetchDocuments(dept) {
+    fetch('./documentHandler.php?content=' + encodeURIComponent(dept))
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById('serviceDocuments');
+        if (!container) return;
+
+        if (!Array.isArray(data) || data.length === 0) {
+          container.innerHTML = '<p>No documents available at the moment</p>';
+          return;
+        }
+
+        data.forEach(docu => {
+          const docElem = document.createElement('div');
+          docElem.className = 'document';
+          docElem.setAttribute('data-filename', docu.filename);
+          docElem.innerHTML = `
+              <img id="docu-icon" src="../../z-resources/Permits-icon/birth.png">
+              <p class="docu-name">${docu.filename}</p>
+          `;
+          container.appendChild(docElem);
+        });
+      })
+      .catch(err => {
+        console.error('Error fetching data:', err);
       });
   }
 
@@ -57,26 +87,25 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  
-    const params = new URLSearchParams(window.location.search);
-    const initialContent = params.get('content');
-    if (initialContent && deptMap[normalize(initialContent)]) {
-        loadContent(initialContent, false);
-    }
 
+  const params = new URLSearchParams(window.location.search);
+  const initialContent = params.get('content');
+  if (initialContent && deptMap[normalize(initialContent)]) {
+    loadContent(initialContent, false);
+  }
 });
 
 
 function changeText(clickedElement) {
   const permit = clickedElement.querySelector('.permit-text');
   const popup_text = document.querySelector('.popup-text');
-  const hiddenPermitInput = document.getElementById('permitTypeInput'); // Get the hidden input
+  const hiddenPermitInput = document.getElementById('permitTypeInput'); 
 
   if (permit && popup_text) {
     const text = permit.textContent.trim();
     popup_text.textContent = text;
     if (hiddenPermitInput) {
-      hiddenPermitInput.value = text; // Store in form for submission
+      hiddenPermitInput.value = text; 
     }
   }
 }

@@ -2,6 +2,7 @@
 
 body {
   font-family: var(--subtitle-font);
+  color: black;
 }
 
 html {
@@ -11,9 +12,75 @@ html {
   box-sizing: inherit;
 }
 
-.page {
-    background: linear-gradient(to bottom, #28666e, #033f63);
-    min-height: 100vh;
+.top-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+
+
+  background-image: url('../z-resources/ibajay_rizal.jpg');
+  background-color: rgba(0, 0, 0, 0.8);
+  mix-blend-mode:darken;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white;
+
+  text-shadow: 0px 0px 5px black;
+}
+.top-title {
+  font-family: var(--newtitle);
+  font-weight: 700;
+  font-size: clamp(2rem, 6vw, 4rem);
+}
+
+.tourism-sections {
+  padding: 5% 0;
+  width: 100%;
+  height: auto;
+  position: relative;
+
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.section-title {
+  font-family: var(--newtitle);
+  font-size: clamp(1rem, 2vw, 2rem);
+}
+
+.section-item {
+  position: relative;
+  width: 350px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 2%;
+  border-radius: 20px;
+
+  background-color: white;
+  box-shadow: 2px 2px 1px black;
+  
+}
+#delicacyImg {
+  width: 100%;
+  
+}
+.delicacy-name {
+    font-family: var(--newtitle);
+    font-size: clamp(1rem, 2vw, 2rem);
+    font-weight: 700;
+}
+.delicacy-desc {
+  text-align: justify;
 }
 
 .img-wrapper {

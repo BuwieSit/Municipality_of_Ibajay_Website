@@ -3,7 +3,7 @@
 body {
     background-color: var(--blueGreen);
     overflow-x: hidden;
-    color: white;
+
 }
 .side-navigation {
     position: fixed;
@@ -82,10 +82,13 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 .history-wrapper > h1 {
     font-family: var(--title-font);
     font-style: italic;
+
 }
 .history-wrapper > p {
     text-align: justify;
@@ -95,8 +98,8 @@ body {
 .pdf-wrapper {
     margin: auto;
     width: 80%;
-    height: 600px; /* or any height that fits your layout */
-    overflow: hidden; /* prevent iframe from expanding beyond */
+    height: 600px;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -112,7 +115,6 @@ iframe {
     width: 100%;
     height: 3500px;
     padding-bottom: 50px;
-    background-image: linear-gradient(var(--blueGreen) ,var(--lightYellow));
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -131,6 +133,7 @@ iframe {
     font-family: var(--subtitle-font);
     font-size: 50px;
     font-weight: 700;
+    color: black;
     
 }
 
@@ -221,7 +224,6 @@ iframe {
 .vis-mis {
     width: 100%;
     height: 900px;
-    background-image: linear-gradient(to top, var(--blueGreen) ,var(--lightYellow));
     
 }
 .vis-mis > h2 {

@@ -474,6 +474,137 @@ function bindNewsFormSubmit() {
         }
 
 
+          // ADD
+    if (e.target && e.target.closest('.admin-add-wrapper')) {
+        popup.innerHTML = `
+            <form class="news-action-form" action="../../ADMIN_CONTROLS/tourismHandler.php" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="action" value="add">
+
+                <label>Image: <input type="file" name="t_image" accept="image/*" required></label>
+
+                <label>Title: <input type="text" name="t_title" required></label>
+                
+                <label>Description: <textarea name="t_desc" required></textarea></label>
+                
+                <label>Section: 
+                    <select name="t_tag" required>
+                        <option value="localDeli">localDeli</option>
+                        <option value="sites">sites</option>
+                        <option value="attractions">attractions</option>
+                    </select>
+                </label>
+                                
+                <button id="actionBtn" type="submit">Add</button>
+                <button type="button" id="closePopup">Cancel</button>
+            </form>
+
+        `;
+
+            popup.style.display = 'block';
+            popup.style.pointerEvents = 'all';
+
+            document.getElementById('closePopup').addEventListener('click', () => {
+                popup.style.display = 'none';
+                popup.style.pointerEvents = 'none';
+            });
+    }
+
+    // EDIT
+    if (e.target && e.target.classList.contains('t-edit')) {
+        const row = e.target.closest('.t_row');
+        const id = row.dataset.t_id;
+        const name = row.dataset.t_name;
+        const desc = row.dataset.t_desc;
+        const tag = row.dataset.t_tag;
+        const image = row.dataset.t_image;
+
+        popup.innerHTML = `
+            <form class="news-action-form" action="../../ADMIN_CONTROLS/tourismHandler.php" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="action" value="edit">
+                <input type="hidden" name="t_id" value="${docId}">
+
+                <label>Title: <input type="text" name="t_title" value="${filename}" required></label>
+                <label>Description: <textarea name="t_desc" required>${desc}</textarea></label>
+                <label>Section: 
+                    <select name="t_tag" required>
+                        <option value="localDeli" ${tag === 'localDeli' ? 'selected' : ''}>localDeli</option>
+                        <option value="sites" ${tag === 'sites' ? 'selected' : ''}>sites</option>
+                        <option value="attractions" ${tag === 'attractions' ? 'selected' : ''}>attractions</option>
+                    </select>
+                </label>
+
+                <label>Replace Image: 
+                    <input type="file" name="t_image" accept="image/*">
+                    ${image ? `<small>Current: <em>${image}</em></small>` : ''}
+                </label>
+
+                <button id="actionBtn" type="submit">Update</button>
+                <button type="button" id="closePopup">Cancel</button>
+            </form>
+        `;
+
+            popup.style.display = 'block';
+            popup.style.pointerEvents = 'all';
+
+            document.getElementById('closePopup').addEventListener('click', () => {
+                popup.style.display = 'none';
+                popup.style.pointerEvents = 'none';
+            });
+    }
+
+    // VIEW
+    if (e.target && e.target.classList.contains('t-view')) {
+        const row = e.target.closest('.t_row');
+        const name = row.dataset.t_name;
+        const desc = row.dataset.t_desc;
+        const tag = row.dataset.t_tag;
+        const image = row.dataset.t_image;
+        popup.innerHTML = `
+            <div class="news-action-form a-view-form">
+                <p>Filename: ${filename}</p>
+                <p>Description: ${desc}</p>
+                <p>Tag: ${tag}</p>
+                ${image ? `<img src="../uploads/tourism/${image}" alt="${filename}" style="max-width: 200px;">` : '<p>No image uploaded.</p>'}
+                <button type="button" id="closePopup">Close</button>
+            </div>
+        `;
+
+
+            popup.style.display = 'block';
+            popup.style.pointerEvents = 'all';
+
+            document.getElementById('closePopup').addEventListener('click', () => {
+                popup.style.display = 'none';
+                popup.style.pointerEvents = 'none';
+            });
+    }
+
+    // DELETE
+    if (e.target && e.target.classList.contains('t-delete')) {
+        const row = e.target.closest('.t_row');
+        const id = row.dataset.t_id;
+        const name = row.dataset.t_name;
+
+        popup.innerHTML = `
+            <form class="news-action-form" action="../../ADMIN_CONTROLS/tourismHandler.php" method="post">
+                <input type="hidden" name="action" value="delete">
+                <input type="hidden" name="t_id" value="${id}">
+                <p>Are you sure you want to delete:</p>
+                <h3>${name}</h3>
+                <button type="submit" id="deleteBtn">Delete</button>
+                <button type="button" id="closePopup" class="cancelBtn">Cancel</button>
+            </form>
+        `;
+
+            popup.style.display = 'block';
+            popup.style.pointerEvents = 'all';
+
+            document.getElementById('closePopup').addEventListener('click', () => {
+                popup.style.display = 'none';
+                popup.style.pointerEvents = 'none';
+            });
+    }
+
 
     });
 

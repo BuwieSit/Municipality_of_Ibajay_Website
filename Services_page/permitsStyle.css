@@ -114,7 +114,7 @@ body {
     font-weight: 500 !important;
     font-size: clamp(0.8rem, 1vw, 1rem);
 }
-.services-content {
+.services-contents {
     position: relative;
     width: 80%;
     height: 100%;

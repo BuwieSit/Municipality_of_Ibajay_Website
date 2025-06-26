@@ -41,13 +41,16 @@ body {
 
     height: 300px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     color: black;
     background-color: var(--darkBlue);
     position: relative;
-    background-color: red;
+    background: url('./z-resources/hall_front.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     overflow: hidden;
     
 }
@@ -57,9 +60,52 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    filter: drop-shadow(0px 0px 5px black);
+}
+.main-container > p {
+    width: 50%;
+    font-family: var(--newtitle);
+    font-weight: 600;
 }
 
 
+.main-articles {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-evenly;
+
+}
+.article-section {
+    width: 30%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 3% 1%;
+
+}
+.article-section> img {
+    width: 300px;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+.article-title {
+    font-family: var(--newtitle);
+    font-weight: 700;
+    
+}
+.aricle-desc {
+    font-weight: 600;
+
+
+}
 /* EXPERIMENT */
 /* EXPERIMENT */
 

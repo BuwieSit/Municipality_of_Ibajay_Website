@@ -11,6 +11,11 @@
     $data = mysqli_fetch_assoc($result);
     
 
+    $tourTable = "SELECT * FROM tourism_content";
+    $tourRes = mysqli_query($conn, $tourTable);
+
+
+
 
 ?>
 
@@ -62,6 +67,46 @@
                 </div>
             </div>
 
+
+            <table class="general-list">
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Section</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   <?php while($t_row = mysqli_fetch_assoc($tourRes)): ?>
+                    <tr class="t_row"
+                        data-t_id="<?php echo $t_row['t_title']; ?>"
+                        data-t_name="<?php echo $t_row['t_title']; ?>"
+                        data-t_desc="<?php echo $t_row['t_desc']; ?>"
+                        data-t_tag="<?php echo $t_row['t_tag']; ?>"
+                        data-t_image="<?php echo $t_row['t_image']; ?>"
+                    >
+                        <td id="t-image"><?php echo $t_row['t_image']; ?></td>
+                        <td id="t-name"><?php echo $t_row['t_title']; ?></td>
+                        <td id="t-desc"><?php echo $t_row['t_desc']; ?></td>
+                        <td id="t-tag"><?php echo $t_row['t_tag']; ?></td>
+
+                        <td class="actions">
+                            
+                                <img class="action-img t-edit" src="../../admin-resources/edit.png" alt="edit">
+                                <img class="action-img t-view" src="../../admin-resources/preview.png" alt="edit">
+                                <img class="action-img t-delete" src="../../admin-resources/delete.png" alt="edit">
+
+                        </td>
+                    </tr>
+                    <?php endwhile; ?>
+                </tbody>
+            </table>
+
+        <div class="news-action-popup tourism-action-popup">
+            <!-- announce-action-form -->
+        </div>
     </div>
     <script src="../admin_styles/adminGlobalScript.js"></script>
     <script src="../admin_styles/adminAJAX.js"></script>
