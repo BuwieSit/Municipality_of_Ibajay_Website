@@ -42,16 +42,20 @@ html {
   width: 100%;
   height: auto;
   position: relative;
-
-
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  gap: 30px;
 }
 .section-title {
   font-family: var(--newtitle);
   font-size: clamp(1rem, 2vw, 2rem);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5% 0;
 }
 
 .section-item {
@@ -626,7 +630,7 @@ grid-row-gap: 0px;
 }
 
 .div1 { grid-area: 1 / 1 / 2 / 6; }
-.div2 { grid-area: 2 / 1 / 6 / 2; }
+.div2 { grid-area: 2 / 1 / 6 / 2; padding: 2% 5%;}
 .div3 { grid-area: 2 / 2 / 6 / 6; }
 .div4 { grid-area: 2 / 2 / 4 / 3; }
 

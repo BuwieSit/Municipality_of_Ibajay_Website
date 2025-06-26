@@ -1,7 +1,7 @@
 fetch('./newsHandler.php')
   .then(response => response.json())
   .then(data => {
-    const container = document.getElementById('newsCont');
+    const container = document.getElementById('mainWrapper');
 
     if (!Array.isArray(data) || data.length === 0) {
       container.innerHTML = '<p>No news available at the moment.</p>';
@@ -15,22 +15,18 @@ fetch('./newsHandler.php')
       });
 
       const newsItem = document.createElement('div');
-      newsItem.className = 'sub-box';
+      newsItem.className = 'main-item';
 
       newsItem.setAttribute('data-headline', row.headline);
       newsItem.setAttribute('data-desc', row.description);
       newsItem.setAttribute('data-date', row.created_at);
-      newsItem.setAttribute
+      newsItem.setAttribute('data-nImg', row.news_image);
       newsItem.innerHTML = `
-        <div class="news2">
-          <img class="news-image2" src="../z-resources/news_thumb.png" alt="news2">
-        </div>
-        <div class="sub-headline">
-          <strong>${row.headline}</strong>
-        </div>
-        <div class="date">
-          ${formattedDate}
-        </div>
+                <div class="main-item">
+                      <img class="main-img" id="mainImg" src="../../ADMIN_CONTROLS/news_thumbnails/${row.news_image}">
+                      <p class="main-title">${row.headline}</p>
+                      <p id="date" class="date">${formattedDate}</p>
+                </div>
       `;
 
       container.appendChild(newsItem);
