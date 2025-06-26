@@ -23,11 +23,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $title = mysqli_real_escape_string($conn, $_POST['headline']);
     $desc = mysqli_real_escape_string($conn, $_POST['headline-description']);
+    $sectionArray = $_POST['news_section'] ?? [];  
+    $section = mysqli_real_escape_string($conn, implode(',', $sectionArray));
 
-    $sql = "INSERT INTO news_table (news_image, headline, description) VALUES ('$newsImg', '$title', '$desc')";
+    $sql = "INSERT INTO news_table (news_image, headline, description, news_section) VALUES ('$newsImg', '$title', '$desc', '$section')";
 
     if (mysqli_query($conn, $sql)) {
-        // $referer = $_SERVER['HTTP_REFERER'];
+        $referer = $_SERVER['HTTP_REFERER'];
         // header("Location: " . $referer . (strpos($referer, '?') === false ? '?' : '&') . "status=success");
         echo "success";
 

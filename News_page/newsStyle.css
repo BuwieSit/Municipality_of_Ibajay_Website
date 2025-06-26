@@ -75,17 +75,23 @@ body {
 
 .side-titles {
     width: 100%;
-
     padding: 3% 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+.side-announce {
+    justify-content: center;
+    align-items: center;
+}
 .article-title {
     font-family: var(--newtitle);
     font-weight: 600;
     font-size: clamp(1rem, 1.5vw, 2rem);
-    cursor: pointer;
+
+}
+.ann-title {
+    font-size: clamp(1rem, 2vw, 2rem);
 }
 
 .article-content {
@@ -93,10 +99,22 @@ body {
     height: auto;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 10px;
     padding: 2% 0;
 
+
+}
+
+.date{
+    text-align: center;
+    font-size: clamp(0.8rem, 1vw, 1.5rem);
+    color: #6B6666;
+    font-family: var(--subtitle-font);
+    font-style: italic;
+    text-align: center;
 }
 
 .article-item {
@@ -104,22 +122,40 @@ body {
     height: 70px;
     padding: 3% 0;
     overflow: hidden;
-
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
+.article-date {
+        text-align: center;
+    font-size: clamp(0.8rem, 1vw, 1.5rem);
+    color: #6B6666;
+    font-family: var(--subtitle-font);
+    font-style: italic;
+    text-align: center;
+}
+
+.article-item:hover {
+    background-color: var(--darkBlue);
+    color: white;
+}
+
+.article-item:hover > .article-wrapper > * {
+    color: white ;
+}
 .article-img {
-    width: 30%;
-    height: 100%;
-    object-fit: cover;
+    width: 20%;
+    height: 50%;
+    object-fit: contain;
 }
 
 .article-desc {
     font-family: var(--subtitle-font);
-    font-size: clamp(0.5rem, 0.8vw, 1.3rem);
+    font-size: clamp(1rem, 2vw, 2rem);
     font-weight: 600;
 }
 
@@ -182,14 +218,7 @@ body {
 
 
 
-.date{
-    text-align: center;
-    font-size: clamp(0.8rem, 1vw, 1.5rem);
-    color: #6B6666;
-    font-family: var(--subtitle-font);
-    font-style: italic;
-    text-align: center;
-}
+
 
 #newsButton {
     width: 90px;

@@ -1,7 +1,7 @@
 <?php 
 
     try {
-        $conn = mysqli_connect('localhost', 'admin', 'ibajayadmin', 'ibajay_db');
+        $conn = mysqli_connect('localhost', 'root', '', 'ibajay_db');
 
     }
     catch (mysqli_sql_exception) {

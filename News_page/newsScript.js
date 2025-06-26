@@ -1,38 +1,80 @@
+function escapeHtml(str) {
+  if (!str) return 'news_thumb.png'; 
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
 fetch('./newsHandler.php')
   .then(response => response.json())
   .then(data => {
     const container = document.getElementById('mainWrapper');
+    container.innerHTML = '';
 
-    if (!Array.isArray(data) || data.length === 0) {
+    const announceList = document.getElementById('aContainer');
+    announceList.innerHTML = '';
+
+    // === NEWS SECTION ===
+    if (Array.isArray(data.news) && data.news.length > 0) {
+      data.news.forEach(row => {
+        const formattedDate = new Date(row.created_at).toLocaleString('en-US', {
+          month: 'long', day: 'numeric', year: 'numeric',
+          hour: 'numeric', minute: '2-digit', hour12: true
+        });
+
+        const safeImage = escapeHtml(row.news_image || 'news_thumb.png');
+
+        const newsItem = document.createElement('div');
+        newsItem.className = 'main-item';
+        newsItem.setAttribute('data-id', row.news_id);
+        newsItem.setAttribute('data-headline', row.headline);
+        newsItem.setAttribute('data-desc', row.description);
+        newsItem.setAttribute('data-date', row.created_at);
+
+        newsItem.innerHTML = `
+          <div class="main-item">
+            <img class="main-img" id="mainImg" src="../../ADMIN_CONTROLS/news_thumbnails/${safeImage}">
+            <p class="main-title">${row.headline}</p>
+            <p id="date" class="date">${formattedDate}</p>
+          </div>
+        `;
+
+        container.appendChild(newsItem);
+      });
+    } else {
       container.innerHTML = '<p>No news available at the moment.</p>';
-      return;
     }
 
-    data.forEach(row => {
-      const formattedDate = new Date(row.created_at).toLocaleString('en-US', {
-        month: 'long', day: 'numeric', year: 'numeric',
-        hour: 'numeric', minute: '2-digit', hour12: true
+    // === ANNOUNCEMENTS SECTION ===
+    if (Array.isArray(data.announcements) && data.announcements.length > 0) {
+      data.announcements.forEach(ann => {
+        const formattedDate = new Date(ann.a_when).toLocaleString('en-US', {
+          month: 'long', day: 'numeric', year: 'numeric',
+          hour: 'numeric', minute: '2-digit', hour12: true
+        });
+
+        const item = document.createElement('div');
+        item.className = 'article-item';
+        item.setAttribute('data-id', ann.announce_id); // single ID only
+        item.innerHTML = `
+          <img class="article-img" src="../../z-resources/speaker.png">
+            <div class="article-wrapper">
+              <p class="article-desc a-what">${ann.a_what}</p>
+              <p class="article-date">${formattedDate}</p>
+            </div>
+
+        `;
+        announceList.appendChild(item);
       });
-
-      const newsItem = document.createElement('div');
-      newsItem.className = 'main-item';
-
-      newsItem.setAttribute('data-headline', row.headline);
-      newsItem.setAttribute('data-desc', row.description);
-      newsItem.setAttribute('data-date', row.created_at);
-      newsItem.setAttribute('data-nImg', row.news_image);
-      newsItem.innerHTML = `
-                <div class="main-item">
-                      <img class="main-img" id="mainImg" src="../../ADMIN_CONTROLS/news_thumbnails/${row.news_image}">
-                      <p class="main-title">${row.headline}</p>
-                      <p id="date" class="date">${formattedDate}</p>
-                </div>
-      `;
-
-      container.appendChild(newsItem);
-    });
+    } else {
+      announceList.innerHTML = '<p>No announcements available at the moment.</p>';
+    }
   })
   .catch(err => {
     console.error('Error fetching news:', err);
-    document.getElementById('newsCont').innerHTML = '<p>Failed to load news.</p>';
+    document.getElementById('mainWrapper').innerHTML = '<p>Failed to load news.</p>';
+    document.getElementById('aItem').innerHTML = '<p>Failed to load announcements.</p>';
   });
