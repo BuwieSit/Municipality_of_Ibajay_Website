@@ -51,33 +51,47 @@ window.addEventListener('DOMContentLoaded', () => {
       });
   }
 
-  function fetchDocuments(dept) {
-    fetch('./documentHandler.php?content=' + encodeURIComponent(dept))
-      .then(response => response.json())
-      .then(data => {
-        const container = document.getElementById('serviceDocuments');
-        if (!container) return;
+function fetchDocuments(dept) {
+  fetch('./documentHandler.php?content=' + encodeURIComponent(dept))
+    .then(response => response.json())
+    .then(data => {
+      const container = document.getElementById('serviceDocuments');
+      if (!container) return;
 
-        if (!Array.isArray(data) || data.length === 0) {
-          container.innerHTML = '<p>No documents available at the moment</p>';
-          return;
-        }
+      container.innerHTML = '';
 
-        data.forEach(docu => {
-          const docElem = document.createElement('div');
-          docElem.className = 'document';
-          docElem.setAttribute('data-filename', docu.filename);
-          docElem.innerHTML = `
-              <img id="docu-icon" src="../../z-resources/Permits-icon/birth.png">
-              <p class="docu-name">${docu.filename}</p>
-          `;
-          container.appendChild(docElem);
-        });
-      })
-      .catch(err => {
-        console.error('Error fetching data:', err);
+      if (!Array.isArray(data) || data.length === 0) {
+        container.innerHTML = '<p>No documents available at the moment</p>';
+        return;
+      }
+
+      data.forEach(docu => {
+        const docElem = document.createElement('div');
+        docElem.className = 'document';
+        docElem.setAttribute('data-filepath', `../../ADMIN_CONTROLS/documents/${docu.document}`);
+        docElem.innerHTML = `
+          <img id="docu-icon" src="../../z-resources/file.png" alt="file icon">
+          <p class="docu-name">${docu.filename}</p>
+        `;
+        container.appendChild(docElem);
       });
-  }
+
+      container.querySelectorAll('.document').forEach(doc => {
+        doc.addEventListener('click', () => {
+          const filePath = doc.getAttribute('data-filepath');
+          const link = document.createElement('a');
+          link.href = filePath;
+          link.download = ''; 
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        });
+      });
+    })
+    .catch(err => {
+      console.error('Error fetching data:', err);
+    });
+}
 
   deptNav.forEach(dnav => {
     dnav.addEventListener('click', () => {

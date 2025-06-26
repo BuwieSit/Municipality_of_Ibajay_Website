@@ -521,9 +521,9 @@ function bindNewsFormSubmit() {
         popup.innerHTML = `
             <form class="news-action-form" action="../../ADMIN_CONTROLS/tourismHandler.php" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="action" value="edit">
-                <input type="hidden" name="t_id" value="${docId}">
+                <input type="hidden" name="t_id" value="${id}">
 
-                <label>Title: <input type="text" name="t_title" value="${filename}" required></label>
+                <label>Title: <input type="text" name="t_title" value="${name}" required></label>
                 <label>Description: <textarea name="t_desc" required>${desc}</textarea></label>
                 <label>Section: 
                     <select name="t_tag" required>
@@ -560,11 +560,11 @@ function bindNewsFormSubmit() {
         const tag = row.dataset.t_tag;
         const image = row.dataset.t_image;
         popup.innerHTML = `
-            <div class="news-action-form a-view-form">
-                <p>Filename: ${filename}</p>
+            <div class="news-action-form t-view-form">
+                <p>Filename: ${name}</p>
                 <p>Description: ${desc}</p>
                 <p>Tag: ${tag}</p>
-                ${image ? `<img src="../uploads/tourism/${image}" alt="${filename}" style="max-width: 200px;">` : '<p>No image uploaded.</p>'}
+                ${image ? `<img class="t-image" id="tImage" src="../../ADMIN_CONTROLS/tourism_uploads/${image}" alt="${name}" style="max-width: 200px;">` : '<p>No image uploaded.</p>'}
                 <button type="button" id="closePopup">Close</button>
             </div>
         `;

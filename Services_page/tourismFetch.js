@@ -7,7 +7,6 @@ window.addEventListener('DOMContentLoaded', () => {
       data.forEach(item => {
         const { t_title, t_desc, t_image, t_tag } = item;
 
-        // Normalize tag to match section class
         let section;
         switch (t_tag) {
           case 'localDeli':
@@ -22,6 +21,7 @@ window.addEventListener('DOMContentLoaded', () => {
           default:
             return;
         }
+
 
         if (section) {
           const nameEl = section.querySelector('.delicacy-name');

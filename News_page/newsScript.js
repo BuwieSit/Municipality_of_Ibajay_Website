@@ -20,7 +20,7 @@ fetch('./newsHandler.php')
       newsItem.setAttribute('data-headline', row.headline);
       newsItem.setAttribute('data-desc', row.description);
       newsItem.setAttribute('data-date', row.created_at);
-
+      newsItem.setAttribute
       newsItem.innerHTML = `
         <div class="news2">
           <img class="news-image2" src="../z-resources/news_thumb.png" alt="news2">
