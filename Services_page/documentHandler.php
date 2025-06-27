@@ -2,7 +2,7 @@
 session_start();
 header('Content-Type: application/json');
 
-include '../conn.php'; 
+include '../conn.php';
 
 $link = $_GET['content'] ?? '';
 $docuItems = [];
@@ -17,7 +17,7 @@ $deptMap = [
 
 if (array_key_exists($link, $deptMap)) {
     $dept = $deptMap[$link];
-    $stmt = $conn->prepare("SELECT * FROM documents_list WHERE dept = ? AND availability = 'Available'");
+    $stmt = $conn->prepare("SELECT filename, document FROM documents_list WHERE dept = ? AND availability = 'Available'");
 
     if ($stmt) {
         $stmt->bind_param("s", $dept);

@@ -157,6 +157,10 @@ body {
     align-items: center;
     justify-content: center;
     gap: 10px;
+    cursor: pointer;
+}
+.document:hover {
+   background-color:  rgb(4, 43, 68);
 }
 .reg-head {
     margin-bottom: 50px;

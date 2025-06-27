@@ -63,7 +63,7 @@
         <h2>Healthcare </h2>
     </header>
 
-    <div class="health-main-cont">
+ <div class="health-main-cont">
 
         <div class="titles">
             <h2>Healthcare Appointments</h2>
@@ -106,7 +106,7 @@
 
         <?php endforeach; ?> 
             
-        </div>
+    </div>
 
         <div class="titles">
             <h2>Healthcare Doctors</h2>
@@ -177,40 +177,40 @@
 
             </div>
             <?php endforeach; ?> 
+            </div>
+
         </div>
+    <?php foreach ($doctorInfo as $row): ?>
 
-    </div>
-<?php foreach ($doctorInfo as $row): ?>
+        <div class="card-popup" data-docid="<?php echo $row['doctor_id']; ?>">
+            <img src="../../admin-resources/close.png" alt="close" id="closeBtn" class="closeBtn">
 
-    <div class="card-popup" data-docid="<?php echo $row['doctor_id']; ?>">
-        <img src="../../admin-resources/close.png" alt="close" id="closeBtn" class="closeBtn">
+            <form id="card-popup-form" action="../../ADMIN_CONTROLS/update_doctors.php" method="post"
+            >   
+                <input type="hidden" name="id" value="<?php echo $row['doctor_id']; ?>">
+                <input id="docname" type="text" name="docname" class="card-input" placeholder="Doctor name" required value="<?php echo htmlspecialchars($row['doctor_name']); ?>">
 
-        <form id="card-popup-form" action="../../ADMIN_CONTROLS/update_doctors.php" method="post"
-        >   
-            <input type="hidden" name="id" value="<?php echo $row['doctor_id']; ?>">
-            <input id="docname" type="text" name="docname" class="card-input" placeholder="Doctor name" required value="<?php echo htmlspecialchars($row['doctor_name']); ?>">
+                <input id="docfor" type="text" name="docfor" class="card-input" placeholder="Doctor specialization" required value="<?php echo htmlspecialchars($row['doctor_for']); ?>">
 
-            <input id="docfor" type="text" name="docfor" class="card-input" placeholder="Doctor specialization" required value="<?php echo htmlspecialchars($row['doctor_for']); ?>">
+                <input id="docexp" type="number" name="docexp" class="card-input" placeholder="Experience" required value="<?php echo htmlspecialchars($row['exp']); ?>">
+                <input id="docfee" type="number" name="docfee" class="card-input" placeholder="Doctor Fee" required value="<?php echo htmlspecialchars($row['fee']); ?>">
 
-            <input id="docexp" type="number" name="docexp" class="card-input" placeholder="Experience" required value="<?php echo htmlspecialchars($row['exp']); ?>">
-            <input id="docfee" type="number" name="docfee" class="card-input" placeholder="Doctor Fee" required value="<?php echo htmlspecialchars($row['fee']); ?>">
-
-            <button type="submit" id="card-update">Update</button>
-        </form>
-            
-    </div>
-<?php endforeach; ?>
-    <div class="confirm-box del-booking">
-        <p>Remove booking?</p>
-        <div class="wrapper">
-            <form id="confirm-form" action="../../ADMIN_CONTROLS/remove_booking.php" method="post">
-                <input type="hidden" name="id" id="deleteBookingId">
-                <button type="submit" class="confirm-buttons conf-yes">Yes, delete</button>
+                <button type="submit" id="card-update">Update</button>
             </form>
-            <button class="confirm-buttons conf-can">Cancel</button>
+                
         </div>
-    </div>
-
+    <?php endforeach; ?>
+        <div class="confirm-box del-booking">
+            <p>Remove booking?</p>
+            <div class="wrapper">
+                <form id="confirm-form" action="../../ADMIN_CONTROLS/remove_booking.php" method="post">
+                    <input type="hidden" name="id" id="deleteBookingId">
+                    <button type="submit" class="confirm-buttons conf-yes">Yes, delete</button>
+                </form>
+                <button class="confirm-buttons conf-can">Cancel</button>
+            </div>
+        </div>
+</div>
     
     <script src="../adminControlScript.js"></script>
     <script src="../confirm.js"></script>
