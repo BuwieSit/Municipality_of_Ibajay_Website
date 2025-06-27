@@ -12,15 +12,6 @@ html {
   box-sizing: inherit;
 }
 
-.top-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 40px;
-  padding: 60px;
-  flex-wrap: wrap; 
-}
-
 .top-wrapper {
   flex: 1;
   display: flex;
@@ -30,12 +21,10 @@ html {
 }
 
 .img-cont {
-  width: 400px; 
+  width: 400px;
   height: 400px;
-  overflow: hidden; 
   border-radius: 49% 51% 39% 61% / 48% 100% 0% 52%;
-  flex-shrink: 0;
-   border: 15px solid #033E63;
+  border: 15px solid #033F63;
 }
 
 .img-cont img {
@@ -45,9 +34,13 @@ html {
   display: block;
 }
 
-.food1{
-  color: black;
- padding-top: 20px;
+.top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  padding: 60px;
+  flex-wrap: wrap; 
 }
 
 .top-title {
@@ -70,16 +63,12 @@ html {
 .section-title {
   font-family: var(--newtitle);
   font-size: clamp(1rem, 2vw, 2rem);
-  align-items: start;
-}
-
-.delicacies {
   width: 100%;
-  text-align: left; /* aligns to the start */
-  padding-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5% 0;
 }
-
-
 
 .section-item {
   position: relative;
@@ -97,6 +86,15 @@ html {
   box-shadow: 2px 2px 1px black;
   
 }
+
+#food-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex;
+  justify-content: center;
+}
+
 #delicacyImg {
   width: 100%;
   
@@ -187,7 +185,7 @@ html {
   flex: 1;
   min-width: 150px;
   max-width: 200px;
-  color: white;
+  color: black;
 }
 
 .left-text p {
@@ -204,7 +202,6 @@ html {
   grid-template-columns: repeat(3, 1fr); 
   gap: 20px;
 }
-
 
 .box {
   position: relative;
