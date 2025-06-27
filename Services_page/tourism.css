@@ -21,10 +21,12 @@ html {
 }
 
 .img-cont {
-  width: 400px;
+  width: 400px; 
   height: 400px;
+  overflow: hidden; 
   border-radius: 49% 51% 39% 61% / 48% 100% 0% 52%;
-  border: 15px solid #033F63;
+  flex-shrink: 0;
+  border: 15px solid #033E63;
 }
 
 .img-cont img {
