@@ -2,7 +2,9 @@
 
     session_start();
     include '../../conn.php';
-    
+        if (!in_array($_SESSION['role'] ?? '', ['super_admin'])) {
+        exit("<script>alert('Access denied.'); location.href='../../admin.php';</script>");
+    }
 
     $sql = 'SELECT * FROM admin_accounts';
     $list = mysqli_query($conn, $sql);

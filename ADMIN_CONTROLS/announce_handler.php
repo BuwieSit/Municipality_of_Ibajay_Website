@@ -14,7 +14,7 @@ switch ($action) {
         $a_date = mysqli_real_escape_string($conn, $_POST['a_date']);
         $a_loc = mysqli_real_escape_string($conn, $_POST['a_loc']);
         $a_why = mysqli_real_escape_string($conn, $_POST['a_why']);
-
+            
         $sql = "INSERT INTO announce_table (a_what, a_when, a_where, a_why) VALUES ('$a_what', '$a_date', '$a_loc', '$a_why')";
         break;
 

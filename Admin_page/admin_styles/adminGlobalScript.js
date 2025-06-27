@@ -110,6 +110,44 @@ function bindNewsFormSubmit() {
         const popup = document.querySelector('.news-action-popup');
         const newsItem = e.target.closest('.admin-news-item');
         
+        // === ADD NEWS ===
+        if (e.target && e.target.classList.contains('add-news-btn')) {
+
+            popup.innerHTML = `
+                <form class="news-action-form add-form" action="../../ADMIN_CONTROLS/news_add.php" method="post" enctype="multipart/form-data">
+                    <input type="file" name="headline-image"> 
+                    <input type="text" name="headline" placeholder="Headline" required>
+                    <textarea name="headline-description" placeholder="Description" required></textarea>
+                        <div class="section-wrapper">
+                            <label>
+                                <input class="section-buttons" type="checkbox" value="topnews" name="top_news">Top news
+                            </label>
+
+                            <label class="note-wrapper">
+                                <input class="section-buttons" type="checkbox" value="featured" name="featured">Featured
+                                <p class="section-note">This will overwrite the current featured news</p>
+                            </label>
+                        </div>
+
+                    
+                    
+                    <button id="actionBtn" type="submit">Add</button>
+                    <button type="button" id="closePopup">Cancel</button>
+                </form>
+            `;
+
+            // bindNewsFormSubmit();
+
+            popup.style.display = 'block';
+            popup.style.pointerEvents = 'all';
+
+            document.getElementById('closePopup').addEventListener('click', () => {
+                popup.style.display = 'none';
+                popup.style.pointerEvents = 'none';
+            });
+        }
+
+        
         // === EDIT NEWS ===
         if (e.target && e.target.classList.contains('edit-news-btn')) {
             const newsId = newsItem.dataset.id;
@@ -122,6 +160,16 @@ function bindNewsFormSubmit() {
                     <input type="file" name="headline_image"> 
                     <input type="text" name="headline" required class="headline-box" value="${headline}">
                     <textarea name="description" rows="6" required class="description-box">${description}</textarea>
+                        <div class="section-wrapper">
+                            <label>
+                                <input class="section-buttons" type="checkbox" value="topnews"  name="news_section[]">Top news
+                            </label>
+
+                            <label class="note-wrapper">
+                                <input class="section-buttons" type="checkbox" value="featured"  name="news_section[]">Featured
+                                <p class="section-note">This will overwrite the current featured news</p>
+                            </label>
+                        </div>
                     <button id="actionBtn" type="submit">Update</button>
                     <button type="button" id="closePopup">Cancel</button>
                 </form>
@@ -162,30 +210,7 @@ function bindNewsFormSubmit() {
             });
         }
 
-        // === ADD NEWS ===
-        if (e.target && e.target.classList.contains('add-news-btn')) {
-
-            popup.innerHTML = `
-                <form class="news-action-form add-form" action="../../ADMIN_CONTROLS/news_add.php" method="post" enctype="multipart/form-data">
-                    <input type="file" name="headline-image"> 
-                    <input type="text" name="headline" placeholder="Headline" required>
-                    <textarea name="headline-description" placeholder="Description" required></textarea>
-                    <button id="actionBtn" type="submit">Add</button>
-                    <button type="button" id="closePopup">Cancel</button>
-                </form>
-            `;
-
-            // bindNewsFormSubmit();
-
-            popup.style.display = 'block';
-            popup.style.pointerEvents = 'all';
-
-            document.getElementById('closePopup').addEventListener('click', () => {
-                popup.style.display = 'none';
-                popup.style.pointerEvents = 'none';
-            });
-        }
-
+ 
 
         if (e.target && e.target.classList.contains('delete-news-btn')) {
             const newsId = newsItem.dataset.id;
