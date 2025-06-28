@@ -13,24 +13,38 @@ html {
 }
 
 .top-wrapper {
+  flex: 1;
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
-  width: 100%;
-  height: auto;
-
-  overflow: hidden;
-  background-image: url('../z-resources/ibajay_rizal.jpg');
-  background-color: rgba(0, 0, 0, 0.8);
-  mix-blend-mode:darken;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  color: white;
-
-  text-shadow: 0px 0px 5px black;
 }
+
+.img-cont {
+  width: 400px; 
+  height: 400px;
+  overflow: hidden; 
+  border-radius: 49% 51% 39% 61% / 48% 100% 0% 52%;
+  flex-shrink: 0;
+  border: 15px solid #033E63;
+}
+
+.img-cont img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  display: block;
+}
+
+.top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  padding: 60px;
+  flex-wrap: wrap; 
+}
+
 .top-title {
   font-family: var(--newtitle);
   font-weight: 700;
@@ -74,6 +88,15 @@ html {
   box-shadow: 2px 2px 1px black;
   
 }
+
+#food-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex;
+  justify-content: center;
+}
+
 #delicacyImg {
   width: 100%;
   
@@ -164,7 +187,7 @@ html {
   flex: 1;
   min-width: 150px;
   max-width: 200px;
-  color: white;
+  color: black;
 }
 
 .left-text p {
@@ -181,7 +204,6 @@ html {
   grid-template-columns: repeat(3, 1fr); 
   gap: 20px;
 }
-
 
 .box {
   position: relative;
