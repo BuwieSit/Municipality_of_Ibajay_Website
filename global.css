@@ -375,16 +375,16 @@ footer {
     width: 200px;
     height: 50px;
     border-radius: 10px;
-    background-color: var(--darkblue);
+    background-color: black;
     box-shadow: 3px 3px 10px black;
     font-family: var(--subtitle-font);
     font-weight: 700;
-    color: black; 
+    color: white; 
     cursor: pointer;
     transition: all 0.3s ease;
 }
 .sign-button:hover {
-    background-color: var(--darkBlue);
+    background-color: black;
     color: white;
 }
 .sign-button:active {
@@ -432,35 +432,48 @@ footer {
    filter: drop-shadow(0px 3px 5px black);
    text-decoration: none;
 } */
-#admin-body {
-    background-color: var(--darkBlue);
+ .admin-container {
+    width: 100%;
+    height: 100vh;
+
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+#admin-body {
+    background-color: #faf9f5;
+    display: flex;
+    flex-direction: row;
     gap: 30px;
-    overflow-x: hidden;
+    overflow: hidden;
+}
+#ibajayvid {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 300px;
+    transform: scale(1.2);
 }
 #admin-title {
     color: white;
     font-family: var(--subtitle-font);
-    font-weight: 700;
+    font-weight: 500;
 }
 .admin-wrapper {
-    background: #FAF9F5;
-    box-shadow: 0 8px 50px  rgba(0, 0, 0, 0.5) inset;
+    background: var(--darkBlue);
     backdrop-filter: blur( 12.5px );
     -webkit-backdrop-filter: blur( 12.5px );
-    border-radius: 10px;
-    width: 600px;
-    height: 500px;
-    padding: 20px;
-    border-radius: 50px;
+    width: 20%;
+    height: 100%;
+    margin: 0;
+    border: 0;
+    padding: 0 5%;
     color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 
 }
 .admin-forms {
@@ -518,6 +531,7 @@ footer {
 .inp-label {
     font-family: var(--subtitle-font);
     margin-bottom: 5px;
+    font-weight: 300;
 }
 .admin-logo-wrapper {
     display: flex;
@@ -530,14 +544,7 @@ footer {
     aspect-ratio: 1;
 }
 
-.admin-container {
-    width: 100%;
-    height: 100vh;
-    border: 1px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 
 
 

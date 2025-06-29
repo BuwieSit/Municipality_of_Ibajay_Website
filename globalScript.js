@@ -49,11 +49,6 @@ window.addEventListener('DOMContentLoaded', () => {
     });
             
 
-
-
-
-
-
         accountBtn.forEach(btn => {
             console.log('clicked');
 

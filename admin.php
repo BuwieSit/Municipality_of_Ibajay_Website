@@ -14,22 +14,26 @@ unset($_SESSION['unique']);
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="1024" initial-scale="1.0" />
     <link rel="icon" href="z-resources/ibajay_logo.png" />
     <link rel="stylesheet" href="global.css" />
     <title>Admin</title>
 </head>
 <body id="admin-body">
-    <div class="admin-logo-wrapper">
-        <img src="../z-resources/ibajay_logo.png" />
-        <h1 id="headerTitle">Municipality of Ibajay</h1>
-    </div>
-    <h2 id="admin-title">ADMIN</h2>
+
+
     <div class="admin-container">
-
-    
+    <video id="ibajayvid" autoplay muted loop>
+      <source src="./z-resources/ibajay_video.mp4" type="video/mp4">
+    </video>
       <div class="admin-wrapper signIn-wrapper">
+        <div class="admin-logo-wrapper">
+            <img src="../z-resources/ibajay_logo.png" />
+            <h1 id="headerTitle">Municipality of Ibajay</h1>
+        </div>
+        
           <form class="admin-forms" id="admin-login" method="post" action="./adminLogin.php" novalidate>
-
+            <h2 id="admin-title">Staff Portal</h2>
             <div class="input-wrapper">
               <label class="inp-label" for="login-unique">Unique ID</label>
               
@@ -58,7 +62,7 @@ unset($_SESSION['unique']);
                 />
                 <span class="error" name="password" id="passErr"><?php echo $password_error;?></span>
             </div>
-            <button type="submit" class="sign-button" name="signIn">Sign in</button>
+            <button type="submit" class="sign-button" name="signIn">Login</button>
             <a href="index.php"><sub id="adminText"></sub></a>
           </form>
           

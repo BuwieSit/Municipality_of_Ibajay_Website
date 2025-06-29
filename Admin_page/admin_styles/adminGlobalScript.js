@@ -23,7 +23,7 @@ function routing() {
                 <ul class="settings-list">
                     <li>Profile</li>
                     <li>Settings</li>
-                    <li>Log out</li>
+                    <li id="logoutList">Log out</li>
                 </ul>
             </div>
         </div>`;
@@ -35,8 +35,29 @@ if (header) {
     console.error("No <header> element found on the page.");
   }
 }
-
 routing();
+
+const logOutTrigger = document.getElementById('logoutList');
+const logPopup = document.getElementById('logoutPopup');
+const logCancel = document.getElementById('logoutCancel');
+const logBtn = document.getElementById('logoutBtn');
+
+logOutTrigger.addEventListener('click', () => {
+    logPopup.style.display = 'block';
+});
+
+logBtn.addEventListener('click', () => {
+    window.location.href = '../../admin.php';
+    setTimeout(window.history.forward(), 0 );
+    window.onunload = () => {
+        null;
+    }
+});
+
+
+logCancel.addEventListener('click', () => {
+    logPopup.style.display = 'none';
+});
 
 function bindNewsFormSubmit() {
     const popup = document.querySelector('.news-action-popup');

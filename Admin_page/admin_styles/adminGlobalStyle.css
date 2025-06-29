@@ -272,6 +272,69 @@ header {
     background-color: rgba(3, 62, 99, 0.4);
 
 }
+
+.logout-popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 0px 5px black;
+    width: auto;
+    padding: 5%;
+    border-radius: 10px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+    transition: all 0.3s ease;
+
+    display: none;
+}
+
+.logout-text {
+    font-family: var(--newtitle);
+    font-size: clamp(0.8rem, 1.5vw, 1.5rem);
+    color: black;
+    font-weight: 700;
+}
+.logout-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: auto;
+
+}
+
+.logout-button {
+    width: auto;
+    padding: 5%;
+    font-family: var(--subtitle-font);
+    font-size: clamp(0.8rem, 1.2vw, 1.5rem);
+    font-weight: 500;
+    cursor: pointer;
+}
+
+#logoutBtn {
+    background-color: rgb(172, 73, 79);
+    color: white;
+}   
+
+#logoutBtn:hover {
+    background-color: rgb(109, 46, 51);
+}
+#logoutCancel {
+    background-color: rgb(224, 224, 224);
+    color: black;
+}
+#logoutCancel:hover {
+    background-color: rgb(185, 185, 185);
+}
+
+
 .admin-content-container {
     grid-area: content;
     position: relative;

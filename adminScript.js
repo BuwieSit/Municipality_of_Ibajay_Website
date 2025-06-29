@@ -1,28 +1,6 @@
   window.addEventListener('DOMContentLoaded', () => {
     
-    // const uniqueErr = document.getElementById('uniqueErr');
-    // const passErr = document.getElementById('passErr');
-    // const login_unique = document.getElementById('login-unique');
-    // const login_pass = document.getElementById('login-password');
 
-    // if (uniqueErr.textContent.trim() === '') {
-    //     login_unique.classList.remove('inp-correct');
-    //     login_unique.classList.add('inp-error');
-    // }
-    // else {
-    //     login_unique.classList.remove('inp-error');
-    //     login_unique.classList.add('inp-correct');
-    // }
-
-    // if (passErr.textContent.trim() === '') {
-    //     login_unique.classList.remove('inp-correct');
-    //     login_pass.classList.add('inp-error');
-    // }
-    // else {
-    //     login_unique.classList.remove('inp-error');
-    //     login_unique.classList.add('inp-correct');
-    // }
-   
     const login_unique = document.getElementById('login-unique');
     const login_pass = document.getElementById('login-password');
     const uniqueErr = document.getElementById('uniqueErr');
@@ -30,6 +8,16 @@
 
 
     login_unique.addEventListener('input', () => {
+
+        if(login_unique.value < 8) {
+            uniqueErr.textContent = 'unique ID is less than 8 characters';
+            login_unique.classList.add('inp-error');
+            login_unique.classList.remove('inp-correct');
+        }
+        if (login_pass.value < 8) {
+            uniqueErr.textContent = 'Password must contain atleast 8 characters';
+        }
+
         if (login_unique.value.trim() === '') {
             uniqueErr.textContent = 'Unique ID is required.';
             login_unique.classList.add('inp-error');
@@ -56,6 +44,7 @@
 
     document.getElementById('loginForm').addEventListener('submit', function (e) {
         if (login_unique.value.trim() === '' || login_pass.value.trim() === '') {
+            uniqueErr.textContent = 'Fill up blank fields'
             e.preventDefault(); 
         }
     });

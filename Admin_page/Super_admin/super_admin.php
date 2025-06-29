@@ -29,6 +29,15 @@
     <header class="head">
         <div class="settings-popup" id="settingsPopup"></div>
     </header>
+
+    <div class="logout-popup" id="logoutPopup">
+        <p class="logout-text">Are you sure you want to logout?</p>
+
+        <form class="logout-form" novalidate>
+           <button type="button" class="logout-button" id="logoutBtn">Log out</button>
+            <button type="button" class="logout-button" id="logoutCancel">Cancel</button>
+        </form>
+    </div>
     <div class="side-navigation">
         <div class="side-wrapper">
             <img src="../../z-resources/ibajay_logo.png" alt="ibajay logo">
