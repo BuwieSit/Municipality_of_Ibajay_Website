@@ -42,6 +42,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="1024">
     <link rel="stylesheet" href="../admin_styles/adminGlobalStyle.css">
     <link rel="stylesheet" href="../adminStyle.css">
     <title>Ibajay Admin</title>

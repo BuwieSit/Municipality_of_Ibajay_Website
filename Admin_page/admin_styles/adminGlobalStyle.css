@@ -183,6 +183,8 @@ header {
     font-size: clamp(0.5rem, 1vw, 1.5rem);
 }
 
+
+
 .admin-navlist {
     position: relative;
     width: 100%;
@@ -334,6 +336,36 @@ header {
     background-color: rgb(185, 185, 185);
 }
 
+.dboard-container {
+    box-shadow: 0px 0px 5px black;
+    max-width: 400px;
+    height: auto;
+    padding: 5%;
+}
+.dboard-title-wrapper {
+    width: 100%;
+    padding: 2% 0;
+
+}
+.dboard-title {
+    font-family: var(--newtitle);
+    font-size: clamp(1rem, 1.5vw, 2rem);
+    font-weight: 700;
+}
+.dboard-content {
+    width: 100%;
+    padding: 2% 0;
+
+}
+.charts {
+    width: 300px;
+    height: 300px;
+    height: auto;
+    background-color: red;
+}
+.contents-dboard {
+    grid-area: news;
+}
 
 .admin-content-container {
     grid-area: content;
@@ -342,11 +374,18 @@ header {
     height: 90%;
     top: 10%;
     right: 0;
-
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template: 
+        "news" "services"
+        "trans" "feedback"
+        "appointments" "healthcare";
+    ;
     z-index: 10;
     overflow: auto; 
 
 }
+
 
 .member-content-container {
     padding-top: 1%;
@@ -795,6 +834,9 @@ header {
     object-fit: contain;
     
 }
+
+
+
 
 .listings {
     width: 80%;

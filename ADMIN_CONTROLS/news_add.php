@@ -23,15 +23,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $title = mysqli_real_escape_string($conn, $_POST['headline']);
     $desc = mysqli_real_escape_string($conn, $_POST['headline-description']);
-    $sectionArray = $_POST['news_section'] ?? [];  
-    $section = mysqli_real_escape_string($conn, implode(',', $sectionArray));
+    $is_topnews = isset($_POST['is_topnews']) ? 1 : 0;
+    $is_featured = isset($_POST['is_featured']) ? 1 : 0;
 
-    $sql = "INSERT INTO news_table (news_image, headline, description, news_section) VALUES ('$newsImg', '$title', '$desc', '$section')";
+    $sql = "INSERT INTO news_table 
+    (news_image, headline, description, is_topnews, is_featured)
+    VALUES ('$newsImg', '$title', '$desc', '$is_topnews', '$is_featured')";
+
 
     if (mysqli_query($conn, $sql)) {
         $referer = $_SERVER['HTTP_REFERER'];
-        // header("Location: " . $referer . (strpos($referer, '?') === false ? '?' : '&') . "status=success");
-        echo "success";
+        header("Location: " . $referer . (strpos($referer, '?') === false ? '?' : '&') . "status=success");
 
     } else {
         echo "Error: " . mysqli_error($conn);

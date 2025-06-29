@@ -9,14 +9,6 @@
 
     login_unique.addEventListener('input', () => {
 
-        if(login_unique.value < 8) {
-            uniqueErr.textContent = 'unique ID is less than 8 characters';
-            login_unique.classList.add('inp-error');
-            login_unique.classList.remove('inp-correct');
-        }
-        if (login_pass.value < 8) {
-            uniqueErr.textContent = 'Password must contain atleast 8 characters';
-        }
 
         if (login_unique.value.trim() === '') {
             uniqueErr.textContent = 'Unique ID is required.';

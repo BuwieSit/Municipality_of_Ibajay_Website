@@ -21,7 +21,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="1024">
     <link rel="stylesheet" href="../../global.css">
     <link rel="stylesheet" href="../admin_styles/adminGlobalStyle.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -97,7 +96,20 @@
     </div>
 
     <div class="member-content-container">
+        <div class="dboard-container contents-dboard">
+                <div class="dboard-title-wrapper">
+                    <p class="dboard-title">Contents</p>
+                </div>
 
+                <div class="dboard-content">
+                    <canvas id="myChart"></canvas>
+                </div>
+        <div class="dboard-content">
+
+        </div>
+
+ 
+        </div>
     </div>
 
     <script src="../admin_styles/adminGlobalScript.js"></script>

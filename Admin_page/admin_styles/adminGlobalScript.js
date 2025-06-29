@@ -48,8 +48,9 @@ logOutTrigger.addEventListener('click', () => {
 
 logBtn.addEventListener('click', () => {
     window.location.href = '../../admin.php';
+    
     setTimeout(window.history.forward(), 0 );
-    window.onunload = () => {
+    window.onload = () => {
         null;
     }
 });
@@ -141,11 +142,11 @@ function bindNewsFormSubmit() {
                     <textarea name="headline-description" placeholder="Description" required></textarea>
                         <div class="section-wrapper">
                             <label>
-                                <input class="section-buttons" type="checkbox" value="topnews" name="top_news">Top news
+                                <input type="checkbox" name="is_topnews" value="1"> Top news 
                             </label>
 
                             <label class="note-wrapper">
-                                <input class="section-buttons" type="checkbox" value="featured" name="featured">Featured
+                                <input type="checkbox" name="is_featured" value="1"> Featured
                                 <p class="section-note">This will overwrite the current featured news</p>
                             </label>
                         </div>
@@ -170,66 +171,85 @@ function bindNewsFormSubmit() {
 
         
         // === EDIT NEWS ===
-        if (e.target && e.target.classList.contains('edit-news-btn')) {
-            const newsId = newsItem.dataset.id;
-            const headline = newsItem.dataset.headline;
-            const description = newsItem.dataset.description;
+if (e.target && e.target.classList.contains('edit-news-btn')) {
+    const newsItem = e.target.closest('.admin-news-item');
 
-            popup.innerHTML = `
-                <form class="news-action-form news-edit-form" method="post" action="../../ADMIN_CONTROLS/update_news.php" enctype="multipart/form-data">
-                    <input type="hidden" name="id" value="${newsId}">
-                    <input type="file" name="headline_image"> 
-                    <input type="text" name="headline" required class="headline-box" value="${headline}">
-                    <textarea name="description" rows="6" required class="description-box">${description}</textarea>
-                        <div class="section-wrapper">
-                            <label>
-                                <input class="section-buttons" type="checkbox" value="topnews"  name="news_section[]">Top news
-                            </label>
+    const newsId = newsItem.dataset.id;
+    const headline = newsItem.dataset.headline;
+    const description = newsItem.dataset.description;
+    const isTopnews = newsItem.dataset.istopnews;
+    const isFeatured = newsItem.dataset.isfeatured;
 
-                            <label class="note-wrapper">
-                                <input class="section-buttons" type="checkbox" value="featured"  name="news_section[]">Featured
-                                <p class="section-note">This will overwrite the current featured news</p>
-                            </label>
-                        </div>
-                    <button id="actionBtn" type="submit">Update</button>
-                    <button type="button" id="closePopup">Cancel</button>
-                </form>
-            `;
+    popup.innerHTML = `
+      <form class="news-action-form news-edit-form" method="post" action="../../ADMIN_CONTROLS/update_news.php" enctype="multipart/form-data">
+        <input type="hidden" name="id" value="${newsId}">
+        <input type="file" name="headline_image"> 
+        <input type="text" name="headline" required class="headline-box" value="${headline}">
+        <textarea name="description" rows="6" required class="description-box">${description}</textarea>
+        
+        <div class="section-wrapper">
+          <label>
+            <input class="section-buttons" type="checkbox" name="is_topnews" value="1" ${isTopnews === "1" ? "checked" : ""}> Top news
+          </label>
 
-            popup.style.display = 'block';
-            popup.style.pointerEvents = 'all';
+          <label class="note-wrapper">
+            <input class="section-buttons" type="checkbox" name="is_featured" value="1" ${isFeatured === "1" ? "checked" : ""}> Featured
+            <p class="section-note">This will overwrite the current featured news</p>
+          </label>
+        </div>
 
-            document.getElementById('closePopup').addEventListener('click', () => {
-                popup.style.display = 'none';
-                popup.style.pointerEvents = 'none';
-            });
-        }
+        <button id="actionBtn" type="submit">Update</button>
+        <button type="button" id="closePopup">Cancel</button>
+      </form>
+    `;
 
-        // === VIEW NEWS ===
-        if (e.target && e.target.classList.contains('view-news-btn')) {
-            const headline = newsItem.dataset.headline;
-            const description = newsItem.dataset.description;
+    popup.style.display = 'block';
+    popup.style.pointerEvents = 'all';
 
-            popup.innerHTML = `
-                <div class="news-action-form news-edit-form">
-                    <div class="headline-cont">
-                        <h1 id="headlineTitle">${headline}</h1>
-                    </div>
-                    <div class="description-cont">
-                        <p id="news-description">${description}</p>
-                    </div>
-                    <button type="button" id="closePopup">Close</button>
-                </div>
-            `;
+    document.getElementById('closePopup').addEventListener('click', () => {
+        popup.style.display = 'none';
+        popup.style.pointerEvents = 'none';
+    });
+}
 
-            popup.style.display = 'block';
-            popup.style.pointerEvents = 'all';
 
-            document.getElementById('closePopup').addEventListener('click', () => {
-                popup.style.display = 'none';
-                popup.style.pointerEvents = 'none';
-            });
-        }
+// === VIEW NEWS ===
+if (e.target && e.target.classList.contains('view-news-btn')) {
+    const newsItem = e.target.closest('.admin-news-item');
+
+    const headline = newsItem.dataset.headline;
+    const description = newsItem.dataset.description;
+    const isTopnews = newsItem.dataset.istopnews === "1";
+    const isFeatured = newsItem.dataset.isfeatured === "1";
+    const imageSrc = newsItem.querySelector('img.doctor-prof')?.getAttribute('src') || '';
+
+    let tags = '';
+    if (isTopnews) tags += `<span class="news-tag">Top News</span>`;
+    if (isFeatured) tags += `<span class="news-tag featured">Featured</span>`;
+
+    popup.innerHTML = `
+        <div class="news-action-form news-edit-form">
+            <div class="headline-cont">
+                <h1 id="headlineTitle">${headline}</h1>
+                <img src="${imageSrc}" alt="News Image" style="max-width:50%; height: 50%; object-fit:contain; border-radius:8px;" onerror="this.src='../../z-resources/news_thumb.png'">
+                <div class="news-tags">${tags}</div>
+            </div>
+            <div class="description-cont">
+                <p id="news-description">${description}</p>
+            </div>
+            <button type="button" id="closePopup">Close</button>
+        </div>
+    `;
+
+    popup.style.display = 'block';
+    popup.style.pointerEvents = 'all';
+
+    document.getElementById('closePopup').addEventListener('click', () => {
+        popup.style.display = 'none';
+        popup.style.pointerEvents = 'none';
+    });
+}
+
 
  
 

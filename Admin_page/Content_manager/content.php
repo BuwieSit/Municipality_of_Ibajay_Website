@@ -25,6 +25,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="1024">
     <link rel="stylesheet" href="../admin_styles/adminGlobalStyle.css">
     <link rel="stylesheet" href="../../global.css">
 
@@ -56,7 +57,6 @@
 
 
     <div class="member-content-container">
-        
 
     <div class="added-popup" id="addedPopup">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
@@ -88,6 +88,8 @@
                 data-id="<?php echo $row['news_id']; ?>"
                 data-headline="<?php echo htmlspecialchars($row['headline'], ENT_QUOTES); ?>"
                 data-description="<?php echo htmlspecialchars($row['description'], ENT_QUOTES); ?>" 
+                data-isfeatured="<?php echo htmlspecialchars($row['is_featured'], ENT_QUOTES); ?>"
+                data-istopnews="<?php echo htmlspecialchars($row['is_topnews'], ENT_QUOTES); ?>"
                 >
                     <div class="headline-image">
                     <img id="docProfile" class="doctor-prof"

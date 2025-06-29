@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
     const pageMap = {
-        'dashboard': { folder: 'Super_admin', file: 'super_admin.php' }, 
+        'dashboard': { folder: 'Super_admin', file: 'dashboard.php' }, 
         'announcements': { folder: 'Content_manager', file: 'content.php' },
         'services': { folder: 'Services_manager', file: 'services.php' },
         'tourism': { folder: 'Tourism_coor', file: 'tourism.php' },
