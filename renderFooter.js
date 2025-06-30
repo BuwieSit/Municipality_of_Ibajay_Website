@@ -74,7 +74,7 @@ function routing() {
 
           <div class="footer-row ftrow">
               <section class="ftrow-sect ftrow-left">
-                  <p class="ftrow-title">Ibajay.</p>
+                  <p class="ftrow-title" id="adminAccess">Ibajay. <img id="adminImage" src="./z-resources/admin.png"></p>
                   <ul class="terms-list">
                     <li><a>Privacy Policy</a><li>
                     <li><a>Terms of Service</a><li>

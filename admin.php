@@ -27,7 +27,7 @@ unset($_SESSION['unique']);
       <source src="./z-resources/ibajay_video.mp4" type="video/mp4">
     </video>
       <div class="admin-wrapper signIn-wrapper">
-        <div class="admin-logo-wrapper">
+        <div class="admin-logo-wrapper" id="adminLogoWrapper">
             <img src="../z-resources/ibajay_logo.png" />
             <h1 id="headerTitle">Municipality of Ibajay</h1>
         </div>

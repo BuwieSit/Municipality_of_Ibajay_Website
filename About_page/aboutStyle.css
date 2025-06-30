@@ -1,7 +1,7 @@
 @import url('../global.css');
 
 body {
-    background-color: var(--blueGreen);
+    background-color: white;
     overflow-x: hidden;
 
 }

@@ -1,6 +1,10 @@
   window.addEventListener('DOMContentLoaded', () => {
     
-
+    const home = document.getElementById('adminLogoWrapper');
+    home.style.cursor = 'pointer';
+    home.addEventListener('click', () => {
+        window.location.href = './index.html';
+    });
     const login_unique = document.getElementById('login-unique');
     const login_pass = document.getElementById('login-password');
     const uniqueErr = document.getElementById('uniqueErr');

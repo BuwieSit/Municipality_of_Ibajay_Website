@@ -101,7 +101,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     let count = 0; 
 
-    const admin_acc = document.querySelector('.admin-access');
+    const admin_acc = document.getElementById('adminAccess');
 
     admin_acc.addEventListener('click', () => {
         count += 1; 

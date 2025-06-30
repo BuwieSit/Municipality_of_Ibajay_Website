@@ -2,21 +2,36 @@
 
 footer {
     position: relative;
-    background-image: linear-gradient(#cbcbcb); 
     border: none;
     width: 100%;
-    height: 600px;
+    height: auto;
     bottom: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    background: white !important;
+    margin-bottom: 0;
+}
+
+#adminImage {
+    width: 30px;
+    object-fit: cover;
+    opacity: 70%;
+}
+#adminAccess {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 .footer-row {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: row;
+    padding: 2% 0;
 }
 
 .logo-text {
@@ -59,7 +74,7 @@ footer {
     height: 100%;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
 }
 .frow-wrapper {
@@ -74,9 +89,6 @@ footer {
     font-family: var(--newtitle);
     font-weight: 700;
     color: var(--darkBlue);
-
-
-
 }
 .frow-wrapper > ul {
     list-style-type: none;
@@ -95,8 +107,11 @@ footer {
     text-decoration: none;
     color: black;
     cursor: pointer;
+    transform: all 0.3s ease;
 }
-
+.frow-wrapper > ul > li > a:hover {
+    text-decoration: underline;
+}
 .frow-sub-cont {
     width: 30%;
     height: 100%;
@@ -143,6 +158,7 @@ footer {
     font-weight: 700;
 
 }
+
 .terms-list {
     display: flex;
     gap: 10px;

@@ -28,7 +28,7 @@
     <title>Super Admin</title>
 </head>
 <body>
-    <header class="head">
+    <header class="head">   
         <div class="settings-popup" id="settingsPopup"></div>
     </header>
 
